@@ -3,15 +3,29 @@ import { config } from "@keystatic/core";
 import { Logo } from "@/components/logo";
 import { env } from "@/config/env.config";
 import { defaultLocale } from "@/config/i18n.config";
-import { curricula, events, people, resources } from "@/lib/content/collections";
+import {
+	curricula,
+	documentation,
+	events,
+	externalResources,
+	hostedResources,
+	pathfinders,
+	people,
+	sources,
+	tags,
+} from "@/lib/content/collections";
 
-// eslint-disable-next-line import-x/no-default-export
 export default config({
 	collections: {
 		curricula: curricula(defaultLocale),
+		documentation: documentation(defaultLocale),
 		events: events(defaultLocale),
+		externalResources: externalResources(defaultLocale),
+		hostedResources: hostedResources(defaultLocale),
+		pathfinders: pathfinders(defaultLocale),
 		people: people(defaultLocale),
-		resources: resources(defaultLocale),
+		sources: sources(defaultLocale),
+		tags: tags(defaultLocale),
 	},
 	singletons: {},
 	storage:
@@ -37,8 +51,9 @@ export default config({
 			name: "DARIAH-Campus",
 		},
 		navigation: {
-			content: ["curricula", "events", "resources"],
-			data: ["people"],
+			content: ["curricula", "events", "externalResources", "hostedResources", "pathfinders"],
+			data: ["people", "sources", "tags"],
+			documentation: ["documentation"],
 		},
 	},
 });

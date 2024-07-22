@@ -33,6 +33,24 @@
 		"something-went-wrong": "Something went wrong!",
 		"try-again": "Try again"
 	},
+	"EventsPage": {
+		"meta": {
+			"title": "Events"
+		},
+		"title": "Events"
+	},
+	"ExternalResourcesPage": {
+		"meta": {
+			"title": "External resources"
+		},
+		"title": "External resources"
+	},
+	"HostedResourcesPage": {
+		"meta": {
+			"title": "Hosted resources"
+		},
+		"title": "Hosted resources"
+	},
 	"ImprintPage": {
 		"meta": {
 			"title": "Imprint"
@@ -40,9 +58,8 @@
 		"title": "Imprint"
 	},
 	"IndexPage": {
-		"badge": "ACDH-CH frontend team",
-		"lead-in": "This is a starter template built with Next.js 14. It includes internationalisation, end-to-end testing, and supports MDX for writing documentation.",
-		"title": "Application template"
+		"title": "Looking for learning resources?",
+		"subtitle": "DARIAH-CAMPUS is a discovery framework and hosting platform for learning resources."
 	},
 	"Loading": {
 		"loading": "Loading"
@@ -65,10 +82,16 @@
 		},
 		"title": "Page not found"
 	},
-	"ResourcesPage": {
+	"PathfindersPage": {
 		"meta": {
-			"title": "Resources"
+			"title": "Pathfinders"
 		},
-		"title": "Resources"
+		"title": "Pathfinders"
+	},
+	"SourcesPage": {
+		"meta": {
+			"title": "Sources"
+		},
+		"title": "Sources"
 	}
 }

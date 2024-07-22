@@ -54,10 +54,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 	const reader = createReader();
 	const curricula = await reader.collections.curricula.all();
-	const resources = await reader.collections.resources.all();
+	const events = await reader.collections.events.all();
+	const externalResources = await reader.collections.externalResources.all();
+	const hostedResources = await reader.collections.hostedResources.all();
+	const pathfinders = await reader.collections.pathfinders.all();
 
-	curricula.forEach((curriculum) => {
-		const pathname = `/curricula/${curriculum.slug}`;
+	curricula.forEach((resource) => {
+		const pathname = `/resources/curricula/${resource.slug}`;
 
 		entries.push({
 			url: String(createUrl({ baseUrl, pathname })),
@@ -65,8 +68,35 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		});
 	});
 
-	resources.forEach((resource) => {
-		const pathname = `/resources/${resource.slug}`;
+	events.forEach((resource) => {
+		const pathname = `/resources/events/${resource.slug}`;
+
+		entries.push({
+			url: String(createUrl({ baseUrl, pathname })),
+			// lastModified: new Date(resource.entry.publishDate),
+		});
+	});
+
+	externalResources.forEach((resource) => {
+		const pathname = `/resources/external/${resource.slug}`;
+
+		entries.push({
+			url: String(createUrl({ baseUrl, pathname })),
+			// lastModified: new Date(resource.entry.publishDate),
+		});
+	});
+
+	hostedResources.forEach((resource) => {
+		const pathname = `/resources/hosted/${resource.slug}`;
+
+		entries.push({
+			url: String(createUrl({ baseUrl, pathname })),
+			// lastModified: new Date(resource.entry.publishDate),
+		});
+	});
+
+	pathfinders.forEach((resource) => {
+		const pathname = `/resources/pathfinders/${resource.slug}`;
 
 		entries.push({
 			url: String(createUrl({ baseUrl, pathname })),

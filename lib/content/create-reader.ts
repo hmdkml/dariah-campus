@@ -10,7 +10,7 @@ import { env } from "@/config/env.config";
 import config from "@/keystatic.config";
 
 export const createReader = cache(function createReader() {
-	if (draftMode().isEnabled) {
+	if (isDraftModeEnabled()) {
 		const branch = cookies().get("ks-branch")?.value;
 
 		assert(
@@ -32,3 +32,15 @@ export const createReader = cache(function createReader() {
 
 	return reader;
 });
+
+function isDraftModeEnabled(): boolean {
+	/**
+	 * `draftMode` throws when `AsyncLocalStorage` is not available,
+	 * e.g. in `generateStaticParams`.
+	 */
+	try {
+		return draftMode().isEnabled;
+	} catch {
+		return false;
+	}
+}
