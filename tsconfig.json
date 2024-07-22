@@ -1,41 +1,35 @@
 {
+	"$schema": "https://json.schemastore.org/tsconfig",
 	"extends": "@acdh-oeaw/tsconfig",
 	"compilerOptions": {
-		"baseUrl": ".",
 		/**
-		 * No longer necessary in typescript v5.
+		 * `"module": "preserve"` should work with typescript 5.6.
 		 *
-		 * @see https://github.com/vercel/next.js/issues/45617
-		 */
-		"forceConsistentCasingInFileNames": true,
-		/**
-		 * Next.js does not yet understand `verbatimModuleSyntax`.
+		 * `esModuleInterop`, `moduleResolution`, and `resolveJsonModule` can be removed then as well.
 		 *
-		 * @see https://github.com/vercel/next.js/issues/46509
+		 * @see https://github.com/microsoft/TypeScript/issues/58975
 		 */
-		"isolatedModules": true,
-		/**
-		 * Next.js does not yet understand `bundler`.
-		 * @see https://github.com/vercel/next.js/issues/47858
-		 *
-		 */
-		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
 		"paths": {
-			"@/*": ["./src/*"],
-			"~/*": ["./*"]
-		}
+			"@/*": ["./*"]
+		},
+		"plugins": [{ "name": "next" }]
 	},
 	"include": [
-		"next-env.d.ts",
-		"app-env.d.ts",
-		"**/*.ts",
-		"**/*.tsx",
-		"**/*.config.js",
-		"**/*.config.cjs",
-		"scripts/*.js"
+		"./next-env.d.ts",
+		"./**/*.d.ts",
+		"./**/*.js",
+		"./**/*.mdx",
+		"./**/*.ts",
+		"./**/*.tsx",
+		".next/types/**/*.ts"
 	],
-	"exclude": ["node_modules"],
+	"exclude": ["node_modules", "out"],
 	"mdx": {
-		"plugins": ["remark-frontmatter", "remark-gfm"]
+		"checkMdx": true,
+		"plugins": ["remark-frontmatter", "remark-mdx-frontmatter", "remark-gfm"]
 	}
 }

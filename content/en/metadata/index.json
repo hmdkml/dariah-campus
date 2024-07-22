@@ -1,0 +1,13 @@
+{
+	"title": "DARIAH-Campus",
+	"description": "DARIAH-Campus is a discovery framework and hosting platform for DARIAH learning resources.",
+	"twitter": {
+		"creator": "@dariaheu",
+		"site": "@dariaheu"
+	},
+	"manifest": {
+		"name": "DARIAH-Campus",
+		"short-name": "DARIAH-Campus",
+		"description": "DARIAH-Campus is a discovery framework and hosting platform for DARIAH learning resources."
+	}
+}

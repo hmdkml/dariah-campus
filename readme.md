@@ -1,62 +1,105 @@
-<!--lint disable first-heading-level-->
+# app template
 
-# DARIAH-Campus
+template repository for next.js apps.
 
-DARIAH-Campus (D-C) is a combined discovery layer and hosting platform for all learning resources
-associated with DARIAH-EU. As a discovery layer, D-C links to existing, externally hosted, resources
-(such as #dariahTeach, PARTHENOS etc.); and as a hosting platform, D-C offers a flexible framework
-for developing and sharing web-based training materials, as well as capturing face-to-face events.
+## how to run
 
-D-C materials are hosted and version-controlled in this GitHub repository and will be delivered to
-the user as a Gatsby-based overlay website.
+prerequisites:
 
-Authors and contributors will be provided with comprehensive author guidelines on how to port
-existing or create new content for D-C in Markdown, a lightweight markup language with plain text
-formatting syntax. The overarching aim of D-C is to improve the openness, discoverability,
-usability, and long-term sustainability of training resources, and to achieve best practice in the
-production and management of open educational resources in the DARIAH ecosystem.
+- [node.js v20](https://nodejs.org/en/download)
+- [pnpm v9](https://pnpm.io/installation)
 
-_Co-funded by the Horizon 2020 innovation and research programme of the European Union under grants
-no. 731081 and 823782._
+> [!TIP]
+>
+> you can use `pnpm` to install the required node.js version with `pnpm env use 20 --global`
 
-## View content
+set required environment variables in `.env.local`:
 
-Visit the website at [https://campus.dariah.eu](https://campus.dariah.eu).
+```bash
+cp .env.local.example .env.local
+```
 
-## Contribute content
+also, set environment variables required by [validation](./.github/workflows/validate.yml) and
+[deployment](./.github/workflows/build-deploy.yml) github actions. use
+["variables"](https://github.com/acdh-oeaw/template-app-next/settings/variables/actions) for every
+environment variable prefixed with `NEXT_PUBLIC_`, and
+["secrets"](https://github.com/acdh-oeaw/template-app-next/settings/secrets/actions) for all others.
 
-### Contribute or edit content via CMS
+the default template accepts the following variables:
 
-Sign-in to the CMS with your GitHub account at
-[https://campus.dariah.eu/admin](https://campus.dariah.eu/admin).
+- `NEXT_PUBLIC_REDMINE_ID` (required): service issue for this application in the acdh-ch
+  [redmine](https://redmine.acdh.oeaw.ac.at) issue tracker.
+- `NEXT_PUBLIC_APP_BASE_URL` (required): the base url for this application. the default of
+  "http://localhost:3000" should be fine for local development.
+- `NEXT_PUBLIC_BOTS` (required): whether this website can be indexed by web crawlers like the google
+  bot. supported values are "disabled" and "enabled", defaults to "disabled".
+- `NEXT_PUBLIC_MATOMO_BASE_URL` and `NEXT_PUBLIC_MATOMO_ID` (optional): set these to support
+  client-side analytics with matomo.
+- `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` (optional): set this to verify site ownership for google
+  search console.
 
-For edits to existing articles you can also directly click the "Suggest changes to this resource"
-link at the bottom of each post.
+when adding new environment variables, don't forget to add them to `.env.local.example` as well.
 
-### Run a local CMS backend
+install dependencies:
 
-You can run a local CMS backend which writes directly to the filesystem, and does not require
-authentication, with `pnpm run cms:dev`. Then run either a production build of the website with
-`NEXT_PUBLIC_USE_LOCAL_CMS='true' pnpm build && pnpm start` or a development build with `pnpm dev`
-and visit [http://localhost:3000/cms](http://localhost:3000/admin). Don't forget to commit and push
-changes via `git`.
+```bash
+pnpm install
+```
 
-### Use your favorite text editor
+run a development server on [http://localhost:3000](http://localhost:3000):
 
-Since content is saved to `.mdx` files in the `content/posts` folder, you can use your favourite
-text editor to make changes and commit via `git`. When using VS Code you can install the recommended
-extensions to get linting aud auto-formatting for markdown.
+```bash
+pnpm run dev
+```
 
-### Contributing guidelines
+> [!TIP]
+>
+> this template supports developing in containers. when opening the project in your editor, you
+> should be prompted to re-open it in a devcontainer.
 
-When contributing content directly via `git`, please use feature branches and don't push to `main`,
-to allow for review.
+## how to deploy
 
-### Note on writing Markdown
+- ask a sysadmin to create a new acdh-ch kubernetes project.
+- create a new namespace in that project via [rancher](https://rancher.acdh-dev.oeaw.ac.at), and set
+  the `KUBE_NAMESPACE` github variable to that namespace
+- adjust the [`app_name`](./.github/workflows/build-deploy.yml#L36), which will be the name of the
+  deployment in the above namespace.
+- set the `PUBLIC_URL` github variable to the application's public url (e.g.
+  "https://my-app.acdh-ch-dev.oeaw.ac.at"), and set the `KUBE_INGRESS_BASE_DOMAIN` to the public
+  url's base domain (e.g. "acdh-ch-dev.oeaw.ac.at"). `PUBLIC_URL` should match
+  `NEXT_PUBLIC_APP_BASE_URL`.
+- if you haven't yet, create a service issue in the acdh-ch
+  [redmine](https://redmine.acdh.oeaw.ac.at) issue tracker, and set the `SERVICE_ID` github variable
+  to the issue number. this should match the `NEXT_PUBLIC_REDMINE_ID` variable in your `.env.local`
+  file.
+- ensure required build args (prefixed with `NEXT_PUBLIC_`) are referenced in both the
+  [`Dockerfile`](./Dockerfile), as well as the [validation](./.github/workflows/validate.yml) and
+  [deployment](./.github/workflows/build-deploy.yml) pipelines, and set as
+  [github variables](https://github.com/acdh-oeaw/template-app-next/settings/variables/actions).
+- ensure required runtime environment variables are referenced in the
+  [validation](./.github/workflows/validate.yml) and
+  [deployment](./.github/workflows/build-deploy.yml) pipelines, and set as
+  [github secrets](https://github.com/acdh-oeaw/template-app-next/settings/secrets/actions). github
+  secrets need to be prefixed with `K8S_SECRET_` to be automatically copied to the runtime
+  environment. in case you need secrets in the docker build context, you can
+  [mount a secret in the Dockerfile](https://docs.docker.com/build/building/secrets/).
+- ensure both the github repository, as well as the
+  [package registry](https://github.com/orgs/acdh-oeaw/packages/container/my-app/settings) is set to
+  public.
 
-Content is saved in MDX format, which is markdown with custom JavaScript components. Most markdown
-syntax is supported, however there are
-[subtle parsing differences](https://github.com/micromark/mdx-state-machine#72-deviations-from-markdown)
-to be aware of. Most notably: the "lesser than" sign `<` needs to be HTML-escaped to `&lt;` (because
-it signifies the start of a custom component), and similarly "autolinks" (`<https://example.com>`
-instead of `[https://example.com](https://example.com)`) are not allowed.
+if everything is set up correctly, every git push to the `main` branch will create a new deployment
+if the validation pipeline passes.
+
+you can reference the [template repository](https://github.com/acdh-oeaw/template-app-next) for a
+working setup.
+
+## template variants
+
+- [`variant/with-commitlint`](tree/variant/with-commitlint) branch: enables `commitlint` and runs it
+  as a git hook, and as part of the validation workflow in a github action.
+- [`variant/with-single-locale`](tree/variant/with-single-locale) branch: adjusts the template to
+  support a single pre-configured locale only, and removes internationalised routing. ui strings are
+  still managed in the [`messages`](./messages) folder to make it easy to activate full i18n support
+  later if needed.
+- [`variant/with-keystatic-cms`](tree/variant/with-keystatic-cms) branch: adds `keystatic` for
+  editing content with a git-based cms.

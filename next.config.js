@@ -1,193 +1,63 @@
-/** @typedef {import('@/i18n/i18n.config').Locale} Locale */
-/** @typedef {import('next').NextConfig & {i18n?: {locales: Array<Locale>; defaultLocale: Locale}}} NextConfig */
-
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
+/** @typedef {import('next').NextConfig} NextConfig */
 
 import createBundleAnalyzer from "@next/bundle-analyzer";
 import createMdxPlugin from "@next/mdx";
-import createSvgPlugin from "@stefanprobst/next-svg";
-import withFrontmatter from "remark-frontmatter";
-import withGfm from "remark-gfm";
-import withMdxFrontmatter from "remark-mdx-frontmatter";
+import localesPlugin from "@react-aria/optimize-locales-plugin";
+import createI18nPlugin from "next-intl/plugin";
 
-const isProductionDeploy = process.env["NEXT_PUBLIC_BASE_URL"]?.startsWith(
-	"https://campus.dariah.eu",
-);
+import { env } from "./config/env.config.js";
+import { createConfig as createMdxConfig } from "./config/mdx.config.js";
 
 /** @type {NextConfig} */
 const config = {
 	eslint: {
-		dirs: ["."],
+		dirs: [process.cwd()],
 		ignoreDuringBuilds: true,
 	},
-	experimental: {
-		outputFileTracingExcludes: {
-			/**
-			 * Next.js standalone output incorrectly includes the content folder,
-			 * which will lead to deployment error:
-			 * "Max serverless function size of 50 MB compressed or 250 MB uncompressed reached"
-			 */
-			"**/*": ["./content/**/*", "node_modules/**/@swc/core*"],
+	logging: {
+		fetches: {
+			fullUrl: true,
 		},
 	},
-	async headers() {
-		const headers = [];
-
-		if (isProductionDeploy !== true) {
-			headers.push({
-				source: "/:path*",
-				headers: [
-					{
-						key: "X-Robots-Tag",
-						value: "noindex, nofollow",
-					},
-				],
-			});
-
-			console.warn("⚠️ Indexing by search engines is disallowed.");
-		}
-
-		return headers;
-	},
-	i18n: {
-		locales: ["en"],
-		defaultLocale: "en",
-	},
-	output: "standalone",
-	pageExtensions: ["page.tsx", "page.mdx", "api.ts"],
-	poweredByHeader: false,
-	async redirects() {
-		return [
-			/**
-			 * Permanent redirects for renamed resources.
-			 * Should include full uri-encoded pathname, without base url.
-			 *
-			 * @example
-			 * ```json
-			 * {
-			 *   "/resource/posts/old-resource": "/resource/posts/new-resource"
-			 * }
-			 *
-			 */
-			...Object.entries(
-				JSON.parse(await readFile(join(process.cwd(), "./redirects.json"), { encoding: "utf-8" })),
-			).map(([source, destination]) => {
-				return {
-					source,
-					destination,
-					permanent: true,
-				};
-			}),
-			/**
-			 * Auto-generated redirects for uuids.
-			 */
-			...Object.entries(
-				JSON.parse(
-					await readFile(join(process.cwd(), "./redirects.resources.json"), { encoding: "utf-8" }),
-				),
-			).map(([uuid, id]) => {
-				return {
-					source: `/id/${uuid}`,
-					destination: `/resource/posts/${id}`,
-					permanent: false,
-				};
-			}),
-			...Object.entries(
-				JSON.parse(
-					await readFile(join(process.cwd(), "./redirects.courses.json"), { encoding: "utf-8" }),
-				),
-			).map(([uuid, id]) => {
-				return {
-					source: `/id/${uuid}`,
-					destination: `/curriculum/${id}`,
-					permanent: false,
-				};
-			}),
-			...Object.entries(
-				JSON.parse(
-					await readFile(join(process.cwd(), "./redirects.events.json"), { encoding: "utf-8" }),
-				),
-			).map(([uuid, id]) => {
-				return {
-					source: `/id/${uuid}`,
-					destination: `/resource/events/${id}`,
-					permanent: false,
-				};
-			}),
-			/**
-			 * Redirects for legacy resources from previous iteration of dariah-campus.
-			 */
-			...Object.entries(
-				JSON.parse(
-					await readFile(join(process.cwd(), "./redirects.legacy.resources.json"), {
-						encoding: "utf-8",
-					}),
-				),
-			).map(([legacyId, id]) => {
-				return {
-					source: `/resource/${legacyId}`,
-					destination: `/resource/posts/${id}`,
-					permanent: true,
-				};
-			}),
-			...Object.entries(
-				JSON.parse(
-					await readFile(join(process.cwd(), "./redirects.legacy.events.json"), {
-						encoding: "utf-8",
-					}),
-				),
-			).map(([legacyId, id]) => {
-				return {
-					source: `/resource/${legacyId}`,
-					destination: `/resource/events/${id}`,
-					permanent: true,
-				};
-			}),
-			...Object.entries(
-				JSON.parse(
-					await readFile(join(process.cwd(), "./redirects.legacy.persons.json"), {
-						encoding: "utf-8",
-					}),
-				),
-			).map(([legacyId, id]) => {
-				return {
-					source: `/author/${legacyId}`,
-					destination: `/author/${id}`,
-					permanent: true,
-				};
-			}),
+	output: env.BUILD_MODE,
+	pageExtensions: ["ts", "tsx", "md", "mdx"],
+	redirects() {
+		/** @type {Awaited<ReturnType<NonNullable<NextConfig["redirects"]>>>} */
+		const redirects = [
+			{
+				source: "/admin",
+				destination: "/keystatic",
+				permanent: false,
+			},
 		];
-	},
-	async rewrites() {
-		return [
-			{ source: "/resources", destination: "/resources/page/1" },
-			{ source: "/resources/:type", destination: "/resources/:type/page/1" },
-			{ source: "/courses", destination: "/courses/page/1" },
-			{ source: "/authors", destination: "/authors/page/1" },
-			{ source: "/author/:id", destination: "/author/:id/page/1" },
-			{ source: "/tags", destination: "/tags/page/1" },
-			{ source: "/tag/:id", destination: "/tag/:id/page/1" },
-			{ source: "/categories", destination: "/categories/page/1" },
-			{ source: "/category/:id", destination: "/category/:id/page/1" },
-			{ source: "/about", destination: "/docs/about" },
-		];
+
+		return Promise.resolve(redirects);
 	},
 	typescript: {
 		ignoreBuildErrors: true,
+	},
+	webpack(config, { isServer }) {
+		/**
+		 * @see https://react-spectrum.adobe.com/react-aria/ssr.html#nextjs-app-router
+		 */
+		if (!isServer) {
+			// eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+			config.plugins.push(localesPlugin.webpack({ locales: [] }));
+		}
+
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-return
+		return config;
 	},
 };
 
 /** @type {Array<(config: NextConfig) => NextConfig>} */
 const plugins = [
-	createBundleAnalyzer({ enabled: process.env.BUNDLE_ANALYZER === "enabled" }),
+	createBundleAnalyzer({ enabled: env.BUNDLE_ANALYZER === "enabled" }),
+	createI18nPlugin("./lib/i18n.ts"),
 	createMdxPlugin({
-		extension: /\.mdx?/,
-		options: {
-			remarkPlugins: [withFrontmatter, withMdxFrontmatter, withGfm],
-		},
+		extension: /\.(md|mdx)$/,
+		options: await createMdxConfig(),
 	}),
-	createSvgPlugin({}),
 ];
 
 export default plugins.reduce((config, plugin) => {
