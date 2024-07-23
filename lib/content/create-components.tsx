@@ -1,6 +1,7 @@
 import { isNonEmptyString, pick } from "@acdh-oeaw/lib";
 import { fields, NotEditable } from "@keystatic/core";
 import {
+	block,
 	type ContentComponent,
 	mark,
 	repeating,
@@ -350,6 +351,14 @@ const components = {
 					// validation: { isRequired: false },
 				}),
 			},
+		});
+	},
+	VideoCard() {
+		return block({
+			label: "Video card",
+			description: "A YouTube video.",
+			icon: <VideoIcon />,
+			schema: {},
 		});
 	},
 } satisfies Record<string, (assetPath: `/${string}/`) => ContentComponent>;

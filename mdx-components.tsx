@@ -47,6 +47,9 @@ const components = {
 	Tab,
 	Tabs,
 	Video,
+	// FIXME:
+	VideoCard: () => null,
+	ExternalResource: () => null,
 };
 
 declare global {

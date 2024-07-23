@@ -6,6 +6,22 @@ import { createComponents } from "@/lib/content/create-components";
 import { createPaths } from "@/lib/content/create-paths";
 import { createPreviewUrl } from "@/lib/content/create-preview-url";
 
+const contentTypes = [
+	{ label: "Audio", value: "audio" },
+	{ label: "Slides", value: "slides" },
+	{ label: "Training module", value: "training-module" },
+	{ label: "Video", value: "video" },
+	{ label: "Webinar recording", value: "webinar-recording" },
+	{ label: "Website", value: "website" },
+] as const;
+
+const locales = [
+	{ label: "German", value: "de" },
+	{ label: "English", value: "en" },
+] as const;
+
+const license = "CC BY 4.0";
+
 export const curricula = createCollection((locale) => {
 	const { assetPath, contentPath } = createPaths("/resources/curricula/", locale);
 
@@ -26,10 +42,7 @@ export const curricula = createCollection((locale) => {
 			}),
 			locale: fields.select({
 				label: "Language",
-				options: [
-					{ label: "German", value: "de" },
-					{ label: "English", value: "en" },
-				],
+				options: locales,
 				defaultValue: "en",
 			}),
 			publicationDate: fields.date({
@@ -74,7 +87,7 @@ export const curricula = createCollection((locale) => {
 			license: fields.text({
 				label: "License",
 				validation: { isRequired: true },
-				defaultValue: "CC BY 4.0",
+				defaultValue: license,
 			}),
 			// tableOfContents: fields.checkbox({
 			// 	label: "Table of contents",
@@ -170,10 +183,7 @@ export const events = createCollection((locale) => {
 			}),
 			locale: fields.select({
 				label: "Language",
-				options: [
-					{ label: "German", value: "de" },
-					{ label: "English", value: "en" },
-				],
+				options: locales,
 				defaultValue: "en",
 			}),
 			publicationDate: fields.date({
@@ -218,7 +228,7 @@ export const events = createCollection((locale) => {
 			license: fields.text({
 				label: "License",
 				validation: { isRequired: true },
-				defaultValue: "CC BY 4.0",
+				defaultValue: license,
 			}),
 			tableOfContents: fields.checkbox({
 				label: "Table of contents",
@@ -325,10 +335,7 @@ export const externalResources = createCollection((locale) => {
 			}),
 			locale: fields.select({
 				label: "Language",
-				options: [
-					{ label: "German", value: "de" },
-					{ label: "English", value: "en" },
-				],
+				options: locales,
 				defaultValue: "en",
 			}),
 			publicationDate: fields.date({
@@ -373,11 +380,11 @@ export const externalResources = createCollection((locale) => {
 			license: fields.text({
 				label: "License",
 				validation: { isRequired: true },
-				defaultValue: "CC BY 4.0",
+				defaultValue: license,
 			}),
 			tableOfContents: fields.checkbox({
 				label: "Table of contents",
-				defaultValue: true,
+				defaultValue: false,
 			}),
 			summary: fields.object(
 				{
@@ -417,14 +424,7 @@ export const externalResources = createCollection((locale) => {
 			),
 			contentType: fields.select({
 				label: "Content type",
-				options: [
-					{ label: "Audio", value: "audio" },
-					{ label: "Slides", value: "slides" },
-					{ label: "Training module", value: "training-module" },
-					{ label: "Video", value: "video" },
-					{ label: "Webinar recording", value: "webinar-recording" },
-					{ label: "Website", value: "website" },
-				],
+				options: contentTypes,
 				defaultValue: "training-module",
 			}),
 			content: fields.mdx({
@@ -458,10 +458,7 @@ export const hostedResources = createCollection((locale) => {
 			}),
 			locale: fields.select({
 				label: "Language",
-				options: [
-					{ label: "German", value: "de" },
-					{ label: "English", value: "en" },
-				],
+				options: locales,
 				defaultValue: "en",
 			}),
 			publicationDate: fields.date({
@@ -506,7 +503,7 @@ export const hostedResources = createCollection((locale) => {
 			license: fields.text({
 				label: "License",
 				validation: { isRequired: true },
-				defaultValue: "CC BY 4.0",
+				defaultValue: license,
 			}),
 			tableOfContents: fields.checkbox({
 				label: "Table of contents",
@@ -528,6 +525,11 @@ export const hostedResources = createCollection((locale) => {
 					label: "Summary",
 				},
 			),
+			contentType: fields.select({
+				label: "Content type",
+				options: contentTypes,
+				defaultValue: "training-module",
+			}),
 			content: fields.mdx({
 				label: "Content",
 				options: {
@@ -559,10 +561,7 @@ export const pathfinders = createCollection((locale) => {
 			}),
 			locale: fields.select({
 				label: "Language",
-				options: [
-					{ label: "German", value: "de" },
-					{ label: "English", value: "en" },
-				],
+				options: locales,
 				defaultValue: "en",
 			}),
 			publicationDate: fields.date({
@@ -607,7 +606,7 @@ export const pathfinders = createCollection((locale) => {
 			license: fields.text({
 				label: "License",
 				validation: { isRequired: true },
-				defaultValue: "CC BY 4.0",
+				defaultValue: license,
 			}),
 			tableOfContents: fields.checkbox({
 				label: "Table of contents",
