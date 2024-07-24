@@ -75,11 +75,11 @@ export const curricula = createCollection((locale) => {
 				validation: { length: { min: 1 } },
 				collection: "tags",
 			}),
-			sources: fields.multiRelationship({
-				label: "Sources",
-				validation: { length: { min: 1 } },
-				collection: "sources",
-			}),
+			// sources: fields.multiRelationship({
+			// 	label: "Sources",
+			// 	validation: { length: { min: 1 } },
+			// 	collection: "sources",
+			// }),
 			featuredImage: fields.image({
 				label: "Featured image",
 				// validation: { isRequired: false },
