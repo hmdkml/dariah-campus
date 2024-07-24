@@ -641,6 +641,11 @@ export const pathfinders = createCollection((locale) => {
 					label: "Summary",
 				},
 			),
+			// contentType: fields.select({
+			// 	label: "Content type",
+			// 	options: contentTypes,
+			// 	defaultValue: "training-module",
+			// }),
 			content: fields.mdx({
 				label: "Content",
 				options: {
