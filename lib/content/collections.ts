@@ -5,6 +5,7 @@ import { createCollection } from "@/lib/content/create-collection";
 import { createComponents } from "@/lib/content/create-components";
 import { createPaths } from "@/lib/content/create-paths";
 import { createPreviewUrl } from "@/lib/content/create-preview-url";
+import * as _fields from "@/lib/content/fields";
 
 const contentTypes = [
 	{ label: "Audio", value: "audio" },
@@ -159,6 +160,9 @@ export const curricula = createCollection((locale) => {
 				},
 				components: createComponents(assetPath),
 			}),
+			doi: _fields.identifier({
+				label: "DOI (readonly)",
+			}),
 		},
 	});
 });
@@ -311,6 +315,9 @@ export const events = createCollection((locale) => {
 					validation: { length: { min: 1 } },
 				},
 			),
+			doi: _fields.identifier({
+				label: "DOI (readonly)",
+			}),
 		},
 	});
 });
@@ -434,6 +441,9 @@ export const externalResources = createCollection((locale) => {
 				},
 				components: createComponents(assetPath),
 			}),
+			doi: _fields.identifier({
+				label: "DOI (readonly)",
+			}),
 		},
 	});
 });
@@ -537,6 +547,9 @@ export const hostedResources = createCollection((locale) => {
 				},
 				components: createComponents(assetPath),
 			}),
+			doi: _fields.identifier({
+				label: "DOI (readonly)",
+			}),
 		},
 	});
 });
@@ -634,6 +647,9 @@ export const pathfinders = createCollection((locale) => {
 					image: createAssetPaths(assetPath),
 				},
 				components: createComponents(assetPath),
+			}),
+			doi: _fields.identifier({
+				label: "DOI (readonly)",
 			}),
 		},
 	});

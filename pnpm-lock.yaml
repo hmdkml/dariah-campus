@@ -14,6 +14,9 @@ importers:
       '@acdh-oeaw/validate-env':
         specifier: ^0.0.3
         version: 0.0.3
+      '@keystar/ui':
+        specifier: ^0.7.9
+        version: 0.7.9(next@14.2.5(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@keystatic/core':
         specifier: ^0.5.29
         version: 0.5.29(next@14.2.5(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
