@@ -214,6 +214,33 @@ export const events = createCollection((locale) => {
 			// 	// validation: { length: { min: 0 } },
 			// 	collection: "people",
 			// }),
+			organisations: fields.array(
+				fields.object(
+					{
+						name: fields.text({
+							label: "Name",
+							validation: { isRequired: true },
+						}),
+						url: fields.url({
+							label: "URL",
+							validation: { isRequired: true },
+						}),
+						logo: fields.image({
+							label: "Logo",
+						}),
+					},
+					{
+						label: "Organisation",
+					},
+				),
+				{
+					label: "Organisations",
+					itemLabel(props) {
+						return props.fields.name.value;
+					},
+					// validation: { length: { min: 0 } },
+				},
+			),
 			tags: fields.multiRelationship({
 				label: "Tags",
 				validation: { length: { min: 1 } },
@@ -239,14 +266,55 @@ export const events = createCollection((locale) => {
 				defaultValue: true,
 			}),
 			attachments: fields.array(
-				fields.file({
-					label: "Attachment",
-					validation: { isRequired: true },
-					...createAssetPaths(assetPath),
-				}),
+				fields.object(
+					{
+						label: fields.text({
+							label: "Label",
+							validation: { isRequired: true },
+						}),
+						file: fields.file({
+							label: "Attachment",
+							validation: { isRequired: true },
+							...createAssetPaths(assetPath),
+						}),
+					},
+					{
+						label: "Attachment",
+					},
+				),
 				{
 					label: "Attachments",
+					itemLabel(props) {
+						return props.fields.label.value;
+					},
 					// validation: { length: { min: 0 } },
+				},
+			),
+			social: fields.object(
+				{
+					email: fields.text({
+						label: "Email",
+						// validation: { isRequired: false },
+					}),
+					website: fields.url({
+						label: "Website",
+						// validation: { isRequired: false },
+					}),
+					twitter: fields.text({
+						label: "Twitter",
+						// validation: { isRequired: false },
+					}),
+					mastodon: fields.text({
+						label: "Mastodon",
+						// validation: { isRequired: false },
+					}),
+					flickr: fields.url({
+						label: "Flickr",
+						// validation: { isRequired: false },
+					}),
+				},
+				{
+					label: "Social",
 				},
 			),
 			summary: fields.object(
@@ -285,13 +353,27 @@ export const events = createCollection((locale) => {
 							collection: "people",
 						}),
 						attachments: fields.array(
-							fields.file({
-								label: "Attachment",
-								validation: { isRequired: true },
-								...createAssetPaths(assetPath),
-							}),
+							fields.object(
+								{
+									label: fields.text({
+										label: "Label",
+										validation: { isRequired: true },
+									}),
+									file: fields.file({
+										label: "Attachment",
+										validation: { isRequired: true },
+										...createAssetPaths(assetPath),
+									}),
+								},
+								{
+									label: "Attachment",
+								},
+							),
 							{
 								label: "Attachments",
+								itemLabel(props) {
+									return props.fields.label.value;
+								},
 								// validation: { length: { min: 0 } },
 							},
 						),
