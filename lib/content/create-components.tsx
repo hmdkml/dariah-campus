@@ -71,7 +71,7 @@ const components = {
 					label: "Title",
 					validation: { isRequired: true },
 				}),
-				url: fields.url({
+				href: fields.url({
 					label: "URL",
 					validation: { isRequired: true },
 				}),
@@ -124,7 +124,7 @@ const components = {
 			description: "Another website, embedded via iframe.",
 			icon: <VideoIcon />,
 			schema: {
-				url: fields.url({
+				src: fields.url({
 					label: "URL",
 					description: "The URL of the iframe.",
 					validation: { isRequired: true },
@@ -353,6 +353,7 @@ const components = {
 			},
 		});
 	},
+	// FIXME:
 	VideoCard() {
 		return block({
 			label: "Video card",

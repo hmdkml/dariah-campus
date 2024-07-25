@@ -59,7 +59,7 @@ There are many different types of controlled vocabularies, the most common among
 * Terminology - a list of terms used to describe concepts in a certain domain
 * Glossary - an alphabetical list of terms with their explanation used in a specific context
 
-**Diagram 1.** below shows how controlled vocabularies are embedded in architecture of an information system (the example is derived from [DEFC controlled vocabulary](https://vocabs.acdh.oeaw.ac.at/defc_thesaurus/en/)). In this example, the Archeological site is a Universal abstract class, whereas Athens is an instance of Archaeological site class and a Particular that represents the exact and real archaeological site studied and described in the system. Athens can be of one or many types that are defined in a controlled vocabulary, for example, it can be a type of ‘Hillside’.
+**Diagram 1.** below shows how controlled vocabularies are embedded in architecture of an information system (the example is derived from [DEFC controlled vocabulary](https://vocabs.acdh.oeaw.ac.at/defc_thesaurus/en/)). In this example, the Archeological site is a Universal abstract class, whereas Athens is an instance of Archaeological site class and a Particular that represents the exact and real archaeological site studied and described in the system. Athens can be of one or many types that are defined in a controlled vocabulary, for example, it can be a type of 'Hillside'.
 
 ![Diagram 1. Controlled vocabularies in data architecture](images/cv_and_skos_model_diagram_1.png)
 
@@ -97,7 +97,7 @@ The field of Digital Humanities (DH) deals with the production of digital object
 
 *Why CVs are important in DH projects?*
 
-DH data is highly interpretational and often observational. To a certain extent and in certain DH disciplines (e.g. literary studies) it is shaped by a researcher’s worldview and opinion. This makes it more difficult to standardize and develop a common understanding of the used terminology. Nevertheless, CVs are an attempt to make the conceptualizations explicit and thus understandable to recipients.
+DH data is highly interpretational and often observational. To a certain extent and in certain DH disciplines (e.g. literary studies) it is shaped by a researcher's worldview and opinion. This makes it more difficult to standardize and develop a common understanding of the used terminology. Nevertheless, CVs are an attempt to make the conceptualizations explicit and thus understandable to recipients.
 
 Moreover, Digital Humanities is one of the domains that has adopted Open Data and Open Science initiatives actively in recent years. This makes it even more crucial to design and publish CVs and link them to external authoritative reference resource to allow data interoperability and linking with data from other DH projects.
 
@@ -172,12 +172,12 @@ ex:cat rdf:type skos:Concept;
 There are two types of relationships between concepts that can be established in a vocabulary:
 
 * Hierarchical via properties skos:broader, skos:narrower
-  * SKOS model doesn’t state that broader & narrower are transitive, but it also doesn’t imply that these properties are intransitive (*Note on transitivity: the relationship is transitive if concept A is related to concept B. Concept B is related to concept C. That implies that concept A is related to concept C.*)
+  * SKOS model doesn't state that broader & narrower are transitive, but it also doesn't imply that these properties are intransitive (*Note on transitivity: the relationship is transitive if concept A is related to concept B. Concept B is related to concept C. That implies that concept A is related to concept C.*)
   * For explicit transitivity use skos:broaderTransitive and skos:narrowerTransitive
 * Associative via property skos:related
   * is not defined as a transitive property
 
-Important to not mix hierarchical and associative relationships: if two concepts are in broader/narrower relationships between each other then they are explicitly in hierarchical relationships, therefore, don’t need to be related via skos:related property. Similarly, if two concepts are related via skos:related property we can infer that they are related in some other distinct hierarchical relationships (e.g. a concept representing a tangible object is related to a concept describing a method that uses that object).
+Important to not mix hierarchical and associative relationships: if two concepts are in broader/narrower relationships between each other then they are explicitly in hierarchical relationships, therefore, don't need to be related via skos:related property. Similarly, if two concepts are related via skos:related property we can infer that they are related in some other distinct hierarchical relationships (e.g. a concept representing a tangible object is related to a concept describing a method that uses that object).
 
 ```turtle
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -458,7 +458,7 @@ Test your knowledge of the SKOS standard with the quiz. The correct answers are 
       </Quiz.Question>
 
       <Quiz.MultipleChoice.Option isCorrect>
-        Concept can’t have more than one preferred label in one language.
+        Concept can't have more than one preferred label in one language.
       </Quiz.MultipleChoice.Option>
 
       <Quiz.MultipleChoice.Option>

@@ -247,7 +247,7 @@ For OCR purposes, one doesn't necessarily need a full color representation of th
 
 > In greyscale, each pixel represents one of 256 shades of grey, while in a bitonal image each pixel is assigned one of two values representing black or white. While both of these methods will allow an image to be stored in a smaller digital space (and thus allow more images to be stored overall), the images themselves can suffer from information loss due to the approximation of colour values in the image.
 >
-> Working with bitonal images is generally held to be the most efficient practice. Converting a colour or greyscale image to bitonal format is referred to as binarisation. Approaches to binarisation typically fall into one of two categories. “Global” methods treat each pixel independently, converting each to black or white based on a single threshold value. If a pixel’s colour intensity is higher than the global threshold it is assigned one value, otherwise it is assigned the opposite value. By contrast, “local” methods make use of the colour information in nearby pixels to determine an appropriate threshold for a particular pixel.
+> Working with bitonal images is generally held to be the most efficient practice. Converting a colour or greyscale image to bitonal format is referred to as binarisation. Approaches to binarisation typically fall into one of two categories. “Global” methods treat each pixel independently, converting each to black or white based on a single threshold value. If a pixel's colour intensity is higher than the global threshold it is assigned one value, otherwise it is assigned the opposite value. By contrast, “local” methods make use of the colour information in nearby pixels to determine an appropriate threshold for a particular pixel.
 
 #### Further reading
 
@@ -283,7 +283,7 @@ Before you invest time and effort into OCRing your dictionary, you should consid
 * which OCR program should you use: trainable or omnifont?
 * what should be the output format of your OCR?
 
-Some texts are totally  un-ocr-able, while some can in principle be recognized, but the quality will be too bad to make it worthwhile to even try.
+Some texts are totally un-ocr-able, while some can in principle be recognized, but the quality will be too bad to make it worthwhile to even try.
 
 <figure>
   <img src="http://i.imgur.com/gL9q7IR.png" style={{width:'100%'}} />
@@ -319,9 +319,9 @@ If you have a script (for instance, Glagolitic) which is not supported by the om
 
 It is beyond the scope of this course to teach you how to train an OCR engine, but there are resources out there that could help you in this area:
 
-* information on training Tesseract in the EMOP project  with the Franken+ tool can be found at: [http://emop.tamu.edu/node/47](http://emop.tamu.edu/node/47), [http://emop.tamu.edu/node/54](http://emop.tamu.edu/node/54).
-* More information on the Franken+ tool  is at: [http://dh-emopweb.tamu.edu/Franken+/](http://dh-emopweb.tamu.edu/Franken+/).
-* There is also a paper on this subject:  Early Modern OCR Project (eMOP) at Texas A\&M University: Using Aletheia to Train Tesseract , [http://dl.acm.org/citation.cfm?id=2494304](http://dl.acm.org/citation.cfm?id=2494304)
+* information on training Tesseract in the EMOP project  with the Franken+ tool can be found at: [http://emop.tamu.edu/node/47](http://emop.tamu.edu/node/47), [http://emop.tamu.edu/node/54](http://emop.tamu.edu/node/54).
+* More information on the Franken+ tool  is at: [http://dh-emopweb.tamu.edu/Franken+/](http://dh-emopweb.tamu.edu/Franken+/).
+* There is also a paper on this subject:  Early Modern OCR Project (eMOP) at Texas A\&M University: Using Aletheia to Train Tesseract , [http://dl.acm.org/citation.cfm?id=2494304](http://dl.acm.org/citation.cfm?id=2494304)
 
 For a discussion of the differences between (limited) training with an omnifont engine and extensive font training with Tesseract, you could also consult this study: [http://lib.psnc.pl/dlibra/doccontent?id=358](http://lib.psnc.pl/dlibra/doccontent?id=358).
 
@@ -480,7 +480,7 @@ Data enrichment covers not only metadata *about* the dictionary itself (structur
 
 A model is a selective representation of an object or a process with an essentially epistemological goal: to use “a likeness to gain knowledge of its original” (McCarty 2007: 392). Following Geertz, McCarty distinguishes between two different types of models -- models of and models for:
 
-> A model of something is an exploratory device, a more or less ‘poor substitute’ for the real thing (Groenewold 1961:98). We build such models-of because the object of study is inaccessible or intractable, like poetry or subatomic whatever-they-are. In contrast a model for something is a design, exemplary ideal, archetype or other guiding preconception. Thus we construct a model of an airplane in order to see how it works; we design a model for an airplane to guide its construction. (McCarty 2002: 393)
+> A model of something is an exploratory device, a more or less 'poor substitute' for the real thing (Groenewold 1961:98). We build such models-of because the object of study is inaccessible or intractable, like poetry or subatomic whatever-they-are. In contrast a model for something is a design, exemplary ideal, archetype or other guiding preconception. Thus we construct a model of an airplane in order to see how it works; we design a model for an airplane to guide its construction. (McCarty 2002: 393)
 
 The two types of models have different trajectories: the former takes an existing object and creates its likeness, whereas the latter creates a vision of an object that is yet to be created. One is an interpretation, the other — a projection. In either case, a model is an abstraction from the object it represents: it can never be equal to the object itself.
 
@@ -540,7 +540,7 @@ As publishing became an industry in its own right, a text might pass through man
 
 Examples, familiar to proofreaders and others, include a caret to add in extra text, special symbols for passages to be omitted or printed in a particular font, and so forth. Even today, although texts are now, by and large set through soft type on a computer (as opposed to hard type which was done manually with slugs for each character) when publishers return proofs to authors or editors, it is still the norm to print out the proofs and use these same symbols to indicate what changes need to be made to the text.
 
-With the rise of computers to generate text (either for print  or electronic publication) the term markup was extended to cover all sorts of special codes to govern formatting, processing and analysis.
+With the rise of computers to generate text (either for print  or electronic publication) the term markup was extended to cover all sorts of special codes to govern formatting, processing and analysis.
 
 #### Types of markup
 
@@ -640,9 +640,9 @@ The XML encoding still successfully describes the encoded data and there are pro
 
 For humans using various element names may not make a difference because we realize that `<name>` or `<person>` and even the outrageous `<personWhoWasRudeToOldLadies>` all refer to the same thing: the first line of a person's address, containing the name of the person. However computers typically work by matching strings, thus the elements `<name>`, `<person>` and `<personWhoWasRudeToOldLadies>` represent three different things, as unrelated as `<somebody>`, `<dog>` and `<fish>`.
 
-To help enforce uniformity in element naming and syntax, SGML used a language called  **Document Type Definition (DTD)**. DTDs are a set of rules that specify what elements are used in an SGML/XML document, how frequently they can be used, at which position in the document hierarchy etc. In the context of dictionaries, a DTD would contain rules that would tell you: an entry *must* contain a lemma, *can* contain grammatical information, and *can* contain one or more senses. A dictionary entry is imaginable without grammatical information, but not without a lemma. Similarly, a dictionary entry can contain one or more senses, but it doesn't have to, because instead of senses, we may encounter a cross-reference.
+To help enforce uniformity in element naming and syntax, SGML used a language called  **Document Type Definition (DTD)**. DTDs are a set of rules that specify what elements are used in an SGML/XML document, how frequently they can be used, at which position in the document hierarchy etc. In the context of dictionaries, a DTD would contain rules that would tell you: an entry *must* contain a lemma, *can* contain grammatical information, and *can* contain one or more senses. A dictionary entry is imaginable without grammatical information, but not without a lemma. Similarly, a dictionary entry can contain one or more senses, but it doesn't have to, because instead of senses, we may encounter a cross-reference.
 
-DTDs represent an abstract model for structuring document, while providing a mechanism for a an individual or community to develop an appropriate vocabulary of element names that suits the data they are encoding. In due course, the W3C, the organization that monitors and develops HTML and XML standards, developed a rules-based language specifically for XML documents written in XML syntax. While DTDs can still be used with XML, the more powerful and flexible **XML Schema** and **RelaxNG** are nowadays more commonly used to constrain the contents of XML documents and to introduce order into the chaos of language.
+DTDs represent an abstract model for structuring document, while providing a mechanism for a an individual or community to develop an appropriate vocabulary of element names that suits the data they are encoding. In due course, the W3C, the organization that monitors and develops HTML and XML standards, developed a rules-based language specifically for XML documents written in XML syntax. While DTDs can still be used with XML, the more powerful and flexible **XML Schema** and **RelaxNG** are nowadays more commonly used to constrain the contents of XML documents and to introduce order into the chaos of language.
 
 It is beyond the scope of this course for you to learn how to write your own schemas, but we will be using schemas specifically developed for dictionaries in order to mark up lexicographic data.
 
@@ -944,7 +944,7 @@ A new TEI file will be created for you with a rudimentary structure consisting o
 
 XML in general, and TEI, in particular, are verbose languages. It takes quite a bit of programmatic yadda-yadda-yadda to encode lexical data in a way that describes each and every component in it in an explicit, machine-readable way. So for the overtired, human eyes, there may be too much stuff to look at.
 
-When working with a large document, the folding support in oXygen XML Editor can be used to collapse some element content leaving only those that you need to edit in focus. Expanding and collapsing works on individual elements. Expanding an element leaves the child elements unchanged.  Foldable elements are marked with a small triangle on the left side of the editor panel and you can use that triangle to quickly collapse or expand them.
+When working with a large document, the folding support in oXygen XML Editor can be used to collapse some element content leaving only those that you need to edit in focus. Expanding and collapsing works on individual elements. Expanding an element leaves the child elements unchanged.  Foldable elements are marked with a small triangle on the left side of the editor panel and you can use that triangle to quickly collapse or expand them.
 
 ![](http://i.imgur.com/4sChbKf.png)
 
@@ -954,29 +954,29 @@ The folds are persistent in oXygen. The next time you open the document the fold
 
 ### Automatic validation
 
-We already saw above an example in which oXygen complained about an XML document which was not well-formed. By default, oXygen will also automatically check for validation errors. The [Enable automatic validation option](https://www.oxygenxml.com/doc/versions/24.1/ug-editor/topics/preferences-editor-document-checking.html#preferences-editor-document-checking__enable-auto-validation) in the [Document Checking preferences page](https://www.oxygenxml.com/doc/versions/24.1/ug-editor/topics/preferences-editor-document-checking.html#preferences-editor-document-checking) controls whether or not all validation errors and warnings will automatically be highlighted in the editor panel.
+We already saw above an example in which oXygen complained about an XML document which was not well-formed. By default, oXygen will also automatically check for validation errors. The [Enable automatic validation option](https://www.oxygenxml.com/doc/versions/24.1/ug-editor/topics/preferences-editor-document-checking.html#preferences-editor-document-checking__enable-auto-validation) in the [Document Checking preferences page](https://www.oxygenxml.com/doc/versions/24.1/ug-editor/topics/preferences-editor-document-checking.html#preferences-editor-document-checking) controls whether or not all validation errors and warnings will automatically be highlighted in the editor panel.
 
-The automatic validation starts parsing the document and marking the errors after a [configurable delay](https://www.oxygenxml.com/doc/versions/24.1/ug-editor/topics/preferences-editor-document-checking.html#preferences-editor-document-checking__delay-after-event) from the last key typed. Errors are highlighted with underline markers in the main editor panel and small rectangles on the right side ruler of the editor panel. Hovering over a validation error presents a tooltip message with more details about the error.
+The automatic validation starts parsing the document and marking the errors after a [configurable delay](https://www.oxygenxml.com/doc/versions/24.1/ug-editor/topics/preferences-editor-document-checking.html#preferences-editor-document-checking__delay-after-event) from the last key typed. Errors are highlighted with underline markers in the main editor panel and small rectangles on the right side ruler of the editor panel. Hovering over a validation error presents a tooltip message with more details about the error.
 
 ![](http://i.imgur.com/OavdVsI.png)
 
 ### Smart editing
 
-oXygen includes *smart editing* features to help you edit XML documents in Text mode. These include, for instance:
+oXygen includes *smart editing* features to help you edit XML documents in Text mode. These include, for instance:
 
-* **Closing tag auto-expansion** - This feature helps save some keystrokes by automatically inserting a closing tag when you insert a complete start tag and the cursor is automatically placed in between the start and end tags. For instance, after entering a start `<entry>`, the corresponding closing `</entry>` is automatically inserted and the cursor is placed between the two (`<entry>`|`</entry>`.
+* **Closing tag auto-expansion** - This feature helps save some keystrokes by automatically inserting a closing tag when you insert a complete start tag and the cursor is automatically placed in between the start and end tags. For instance, after entering a start `<entry>`, the corresponding closing `</entry>` is automatically inserted and the cursor is placed between the two (`<entry>`|`</entry>`.
 
-* **Auto-rename matching tag** - When you edit the name of a start tag, Oxygen XML Editor will mirror-edit the name of the matching end tag. This feature can be controlled from the [**Content Completion** option page](https://www.oxygenxml.com/doc/versions/24.1/ug-editor/topics/preferences-content-completion.html#preferences-content-completion__auto-edit-matching-tag).
+* **Auto-rename matching tag** - When you edit the name of a start tag, Oxygen XML Editor will mirror-edit the name of the matching end tag. This feature can be controlled from the [**Content Completion** option page](https://www.oxygenxml.com/doc/versions/24.1/ug-editor/topics/preferences-content-completion.html#preferences-content-completion__auto-edit-matching-tag).
 
-* **Auto-breaking the edited line** - The [**Hard line wrap** option](https://www.oxygenxml.com/doc/versions/24.1/ug-editor/topics/preferences-editor-format.html#preferences-editor-format__hard-line-wrap-li) automatically breaks the edited line when its length exceeds the maximum line length [defined for the format and indent operation](https://www.oxygenxml.com/doc/versions/24.1/ug-editor/topics/preferences-editor-format.html#preferences-editor-format__line-width-ph).
+* **Auto-breaking the edited line** - The [**Hard line wrap** option](https://www.oxygenxml.com/doc/versions/24.1/ug-editor/topics/preferences-editor-format.html#preferences-editor-format__hard-line-wrap-li) automatically breaks the edited line when its length exceeds the maximum line length [defined for the format and indent operation](https://www.oxygenxml.com/doc/versions/24.1/ug-editor/topics/preferences-editor-format.html#preferences-editor-format__line-width-ph).
 
-* **Double-click** - A double-click selects certain text, depending on the position of the click in the document:
+* **Double-click** - A double-click selects certain text, depending on the position of the click in the document:
 
   * If the click position is on a start tag or end tag, then the element name is selected.
   * If the click position is immediately after the opening quote or immediately before the closing quote of an attribute value, then the entire attribute value is selected.
   * Otherwise, a double-click selects contiguous text.
 
-* **Triple-click** - A triple-click selects entire regions of text, depending on the click position:
+* **Triple-click** - A triple-click selects entire regions of text, depending on the click position:
 
   * If the click position is on a start or end tag, then the entire tag is selected, including the start and end tags, and the content in between.
   * If the click position is after a start tag or before an end tag, then the entire content of the element without the start and end tags is selected.
