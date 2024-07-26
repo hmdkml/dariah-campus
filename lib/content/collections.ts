@@ -195,6 +195,18 @@ export const events = createCollection((locale) => {
 				validation: { isRequired: true },
 				defaultValue: { kind: "today" },
 			}),
+			startDate: fields.date({
+				label: "Start date",
+				validation: { isRequired: true },
+			}),
+			endDate: fields.date({
+				label: "End date",
+				// validation: { isRequired: false },
+			}),
+			location: fields.text({
+				label: "Location",
+				validation: { isRequired: true },
+			}),
 			version: fields.text({
 				label: "Version",
 				defaultValue: "1.0.0",
