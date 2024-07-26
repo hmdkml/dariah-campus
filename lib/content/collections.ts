@@ -290,6 +290,25 @@ export const events = createCollection((locale) => {
 					// validation: { length: { min: 0 } },
 				},
 			),
+			links: fields.array(
+				fields.object({
+					label: fields.text({
+						label: "Label",
+						validation: { isRequired: true },
+					}),
+					href: fields.url({
+						label: "URL",
+						validation: { isRequired: true },
+					}),
+				}),
+				{
+					label: "Links",
+					itemLabel(props) {
+						return props.fields.label.value;
+					},
+					// validation: { length: { min: 0 } },
+				},
+			),
 			social: fields.object(
 				{
 					email: fields.text({
@@ -349,7 +368,7 @@ export const events = createCollection((locale) => {
 						}),
 						speakers: fields.multiRelationship({
 							label: "Speakers",
-							validation: { length: { min: 1 } },
+							// validation: { length: { min: 0 } },
 							collection: "people",
 						}),
 						attachments: fields.array(
@@ -377,6 +396,25 @@ export const events = createCollection((locale) => {
 								// validation: { length: { min: 0 } },
 							},
 						),
+						links: fields.array(
+							fields.object({
+								label: fields.text({
+									label: "Label",
+									validation: { isRequired: true },
+								}),
+								href: fields.url({
+									label: "URL",
+									validation: { isRequired: true },
+								}),
+							}),
+							{
+								label: "Links",
+								itemLabel(props) {
+									return props.fields.label.value;
+								},
+								// validation: { length: { min: 0 } },
+							},
+						),
 						content: fields.mdx({
 							label: "Content",
 							options: {
@@ -384,6 +422,77 @@ export const events = createCollection((locale) => {
 							},
 							components: createComponents(assetPath),
 						}),
+						talks: fields.array(
+							fields.object({
+								title: fields.text({
+									label: "Title",
+									validation: { isRequired: true },
+								}),
+								speakers: fields.multiRelationship({
+									label: "Speakers",
+									validation: { length: { min: 1 } },
+									collection: "people",
+								}),
+								attachments: fields.array(
+									fields.object(
+										{
+											label: fields.text({
+												label: "Label",
+												validation: { isRequired: true },
+											}),
+											file: fields.file({
+												label: "Attachment",
+												validation: { isRequired: true },
+												...createAssetPaths(assetPath),
+											}),
+										},
+										{
+											label: "Attachment",
+										},
+									),
+									{
+										label: "Attachments",
+										itemLabel(props) {
+											return props.fields.label.value;
+										},
+										// validation: { length: { min: 0 } },
+									},
+								),
+								links: fields.array(
+									fields.object({
+										label: fields.text({
+											label: "Label",
+											validation: { isRequired: true },
+										}),
+										href: fields.url({
+											label: "URL",
+											validation: { isRequired: true },
+										}),
+									}),
+									{
+										label: "Links",
+										itemLabel(props) {
+											return props.fields.label.value;
+										},
+										// validation: { length: { min: 0 } },
+									},
+								),
+								content: fields.mdx({
+									label: "Content",
+									options: {
+										image: createAssetPaths(assetPath),
+									},
+									components: createComponents(assetPath),
+								}),
+							}),
+							{
+								label: "Talks",
+								itemLabel(props) {
+									return props.fields.title.value;
+								},
+								// validation: { length: { min: 0 } },
+							},
+						),
 					},
 					{
 						label: "Session",

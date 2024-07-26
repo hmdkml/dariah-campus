@@ -22,6 +22,31 @@ import {
 
 import { createAssetPaths } from "@/lib/content/create-asset-paths";
 
+/** @see https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts */
+const calloutKinds = [
+	{ label: "Caution", value: "caution" },
+	{ label: "Important", value: "important" },
+	{ label: "Note", value: "note" },
+	{ label: "Tip", value: "tip" },
+	{ label: "Warning", value: "warning" },
+] as const;
+
+const gridVariants = [
+	{ label: "Two columns", value: "two-columns" },
+	{ label: "Three columns", value: "three-columns" },
+	{ label: "Four columns", value: "four-columns" },
+	{ label: "Two columns, right is 2x as wide", value: "one-two-columns" },
+	{ label: "Two columns, right is 3x as wide", value: "one-three-columns" },
+	{ label: "Two columns, right is 4x as wide", value: "one-four-columns" },
+] as const;
+
+const videoProviders = [
+	{ label: "Nakala", value: "nakala" },
+	{ label: "University of Helsinki", value: "uni-helsinki" },
+	{ label: "Vimeo", value: "vimeo" },
+	{ label: "YouTube", value: "youtube" },
+] as const;
+
 const components = {
 	Callout() {
 		return wrapper({
@@ -31,14 +56,7 @@ const components = {
 			schema: {
 				kind: fields.select({
 					label: "Kind",
-					/** @see https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts */
-					options: [
-						{ label: "Caution", value: "caution" },
-						{ label: "Important", value: "important" },
-						{ label: "Note", value: "note" },
-						{ label: "Tip", value: "tip" },
-						{ label: "Warning", value: "warning" },
-					],
+					options: calloutKinds,
 					defaultValue: "note",
 				}),
 				title: fields.text({
@@ -167,32 +185,7 @@ const components = {
 			schema: {
 				variant: fields.select({
 					label: "Variant",
-					options: [
-						{
-							label: "Two columns",
-							value: "two-columns",
-						},
-						{
-							label: "Three columns",
-							value: "three-columns",
-						},
-						{
-							label: "Four columns",
-							value: "four-columns",
-						},
-						{
-							label: "Two columns, right is 2x as wide",
-							value: "one-two-columns",
-						},
-						{
-							label: "Two columns, right is 3x as wide",
-							value: "one-three-columns",
-						},
-						{
-							label: "Two columns, right is 4x as wide",
-							value: "one-four-columns",
-						},
-					],
+					options: gridVariants,
 					defaultValue: "two-columns",
 				}),
 			},
@@ -333,17 +326,11 @@ const components = {
 			schema: {
 				provider: fields.select({
 					label: "Provider",
-					options: [
-						{ label: "Nakala", value: "nakala" },
-						{ label: "University of Helsinki", value: "uni-helsinki" },
-						{ label: "Vimeo", value: "vimeo" },
-						{ label: "YouTube", value: "youtube" },
-					],
+					options: videoProviders,
 					defaultValue: "youtube",
 				}),
 				id: fields.text({
 					label: "Video identifier",
-					description: "The YouTube video id.",
 					validation: { isRequired: true },
 				}),
 				startTime: fields.number({
@@ -353,13 +340,38 @@ const components = {
 			},
 		});
 	},
-	// FIXME:
 	VideoCard() {
 		return block({
 			label: "Video card",
 			description: "A YouTube video.",
 			icon: <VideoIcon />,
-			schema: {},
+			schema: {
+				title: fields.text({
+					label: "Title",
+					validation: { isRequired: true },
+				}),
+				subtitle: fields.text({
+					label: "Subtitle",
+					validation: { isRequired: true },
+				}),
+				provider: fields.select({
+					label: "Provider",
+					options: videoProviders,
+					defaultValue: "youtube",
+				}),
+				id: fields.text({
+					label: "Video identifier",
+					validation: { isRequired: true },
+				}),
+				startTime: fields.number({
+					label: "Start time",
+					// validation: { isRequired: false },
+				}),
+				image: fields.image({
+					label: "image",
+					validation: { isRequired: true },
+				}),
+			},
 		});
 	},
 } satisfies Record<string, (assetPath: `/${string}/`) => ContentComponent>;

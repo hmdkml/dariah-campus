@@ -1,5 +1,3 @@
-import { ExternalResource } from "@/components/content/external-resource";
-import { VideoCard } from "@/components/content/video-card";
 import { Callout } from "@/components/content/callout";
 import { Card } from "@/components/content/card";
 import { Disclosure } from "@/components/content/disclosure";
@@ -18,6 +16,7 @@ import {
 } from "@/components/content/quiz";
 import { Tab, Tabs } from "@/components/content/tabs";
 import { Video } from "@/components/content/video";
+import { VideoCard } from "@/components/content/video-card";
 import { Link } from "@/components/link";
 
 const components = {
@@ -27,7 +26,6 @@ const components = {
 	Disclosure,
 	DownloadLink,
 	Embed,
-	ExternalResource, // FIXME:
 	Figure,
 	Footnote,
 	Grid,
