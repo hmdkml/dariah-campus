@@ -380,7 +380,7 @@ export const events = createCollection((locale) => {
 						}),
 						speakers: fields.multiRelationship({
 							label: "Speakers",
-							// validation: { length: { min: 0 } },
+							validation: { length: { min: 1 } },
 							collection: "people",
 						}),
 						attachments: fields.array(
