@@ -32,6 +32,7 @@ export default async function ExternalResourcesPage(
 	return (
 		<MainContent className="container py-8">
 			<PageTitle>{t("title")}</PageTitle>
+			<pre>{JSON.stringify(entries, null, 2)}</pre>
 		</MainContent>
 	);
 }

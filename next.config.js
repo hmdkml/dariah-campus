@@ -6,7 +6,7 @@ import localesPlugin from "@react-aria/optimize-locales-plugin";
 import createI18nPlugin from "next-intl/plugin";
 
 import { env } from "./config/env.config.js";
-import { createConfig as createMdxConfig } from "./config/mdx.config.js";
+import { createMdxConfig } from "./config/mdx.config.js";
 
 /** @type {NextConfig} */
 const config = {

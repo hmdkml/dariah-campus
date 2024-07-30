@@ -30,6 +30,7 @@ export default async function EventsPage(_props: EventsPageProps): Promise<Await
 	return (
 		<MainContent className="container py-8">
 			<PageTitle>{t("title")}</PageTitle>
+			<pre>{JSON.stringify(entries, null, 2)}</pre>
 		</MainContent>
 	);
 }

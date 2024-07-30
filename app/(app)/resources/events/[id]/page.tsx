@@ -51,6 +51,7 @@ export default async function EventPage(props: EventPageProps): Promise<Awaited<
 	return (
 		<MainContent className="container py-8">
 			<PageTitle>{entry.title}</PageTitle>
+			<pre>{JSON.stringify(entry, null, 2)}</pre>
 		</MainContent>
 	);
 }

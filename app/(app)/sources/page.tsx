@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 
 import { MainContent } from "@/components/main-content";
 import { PageTitle } from "@/components/ui/page-title";
+import { createReader } from "@/lib/content/create-reader";
 
 interface SourcesPageProps extends EmptyObject {}
 
@@ -21,12 +22,16 @@ export async function generateMetadata(
 	return metadata;
 }
 
-export default function SourcesPage(_props: SourcesPageProps): ReactNode {
+export default async function SourcesPage(_props: SourcesPageProps): Promise<Awaited<ReactNode>> {
 	const t = useTranslations("SourcesPage");
+
+	const reader = createReader();
+	const entries = await reader.collections.sources.all({ resolveLinkedFiles: true });
 
 	return (
 		<MainContent className="container py-8">
 			<PageTitle>{t("title")}</PageTitle>
+			<pre>{JSON.stringify(entries, null, 2)}</pre>
 		</MainContent>
 	);
 }

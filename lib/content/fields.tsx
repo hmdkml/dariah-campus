@@ -1,5 +1,5 @@
-import type { BasicFormField, FormFieldStoredValue } from "@keystatic/core";
 import { TextField } from "@keystar/ui/text-field";
+import type { BasicFormField, FormFieldStoredValue } from "@keystatic/core";
 
 export function identifier({
 	label,
