@@ -1,7 +1,7 @@
 ---
 title: Tutorial for VOICE 3.0
 locale: en
-publicationDate: 2022-11-17T15:03:36.389Z
+publicationDate: 2022-11-17
 version: 2.0.0
 authors:
   - pitzl-marie-luise
@@ -63,7 +63,7 @@ To access VOICE 3.0 Online, go to [https://voice3.acdh.oeaw.ac.at](https://voice
 
 Once you have selected your preferences for cookies, the content in the blue area of the **landing page** **changes**. It now gives you the option to explore VOICE, either by **typing in a search query** or by simply clicking "**Browse**" - this takes you to the actual VOICE 3.0 Online interface.
 
-<Figure src="images/voice3-0_startwebinterface.png">
+<Figure src="/assets/content/en/resources/hosted/tutorial-for-voice-3-0/voice3-0_startwebinterface.png">
   VOICE 3.0 Web Interface
 </Figure>
 
@@ -87,65 +87,61 @@ The following clip offers an introductory tour of the VOICE 3.0 Online interface
 **Test your knowledge of the VOICE 3.0 Interface**
 
 <Quiz>
-  <Quiz.Card>
-    <Quiz.MultipleChoice variant="single">
-      <Quiz.Question>
-        For a research paper, you are looking for interactions between ELF speakers of English in academic contexts. Which of the five domains available in VOICE 3.0 Online might contain such speech events? Tick the correct answer.
-      </Quiz.Question>
+  <QuizChoice variant="single" variant="single">
+    <QuizChoiceQuestion>
+      For a research paper, you are looking for interactions between ELF speakers of English in academic contexts. Which of the five domains available in VOICE 3.0 Online might contain such speech events? Tick the correct answer.
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option>
-        PB
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      PB
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        PR and LE
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      PR and LE
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        PR and ED
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      PR and ED
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        ED and LE
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      ED and LE
+    </QuizChoiceAnswer>
 
-      <Quiz.Message type="correct">
-        Correct! In order to find appropriate events, look into the two domains PR (professional and research/science) and ED (educational). Tip: Hovering over the domain abbreviation with your mouse reveals a short definition of the domain.
-      </Quiz.Message>
+    <QuizSuccessMessage>
+      Correct! In order to find appropriate events, look into the two domains PR (professional and research/science) and ED (educational). Tip: Hovering over the domain abbreviation with your mouse reveals a short definition of the domain.
+    </QuizSuccessMessage>
 
-      <Quiz.Message type="incorrect">
-        Sorry! Have a look at the domain descriptions again, either by hovering over the domains with your mouse in the corpus tree on the left or by going to Corpus information and VOICE Header.
-      </Quiz.Message>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizErrorMessage>
+      Sorry! Have a look at the domain descriptions again, either by hovering over the domains with your mouse in the corpus tree on the left or by going to Corpus information and VOICE Header.
+    </QuizErrorMessage>
+  </QuizChoice>
 
-  <Quiz.Card>
-    <Quiz.MultipleChoice variant="multiple">
-      <Quiz.Question>
-        You are really satisfied with your search results and you want to cite the VOICE corpus in your research paper. Where can you find the biographical information in the VOICE 3.0 Online interface? Tick ALL options that lead to the desired result.
-      </Quiz.Question>
+  <QuizChoice variant="multiple" variant="multiple">
+    <QuizChoiceQuestion>
+      You are really satisfied with your search results and you want to cite the VOICE corpus in your research paper. Where can you find the biographical information in the VOICE 3.0 Online interface? Tick ALL options that lead to the desired result.
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        I go to "Corpus information" and click on "How to cite VOICE".
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      I go to "Corpus information" and click on "How to cite VOICE".
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        At the bottom of the website, in the middle, I can immediately find the short citation for VOICE 3.0 Online. The long version appears when hovering over the small "i" icon.
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      At the bottom of the website, in the middle, I can immediately find the short citation for VOICE 3.0 Online. The long version appears when hovering over the small "i" icon.
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        I go to the VOICE project homepage at voice.acdh.oeaw\.ac.at and look for the necessary information there.
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      I go to the VOICE project homepage at voice.acdh.oeaw\.ac.at and look for the necessary information there.
+    </QuizChoiceAnswer>
 
-      <Quiz.Message type="correct">
-        Well done! All answers are correct. In fact, there are various options to find the information for your bibliography.
-      </Quiz.Message>
+    <QuizSuccessMessage>
+      Well done! All answers are correct. In fact, there are various options to find the information for your bibliography.
+    </QuizSuccessMessage>
 
-      <Quiz.Message type="incorrect">
-        Your chosen option was definitely correct, but what about the other options stated?
-      </Quiz.Message>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizErrorMessage>
+      Your chosen option was definitely correct, but what about the other options stated?
+    </QuizErrorMessage>
+  </QuizChoice>
 </Quiz>
 
 ## Searches in VOICE 3.0
@@ -184,7 +180,7 @@ As an entirely novel feature of VOICE 3.0 Online, conversational mark-up can now
 Detailed examples for mark-up searches are provided in section 6 of the VOICE 3.0 Online [search manual](https://voice.acdh.oeaw.ac.at/wp-content/uploads/2021/09/Search-manual-VOICE-3.0-Online.pdf).
 The VOICE tagging scheme has been said to be especially strong in displaying features typical of spoken language. This is possible because already during the early stages of the corpus compilation, it was decided to add additional tags to the [PENN Treebank tagset](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html) to represent spoken features in the corpus. The following illustration shows some examples of spoken features that have been tagged and thus allow powerful searches in VOICE:
 
-<Figure src="images/voice-pos-tagging-spoken-features.png">
+<Figure src="/assets/content/en/resources/hosted/tutorial-for-voice-3-0/voice-pos-tagging-spoken-features.png">
   VOICE POS tagging - spoken features
 </Figure>
 
@@ -195,133 +191,125 @@ Detailed examples for mark-up searches are provided in section 6 of the VOICE 3.
 **Simple Searches in VOICE 3.0 Online**
 
 <Quiz>
-  <Quiz.Card>
-    <Quiz.MultipleChoice variant="single">
-      <Quiz.Question>
-        How many instances of the word *English* does a simple search in VOICE 3.0 Online yield?
-      </Quiz.Question>
+  <QuizChoice variant="single" variant="single">
+    <QuizChoiceQuestion>
+      How many instances of the word *English* does a simple search in VOICE 3.0 Online yield?
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option>
-        14
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      14
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        1329
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      1329
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        5031
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      5031
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        406
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      406
+    </QuizChoiceAnswer>
 
-      <Quiz.Message type="correct">
-        Well done! If you got 1329 results, then you have correctly entered the token English in lowercase letters.
-      </Quiz.Message>
+    <QuizSuccessMessage>
+      Well done! If you got 1329 results, then you have correctly entered the token English in lowercase letters.
+    </QuizSuccessMessage>
 
-      <Quiz.Message type="incorrect">
-        Sorry! Try again and check how you need to search for a token in VOICE 3.0 Online.
-      </Quiz.Message>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizErrorMessage>
+      Sorry! Try again and check how you need to search for a token in VOICE 3.0 Online.
+    </QuizErrorMessage>
+  </QuizChoice>
 
-  <Quiz.Card>
-    <Quiz.MultipleChoice variant="single">
-      <Quiz.Question>
-        Humour and laughter are important topics in ELF research. VOICE 3.0 Online allows you to search for laughter in VOICE data in various forms. Which of these queries gives you stretches of laughingly spoken sequences?
-      </Quiz.Question>
+  <QuizChoice variant="single" variant="single">
+    <QuizChoiceQuestion>
+      Humour and laughter are important topics in ELF research. VOICE 3.0 Online allows you to search for laughter in VOICE data in various forms. Which of these queries gives you stretches of laughingly spoken sequences?
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option>
-        \_@+
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      \_@+
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        \<@/>
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      \<@/>
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        \_@
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      \_@
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        Q
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      Q
+    </QuizChoiceAnswer>
 
-      <Quiz.Message type="correct">
-        Well done! By using pointed brackets, you can search for stretches of conversational mark-up, such as laughter. Laughter is represented by the symbol @ in VOICE.
-      </Quiz.Message>
+    <QuizSuccessMessage>
+      Well done! By using pointed brackets, you can search for stretches of conversational mark-up, such as laughter. Laughter is represented by the symbol @ in VOICE.
+    </QuizSuccessMessage>
 
-      <Quiz.Message type="incorrect">
-        The first answer option searches for strings of tokenized laughter of any lenght, while with the third answer option you search for a particular number of tokenized laughter. The fourth and final answer option is no valid search.
-      </Quiz.Message>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizErrorMessage>
+      The first answer option searches for strings of tokenized laughter of any lenght, while with the third answer option you search for a particular number of tokenized laughter. The fourth and final answer option is no valid search.
+    </QuizErrorMessage>
+  </QuizChoice>
 
-  <Quiz.Card>
-    <Quiz.MultipleChoice variant="single">
-      <Quiz.Question>
-        You want to find out if word coinages are frequently uttered softly or whispered. Which of the options below will **not** yield meaning results for this search? Tip: consult the POS tagging and search manual!
-      </Quiz.Question>
+  <QuizChoice variant="single" variant="single">
+    <QuizChoiceQuestion>
+      You want to find out if word coinages are frequently uttered softly or whispered. Which of the options below will **not** yield meaning results for this search? Tip: consult the POS tagging and search manual!
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option>
-        PVC within \<soft/>
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      PVC within \<soft/>
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        PVC \<soft/>
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      PVC \<soft/>
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        \<soft/> containing PVC
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      \<soft/> containing PVC
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        PVC within \<whispering/>
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      PVC within \<whispering/>
+    </QuizChoiceAnswer>
 
-      <Quiz.Message type="correct">
-        Correct. This query searches for a string of PVC (pronunciation variation and coinage) followed by a softly spoken sequence.
-      </Quiz.Message>
+    <QuizSuccessMessage>
+      Correct. This query searches for a string of PVC (pronunciation variation and coinage) followed by a softly spoken sequence.
+    </QuizSuccessMessage>
 
-      <Quiz.Message type="incorrect">
-        Check your results and try out the other stated options in the VOICE 3.0 Online interface – which of them provides the correct answer to your search for softly or whispered word coinages?
-      </Quiz.Message>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizErrorMessage>
+      Check your results and try out the other stated options in the VOICE 3.0 Online interface – which of them provides the correct answer to your search for softly or whispered word coinages?
+    </QuizErrorMessage>
+  </QuizChoice>
 
-  <Quiz.Card>
-    <Quiz.MultipleChoice variant="single">
-      <Quiz.Question>
-        You are interested in the use of code-switches into French, which is not the L1 of a speaker. How do you search for this?
-      </Quiz.Question>
+  <QuizChoice variant="single" variant="single">
+    <QuizChoiceQuestion>
+      You are interested in the use of code-switches into French, which is not the L1 of a speaker. How do you search for this?
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option>
-        \<LQ/>
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      \<LQ/>
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        \<L/>
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      \<L/>
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        \<L1fre/>
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      \<L1fre/>
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        \<LNfre/>
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      \<LNfre/>
+    </QuizChoiceAnswer>
 
-      <Quiz.Message type="correct">
-        Correct!
-      </Quiz.Message>
+    <QuizSuccessMessage>
+      Correct!
+    </QuizSuccessMessage>
 
-      <Quiz.Message type="incorrect">
-        Have a look at the search manual in the Corpus Information and check your search query.
-      </Quiz.Message>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizErrorMessage>
+      Have a look at the search manual in the Corpus Information and check your search query.
+    </QuizErrorMessage>
+  </QuizChoice>
 </Quiz>
 
 ### Fine-tuning your searches:
@@ -364,70 +352,66 @@ In the following video clip, VOICE project member Ruth Osimk-Teasdale demonstrat
 **Searches with placeholders in VOICE**
 
 <Quiz>
-  <Quiz.Card>
-    <Quiz.MultipleChoice variant="single">
-      <Quiz.Question>
-        You are interested in vague expressions and looking for the classifier *some sort of* followed by a singular noun with an **asterisk wildcard** (to include also plural noun tags). Which domain yields **no** instances of this construction? Tip: Consult the POS tagset in the Corpus information if necessary.
-      </Quiz.Question>
+  <QuizChoice variant="single" variant="single">
+    <QuizChoiceQuestion>
+      You are interested in vague expressions and looking for the classifier *some sort of* followed by a singular noun with an **asterisk wildcard** (to include also plural noun tags). Which domain yields **no** instances of this construction? Tip: Consult the POS tagset in the Corpus information if necessary.
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option>
-        LE
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      LE
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        ED
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      ED
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        PB
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      PB
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        PO
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      PO
+    </QuizChoiceAnswer>
 
-      <Quiz.Message type="correct">
-        Correct!
-      </Quiz.Message>
+    <QuizSuccessMessage>
+      Correct!
+    </QuizSuccessMessage>
 
-      <Quiz.Message type="incorrect">
-        For this query, you should type in "some sort of NN\*". With the tag NN plus the asterisk, you search for single nouns and plural nouns.
-      </Quiz.Message>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizErrorMessage>
+      For this query, you should type in "some sort of NN\*". With the tag NN plus the asterisk, you search for single nouns and plural nouns.
+    </QuizErrorMessage>
+  </QuizChoice>
 
-  <Quiz.Card>
-    <Quiz.MultipleChoice variant="single">
-      <Quiz.Question>
-        You want to find out how state verbs are used in VOICE. Search for all verb forms of *taste*. What does your query look like?
-      </Quiz.Question>
+  <QuizChoice variant="single" variant="single">
+    <QuizChoiceQuestion>
+      You want to find out how state verbs are used in VOICE. Search for all verb forms of *taste*. What does your query look like?
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option>
-        tast.\*,VVP
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      tast.\*,VVP
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        taste,VV
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      taste,VV
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        tast.\*,V.\*
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      tast.\*,V.\*
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        taste
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      taste
+    </QuizChoiceAnswer>
 
-      <Quiz.Message type="correct">
-        Correct - this yields 24 hits in 23 utterances
-      </Quiz.Message>
+    <QuizSuccessMessage>
+      Correct - this yields 24 hits in 23 utterances
+    </QuizSuccessMessage>
 
-      <Quiz.Message type="incorrect">
-        Consult the POS tagset in the Corpus information and check!
-        (Explanation: VVP searches for present tense verb taste, the second answer option searches for taste as base form and the fourth option searches for the token "taste", including taste as noun, but not the verb forms tasting, tasted, etc.)
-      </Quiz.Message>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizErrorMessage>
+      Consult the POS tagset in the Corpus information and check!
+      (Explanation: VVP searches for present tense verb taste, the second answer option searches for taste as base form and the fourth option searches for the token "taste", including taste as noun, but not the verb forms tasting, tasted, etc.)
+    </QuizErrorMessage>
+  </QuizChoice>
 </Quiz>
 
 ### Bookmarks and Filters: Creating your own subcorpus in VOICE 3.0
@@ -444,7 +428,7 @@ In order to create your own corpus, first of all navigate to the tab "**Filter**
 
 Once you have set your filters, you can use the search field in the middle area and search your subcorpus. All speech events from your corpus which yield results for your search will then be highlighted in **bold** in the corpus tree. In addition, events which would also yield results for your query but are not part of your subcorpus will be marked in **grey and bold**, as can be seen in the following illustration:
 
-<Figure src="images/voice3-0_filter_grey_highlighted.png">
+<Figure src="/assets/content/en/resources/hosted/tutorial-for-voice-3-0/voice3-0_filter_grey_highlighted.png">
   Search results for corpus and subcorpus, with opened transcripts on the
   right-hand side
 </Figure>
@@ -454,7 +438,7 @@ If you would like to add particular speech events to your subcorpus, tick the bo
 <Callout title="Tip: Manual Selection" kind="tip">
   The function "**Manual selection**" in the filter area gives you the option to manually choose speech events for your subcorpus. In order to do so, you must turn on the function and go to the corpus tree. Speech events can be added by ticking the respective box. This function can be used before you run a search or after you have run a search.
 
-  <Figure src="images/voice3-0_filters_manually.png">
+  <Figure src="/assets/content/en/resources/hosted/tutorial-for-voice-3-0/voice3-0_filters_manually.png">
     Activating manual selection
   </Figure>
 </Callout>
@@ -463,7 +447,7 @@ If you would like to add particular speech events to your subcorpus, tick the bo
 
 Bookmarks can be easily set with the help of the third tab in the left-hand area. First of all, activate icons and local storage. Once you have done so, small icons appear next to the search results in the middle area. You now have the possibility to select a search result (i.e. a particular utterance) and create a bookmark for it. You can add a short description, and then save the bookmark (as URL, .txt or .xlsx). Saved bookmarks will appear on the left if you click on the tab "**Bookmarks**".
 
-<Figure src="images/voice3-0_bookmark_export.png">
+<Figure src="/assets/content/en/resources/hosted/tutorial-for-voice-3-0/voice3-0_bookmark_export.png">
   Working with bookmarks
 </Figure>
 
@@ -478,101 +462,95 @@ After you have carried out a search, the download button (i.e. arrow) can be fou
 **Filters and bookmark function in VOICE 3.0 Online**
 
 <Quiz>
-  <Quiz.Card>
-    <Quiz.MultipleChoice variant="single">
-      <Quiz.Question>
-        Let's start with an easy task: You are looking for transcripts from dyadic interactions between unacquainted speakers. How many of these can you find in VOICE 3.0 Online?
-      </Quiz.Question>
+  <QuizChoice variant="single" variant="single">
+    <QuizChoiceQuestion>
+      Let's start with an easy task: You are looking for transcripts from dyadic interactions between unacquainted speakers. How many of these can you find in VOICE 3.0 Online?
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option>
-        14
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      14
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        12
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      12
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        10
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      10
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        8
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      8
+    </QuizChoiceAnswer>
 
-      <Quiz.Message type="correct">
-        Correct!
-      </Quiz.Message>
+    <QuizSuccessMessage>
+      Correct!
+    </QuizSuccessMessage>
 
-      <Quiz.Message type="incorrect">
-        If your answer was not 12 but 14, then you used the filter for interactants instead of speakers. The difference might be small, but important: Interactants also include researchers or persons not involved in the conversation, like for example a waiter who brings coffee to a table of speakers. The small "i" icon next to the filters provides more information on the filter categories when hovering over it. 10 and 8 are wrong.
-      </Quiz.Message>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizErrorMessage>
+      If your answer was not 12 but 14, then you used the filter for interactants instead of speakers. The difference might be small, but important: Interactants also include researchers or persons not involved in the conversation, like for example a waiter who brings coffee to a table of speakers. The small "i" icon next to the filters provides more information on the filter categories when hovering over it. 10 and 8 are wrong.
+    </QuizErrorMessage>
+  </QuizChoice>
 
-  <Quiz.Card>
-    <Quiz.MultipleChoice variant="single">
-      <Quiz.Question>
-        Due to the limited scope of research projects in university courses, you would like to identify the shortest speech event for which an audio file is available in the corpus. Which one is the correct speech event?
-      </Quiz.Question>
+  <QuizChoice variant="single" variant="single">
+    <QuizChoiceQuestion>
+      Due to the limited scope of research projects in university courses, you would like to identify the shortest speech event for which an audio file is available in the corpus. Which one is the correct speech event?
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        PRqas409
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      PRqas409
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        EDsve422
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      EDsve422
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        PBqas411
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      PBqas411
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        LEcon420
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      LEcon420
+    </QuizChoiceAnswer>
 
-      <Quiz.Message type="correct">
-        Correct, the file's duration is 10 minutes, 53 seconds.
-      </Quiz.Message>
+    <QuizSuccessMessage>
+      Correct, the file's duration is 10 minutes, 53 seconds.
+    </QuizSuccessMessage>
 
-      <Quiz.Message type="incorrect">
-        Turn on the filter for audio files so that only speech events with an audio file are shown; furthermore, there are two filter categories which will help you narrow down the events, namely "duration of speech event" and "number of words". They can either be used on their own or in combination.
-      </Quiz.Message>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizErrorMessage>
+      Turn on the filter for audio files so that only speech events with an audio file are shown; furthermore, there are two filter categories which will help you narrow down the events, namely "duration of speech event" and "number of words". They can either be used on their own or in combination.
+    </QuizErrorMessage>
+  </QuizChoice>
 
-  <Quiz.Card>
-    <Quiz.MultipleChoice variant="single">
-      <Quiz.Question>
-        You bookmark an utterance from PRqas409 indicating the category and including a comment for later. Then export your bookmark(s). Which information is NOT provided in the file?
-      </Quiz.Question>
+  <QuizChoice variant="single" variant="single">
+    <QuizChoiceQuestion>
+      You bookmark an utterance from PRqas409 indicating the category and including a comment for later. Then export your bookmark(s). Which information is NOT provided in the file?
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option>
-        Number of bookmarks
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      Number of bookmarks
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        Date and time of export
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      Date and time of export
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        Utterance ID
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      Utterance ID
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        Speaker information
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      Speaker information
+    </QuizChoiceAnswer>
 
-      <Quiz.Message type="correct">
-        Correct!
-      </Quiz.Message>
+    <QuizSuccessMessage>
+      Correct!
+    </QuizSuccessMessage>
 
-      <Quiz.Message type="incorrect">
-        Use the explanation above to set a bookmark and then download it as .xlsx file. Then download it and check!
-      </Quiz.Message>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizErrorMessage>
+      Use the explanation above to set a bookmark and then download it as .xlsx file. Then download it and check!
+    </QuizErrorMessage>
+  </QuizChoice>
 </Quiz>
 
 ### Conclusion - Advanced Searches
@@ -586,101 +564,95 @@ Tip: Before you start the quiz, it might be helpful to download the search manua
 **Combing filters and searches**
 
 <Quiz>
-  <Quiz.Card>
-    <Quiz.MultipleChoice variant="single">
-      <Quiz.Question>
-        To resources from which language do the speakers in the two business meetings including L1 speakers of Serbian refer that is neither English nor any of the speakers' L1?
-      </Quiz.Question>
+  <QuizChoice variant="single" variant="single">
+    <QuizChoiceQuestion>
+      To resources from which language do the speakers in the two business meetings including L1 speakers of Serbian refer that is neither English nor any of the speakers' L1?
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option>
-        Spanish
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      Spanish
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        Italian
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      Italian
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        French
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      French
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        Croatian
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      Croatian
+    </QuizChoiceAnswer>
 
-      <Quiz.Message type="correct">
-        Correct!
-      </Quiz.Message>
+    <QuizSuccessMessage>
+      Correct!
+    </QuizSuccessMessage>
 
-      <Quiz.Message type="incorrect">
-        Have a close look at the question and your filters: first of all, select the correct domain PB, then narrow down your search to mtg = meeting. Select *Serbian* as L1. Now, you need to type in the correct search query: \<LN/>. Finally, compare \<LN/> tags with **Speaker Information** in text header.
-      </Quiz.Message>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizErrorMessage>
+      Have a close look at the question and your filters: first of all, select the correct domain PB, then narrow down your search to mtg = meeting. Select *Serbian* as L1. Now, you need to type in the correct search query: \<LN/>. Finally, compare \<LN/> tags with **Speaker Information** in text header.
+    </QuizErrorMessage>
+  </QuizChoice>
 
-  <Quiz.Card>
-    <Quiz.MultipleChoice variant="single">
-      <Quiz.Question>
-        How many of the speech events in your subcorpus of transcripts from working group discussions in an educational setting feature non-English tokens?
-      </Quiz.Question>
+  <QuizChoice variant="single" variant="single">
+    <QuizChoiceQuestion>
+      How many of the speech events in your subcorpus of transcripts from working group discussions in an educational setting feature non-English tokens?
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option>
-        1
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      1
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        2
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      2
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        4
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      4
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        5
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      5
+    </QuizChoiceAnswer>
 
-      <Quiz.Message type="correct">
-        Correct - select ED in domain, select wdg, type FW in search field, navigate to the tree and check which events are highlighted in bold.
-      </Quiz.Message>
+    <QuizSuccessMessage>
+      Correct - select ED in domain, select wdg, type FW in search field, navigate to the tree and check which events are highlighted in bold.
+    </QuizSuccessMessage>
 
-      <Quiz.Message type="incorrect">
-        Check your filters. You should have selected ED in domain and wdg for SPET. Then type FW in the search field and navigate to the tree. Check the events highlighted in bold. Alternatively, you can search for \<LN/>.
-      </Quiz.Message>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizErrorMessage>
+      Check your filters. You should have selected ED in domain and wdg for SPET. Then type FW in the search field and navigate to the tree. Check the events highlighted in bold. Alternatively, you can search for \<LN/>.
+    </QuizErrorMessage>
+  </QuizChoice>
 
-  <Quiz.Card>
-    <Quiz.MultipleChoice variant="single">
-      <Quiz.Question>
-        How many response particles are produced by speakers while someone else is speaking in leisure conversations in VOICE?
-      </Quiz.Question>
+  <QuizChoice variant="single" variant="single">
+    <QuizChoiceQuestion>
+      How many response particles are produced by speakers while someone else is speaking in leisure conversations in VOICE?
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option>
-        20652
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      20652
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        2080
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      2080
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        2179
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      2179
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        1808
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      1808
+    </QuizChoiceAnswer>
 
-      <Quiz.Message type="correct">
-        Correct!
-      </Quiz.Message>
+    <QuizSuccessMessage>
+      Correct!
+    </QuizSuccessMessage>
 
-      <Quiz.Message type="incorrect">
-        If your results was 20562, you searched without setting filters; if you had 2179, then you have only set the filter for leisure, but not for conversation. If you got 1808 results, then you searched for \<ol/> containing, which counts the number of overlaps but not the number of response particles.
-      </Quiz.Message>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizErrorMessage>
+      If your results was 20562, you searched without setting filters; if you had 2179, then you have only set the filter for leisure, but not for conversation. If you got 1808 results, then you searched for \<ol/> containing, which counts the number of overlaps but not the number of response particles.
+    </QuizErrorMessage>
+  </QuizChoice>
 </Quiz>
 
 ### Links:
@@ -689,4 +661,3 @@ Tip: Before you start the quiz, it might be helpful to download the search manua
 * Pitzl, Marie-Luise. [VOICE: Vienna-Oxford-International Corpus of English](https://voice.acdh.oeaw.ac.at/). Homepage. [https:/voice.acdh.oeaw.ac.at](https://voice.acdh.oeaw.ac.at/). (14 March 2022).
 * [VOICE](https://voice3.acdh.oeaw.ac.at/). 2021. The Vienna-Oxford International Corpus of English (version VOICE 3.0 Online). Founding director: Barbara Seidlhofer; Principal investigators VOICE 3.0: Marie-Luise Pitzl, Daniel Schopper; Researchers: Angelika Breiteneder, Hans-Christian Breuer, Nora Dorn, Theresa Klimpfinger, Stefan Majewski, Ruth Osimk-Teasdale, Hannes Pirker, Marie-Luise Pitzl, Michael Radeka, Stefanie Riegler, Barbara Seidlhofer, Omar Siam, Daniel Stoxreiter. [https://voice3.acdh.oeaw.ac.at](https://voice3.acdh.oeaw.ac.at) (14 March 2022).
 * Pitzl, Marie-Luise, Ruth Osimk-Teasdale, Stefanie Riegler, Hannes Pirker, Omar Siam. *ACDH-CH Tool Gallery 8.1.: Spoken Corpus Linguistics and Open Access: Usability and Technology of VOICE 3.0 Online*. Youtube. April 2022. [https://www.youtube.com/playlist?list=PLN0wiGwlUlbem5euvpMLxpnkDljOZ6k\_2](https://www.youtube.com/playlist?list=PLN0wiGwlUlbem5euvpMLxpnkDljOZ6k_2).
-

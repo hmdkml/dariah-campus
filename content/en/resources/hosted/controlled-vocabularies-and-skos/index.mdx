@@ -38,7 +38,7 @@ This learning resource is presented in two formats: a video screencast, which yo
 
 This screencast was recorded for the Spring School LiSeH 2021, and presents much of the same material as in the full module below, with some omissions.
 
-<VideoCard title="Click to view" id="DUlfC8NL0Bs" image="images/cv_and_skos_title_image.JPG" provider="youtube" />
+<VideoCard title="Click to view" id="DUlfC8NL0Bs" image="/assets/content/en/resources/hosted/controlled-vocabularies-and-skos/cv_and_skos_title_image.jpg" provider="youtube" />
 
 ## Introduction
 
@@ -61,7 +61,7 @@ There are many different types of controlled vocabularies, the most common among
 
 **Diagram 1.** below shows how controlled vocabularies are embedded in architecture of an information system (the example is derived from [DEFC controlled vocabulary](https://vocabs.acdh.oeaw.ac.at/defc_thesaurus/en/)). In this example, the Archeological site is a Universal abstract class, whereas Athens is an instance of Archaeological site class and a Particular that represents the exact and real archaeological site studied and described in the system. Athens can be of one or many types that are defined in a controlled vocabulary, for example, it can be a type of 'Hillside'.
 
-![Diagram 1. Controlled vocabularies in data architecture](images/cv_and_skos_model_diagram_1.png)
+![Diagram 1. Controlled vocabularies in data architecture](/assets/content/en/resources/hosted/controlled-vocabularies-and-skos/cv_and_skos_model_diagram_1.png)
 
 Controlled vocabularies (CVs) are prominently used in many domains of research and industry:
 
@@ -107,15 +107,15 @@ There are different approaches to how CVs can be reused or made interoperable wi
 
 **Diagram 2.** below shows how different projects use one controlled vocabulary to describe their data. Both projects' data can be queried with terms from this vocabulary. This is probably the best-case scenario that can happen because it ensures full data interoperability.
 
-![Diagram 2. Usage of a common controlled vocabulary for data description in different projects](images/diagram_2.jpg)
+![Diagram 2. Usage of a common controlled vocabulary for data description in different projects](/assets/content/en/resources/hosted/controlled-vocabularies-and-skos/diagram_2.jpg)
 
 Another approach on **Diagram 3.** shows how different projects use their own project-specific controlled vocabularies. The vocabularies are linked to each other through established relationships among concepts in both of them. Therefore we can refer to data in Project 1 using matching concepts from the controlled vocabulary of Project 2. The linking happens on a level of a concept description when the statement is encoded that the concept is exact/related/close match (etc.) to a concept from another CV or from a large semantic network, e.g. [Dbpedia](https://wiki.dbpedia.org/).
 
-![Diagram 3. Interoperable controlled vocabularies](images/diagram_3.jpg)
+![Diagram 3. Interoperable controlled vocabularies](/assets/content/en/resources/hosted/controlled-vocabularies-and-skos/diagram_3.jpg)
 
 There are also meta-vocabularies developed with a primary goal to be a high-level overarching vocabulary for more domain-specific CVs. Therefore making it easier to connect local CVs and establish relationships among them through common meta-level concepts. Backbone Thesaurus [^4] is one of the examples in the DH domain that has as its purpose to allow interdisciplinary CVs development and integration.
 
-![BBT - Backbone Thesaurus in Vocabs repository](images/bbt.png)
+![BBT - Backbone Thesaurus in Vocabs repository](/assets/content/en/resources/hosted/controlled-vocabularies-and-skos/bbt.png)
 
 ## SKOS Standard
 
@@ -337,143 +337,133 @@ ex:europeanWildcatLabel1 skosxl:labelRelation ex:europeanWildcatLabel2.
 Test your knowledge of the SKOS standard with the quiz. The correct answers are at the end of the learning resource.
 
 <Quiz>
-  <Quiz.Card>
-    <Quiz.MultipleChoice>
-      <Quiz.Question>
-        **Select all triples with *correct* RDF syntax.** *Please, assume the following prefixes for all options:*
+  <QuizChoice variant="multiple">
+    <QuizChoiceQuestion>
+      **Select all triples with *correct* RDF syntax.** *Please, assume the following prefixes for all options:*
 
-        ```turtle
-        @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-        @prefix ex: <http://www.example.org/cats#> .
-        @prefix wikidata: <http://www.wikidata.org/entity/> .
-        ```
-      </Quiz.Question>
+      ```turtle
+      @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+      @prefix ex: <http://www.example.org/cats#> .
+      @prefix wikidata: <http://www.wikidata.org/entity/> .
+      ```
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option>
-        `ex:europeanWildcat a skos Concept; skos prefLabel "European wildcat"@en.`
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      `ex:europeanWildcat a skos Concept; skos prefLabel "European wildcat"@en.`
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        `ex:europeanWildcat rdf:type skos:Concept; skos:preflabel "European wildcat"@en.`
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      `ex:europeanWildcat rdf:type skos:Concept; skos:preflabel "European wildcat"@en.`
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        `ex:europeanWildcat a skos:Concept; skos:prefLabel "European wildcat"@en.`
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      `ex:europeanWildcat a skos:Concept; skos:prefLabel "European wildcat"@en.`
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        `ex:europeanWildcat rdf:type skos:Concept, skos:preflabel "European wildcat"@en.`
-      </Quiz.MultipleChoice.Option>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizChoiceAnswer kind="incorrect">
+      `ex:europeanWildcat rdf:type skos:Concept, skos:preflabel "European wildcat"@en.`
+    </QuizChoiceAnswer>
+  </QuizChoice>
 
-  <Quiz.Card>
-    <Quiz.MultipleChoice>
-      <Quiz.Question>
-        **Select all *correct* SKOS records.** *Please, assume the following prefixes for all options:*
+  <QuizChoice variant="multiple">
+    <QuizChoiceQuestion>
+      **Select all *correct* SKOS records.** *Please, assume the following prefixes for all options:*
 
-        ```turtle
-        @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-        @prefix ex: <http://www.example.org/cats#> .
-        @prefix wikidata: <http://www.wikidata.org/entity/> .
-        ```
-      </Quiz.Question>
+      ```turtle
+      @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+      @prefix ex: <http://www.example.org/cats#> .
+      @prefix wikidata: <http://www.wikidata.org/entity/> .
+      ```
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option>
-        `ex:eurasianLynx a skos:Concept; skos:prefLabel "Eurasian lynx"@en; skos:prefLabel "Lynx"@en.`
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      `ex:eurasianLynx a skos:Concept; skos:prefLabel "Eurasian lynx"@en; skos:prefLabel "Lynx"@en.`
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        `ex:eurasianLynx a skos:Concept; skos:prefLabel "Eurasian lynx"@en; skos:prefLabel "Eurasischer Luchs"@de.`
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      `ex:eurasianLynx a skos:Concept; skos:prefLabel "Eurasian lynx"@en; skos:prefLabel "Eurasischer Luchs"@de.`
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        `ex:eurasianLynx a skos:Concept; skos:prefLabel "Eurasian lynx"@en; skos:altLabel "Lynx"@en.`
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      `ex:eurasianLynx a skos:Concept; skos:prefLabel "Eurasian lynx"@en; skos:altLabel "Lynx"@en.`
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        `ex:eurasianLynx a skos:Concept; skos:prefLabel "Eurasian lynx"@en; skos:prefLabel "Eurasischer Luchs"@en.`
-      </Quiz.MultipleChoice.Option>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizChoiceAnswer kind="incorrect">
+      `ex:eurasianLynx a skos:Concept; skos:prefLabel "Eurasian lynx"@en; skos:prefLabel "Eurasischer Luchs"@en.`
+    </QuizChoiceAnswer>
+  </QuizChoice>
 
-  <Quiz.Card>
-    <Quiz.MultipleChoice>
-      <Quiz.Question>
-        **Select all *incorrect* SKOS records.** *Please, assume the following prefixes for all options:*
+  <QuizChoice variant="multiple">
+    <QuizChoiceQuestion>
+      **Select all *incorrect* SKOS records.** *Please, assume the following prefixes for all options:*
 
-        ```turtle
-        @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-        @prefix ex: <http://www.example.org/cats#> .
-        @prefix wikidata: <http://www.wikidata.org/entity/> .
-        ```
-      </Quiz.Question>
+      ```turtle
+      @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+      @prefix ex: <http://www.example.org/cats#> .
+      @prefix wikidata: <http://www.wikidata.org/entity/> .
+      ```
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        `ex:europeanWildcat a skos:Concept; skos:exactMatch ex:eurasianLynx.`
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      `ex:europeanWildcat a skos:Concept; skos:exactMatch ex:eurasianLynx.`
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        `ex:europeanWildcat a skos:Concept; skos:exactMatch wikidata:Q148833.`
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      `ex:europeanWildcat a skos:Concept; skos:exactMatch wikidata:Q148833.`
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        `ex:europeanWildcat a skos:Concept; skos:broader ex:wildcat; skos:broadMatch ex:wildcat.`
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      `ex:europeanWildcat a skos:Concept; skos:broader ex:wildcat; skos:broadMatch ex:wildcat.`
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        `ex:europeanWildcat a skos:Concept; skos:broader ex:wildcat; skos:broadMatch wikidata:Q43576.`
-      </Quiz.MultipleChoice.Option>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizChoiceAnswer kind="incorrect">
+      `ex:europeanWildcat a skos:Concept; skos:broader ex:wildcat; skos:broadMatch wikidata:Q43576.`
+    </QuizChoiceAnswer>
+  </QuizChoice>
 
-  <Quiz.Card>
-    <Quiz.MultipleChoice>
-      <Quiz.Question>
-        **Select all *incorrect* statements.**
-      </Quiz.Question>
+  <QuizChoice variant="multiple">
+    <QuizChoiceQuestion>
+      **Select all *incorrect* statements.**
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        Concept can be a top Concept of Concept Scheme and have a broader Concept in this Concept Scheme.
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      Concept can be a top Concept of Concept Scheme and have a broader Concept in this Concept Scheme.
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        Concept can have several preferred labels in one language.
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      Concept can have several preferred labels in one language.
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        Concept can be broader and narrower of another Concept at the same time.
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      Concept can be broader and narrower of another Concept at the same time.
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        Concept can have several alternative labels in one language.
-      </Quiz.MultipleChoice.Option>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizChoiceAnswer kind="incorrect">
+      Concept can have several alternative labels in one language.
+    </QuizChoiceAnswer>
+  </QuizChoice>
 
-  <Quiz.Card>
-    <Quiz.MultipleChoice>
-      <Quiz.Question>
-        **Select all *correct* statements.**
-      </Quiz.Question>
+  <QuizChoice variant="multiple">
+    <QuizChoiceQuestion>
+      **Select all *correct* statements.**
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        Concept can't have more than one preferred label in one language.
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      Concept can't have more than one preferred label in one language.
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        It is recommended to create a new Concept for each synonym of a term.
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      It is recommended to create a new Concept for each synonym of a term.
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        Concept can have a broader matching concept in another Concept Scheme and can be linked to it.
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      Concept can have a broader matching concept in another Concept Scheme and can be linked to it.
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        Concept can have many matching Concepts in external Concept Schemas.
-      </Quiz.MultipleChoice.Option>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizChoiceAnswer kind="correct">
+      Concept can have many matching Concepts in external Concept Schemas.
+    </QuizChoiceAnswer>
+  </QuizChoice>
 </Quiz>
 
 ## SKOS vocabulary quality
@@ -517,35 +507,35 @@ Controlled vocabularies provide data descriptors for future data retrieval. This
 
 Picture 1. Visualization of IAD Thesaurus [^6]
 
-![Picture 1. Visualization of IAD thesaurus](images/iad_thesaurus_visualization.PNG)
+![Picture 1. Visualization of IAD thesaurus](/assets/content/en/resources/hosted/controlled-vocabularies-and-skos/iad_thesaurus_visualization.png)
 
 * Database values: CVs are closed lists in the user interface represented as dropdown lists when creating or annotating a record.
 
 Picture 2. CV in data curation interface
 
-![Picture 2. Controlled vocabularies in IAD curation interface](images/cv_in_curation_interface.PNG)
+![Picture 2. Controlled vocabularies in IAD curation interface](/assets/content/en/resources/hosted/controlled-vocabularies-and-skos/cv_in_curation_interface.png)
 
 * Context information: when exploring data it is important to provide a user with an explanation of used terms in the interface.
 
 Picture 3. CV in user interface
 
-![Picture 3. Pop up with a vocabulary term definition and traslations in user interface](images/cv_popup_in_userinterface.png)
+![Picture 3. Pop up with a vocabulary term definition and traslations in user interface](/assets/content/en/resources/hosted/controlled-vocabularies-and-skos/cv_popup_in_userinterface.png)
 
 * Faceted search is based on CVs: dropdowns and autocompletes
 
 Picture 4. CV in faceted search interface
 
-![Picture 4. Controlled vocabularies in IAD search interface](images/cv_in_search_interface_01.png)
+![Picture 4. Controlled vocabularies in IAD search interface](/assets/content/en/resources/hosted/controlled-vocabularies-and-skos/cv_in_search_interface_01.png)
 
 Picture 5. CV in faceted search interface
 
-![Picture 5. Controlled vocabularies in IAD search interface](images/cv_in_search_interface_02.PNG)
+![Picture 5. Controlled vocabularies in IAD search interface](/assets/content/en/resources/hosted/controlled-vocabularies-and-skos/cv_in_search_interface_02.png)
 
 * CVs are building blocks of Linked Open Data and used for connecting distributed datasets via concepts persistent URIs. Each concept has a unique stable and resolvable URI that can be reused by other projects to refer to this concept. The reference can be done by using directly URI or by retrieving a URI using the API of a vocabulary repository.
 
 Picture 6. IAD Thesaurus in Vocabs repository
 
-![Picture 6. IAD - Iron-Age-Danube Thesaurus in Vocabs repository](images/vocabs_iad.JPG)
+![Picture 6. IAD - Iron-Age-Danube Thesaurus in Vocabs repository](/assets/content/en/resources/hosted/controlled-vocabularies-and-skos/vocabs_iad.jpg)
 
 ## Open source tools for vocabulary management
 
@@ -651,4 +641,3 @@ The creation of this learning material was supported by the Visegrad Fund Projec
 [^5]: [Alistair Miles, Sean Bechhofer. SKOS Reference, W3C Recommendation 18 August 2009](https://www.w3.org/TR/skos-reference/)
 
 [^6]: [IAD Thesaurus](https://vocabs.acdh.oeaw.ac.at/iad_thesaurus/en/)
-

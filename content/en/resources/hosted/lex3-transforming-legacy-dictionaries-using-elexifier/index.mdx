@@ -14,7 +14,9 @@ sources:
 license: CC BY 4.0
 tableOfContents: true
 summary:
-  content: "This course introduces Elexifier, a cloud-based dictionary service for the conversion of legacy XML and PDF dictionaries into a shared data format based on the ELEXIS Data Model. "
+  content: "This course introduces Elexifier, a cloud-based dictionary service for
+    the conversion of legacy XML and PDF dictionaries into a shared data format
+    based on the ELEXIS Data Model. "
 contentType: training-module
 ---
 This course introduces Elexifier, a cloud-based dictionary service for the conversion of legacy XML and PDF dictionaries into a shared data format based on the ELEXIS Data Model.
@@ -35,7 +37,7 @@ This course requires basic knowledge of XML, which can be acquired from the cour
 
 Elexifier is a cloud-based dictionary conversion service for conversion of legacy XML and PDF dictionaries into a shared data format so that these dictionaries can be integrated into the ELEXIS infrastructure. It takes as input an XML or PDF dictionary and produces a TEI-compliant XML file in line with the specifications of the Elexis Data Model. The figure below shows the position of the Elexifier tool (the green circle) in relation to the complete set of the ELEXIS Dictionary Tools.
 
-![Graphic guide to the ELEXIS Dictionary Tools](images/elexis_dictionary_tools.png "Graphic guide to the ELEXIS Dictionary Tools")
+![Graphic guide to the ELEXIS Dictionary Tools](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/elexis_dictionary_tools.png "Graphic guide to the ELEXIS Dictionary Tools")
 
 Dictionaries that have been transformed using Elexifier, can be edited further in Lexonomy or can be imported into the Dictionary Matrix.
 
@@ -115,25 +117,23 @@ First, have a look at the input XML and see if you understand its structure. An 
 Figure: Extract from GLOBAL French Portuguese Dictionary © K Dictionaries Ltd
 
 <Quiz>
-  <Quiz.Card>
-    <Quiz.MultipleChoice>
-      <Quiz.Question>
-        See if you can identify in this extract the name of the XML tag that is used for the entry element.
-      </Quiz.Question>
+  <QuizChoice variant="multiple">
+    <QuizChoiceQuestion>
+      See if you can identify in this extract the name of the XML tag that is used for the entry element.
+    </QuizChoiceQuestion>
 
-      <Quiz.MultipleChoice.Option>
-        EntryCtn
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="incorrect">
+      EntryCtn
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option isCorrect>
-        Entry
-      </Quiz.MultipleChoice.Option>
+    <QuizChoiceAnswer kind="correct">
+      Entry
+    </QuizChoiceAnswer>
 
-      <Quiz.MultipleChoice.Option>
-        DictionaryEntry
-      </Quiz.MultipleChoice.Option>
-    </Quiz.MultipleChoice>
-  </Quiz.Card>
+    <QuizChoiceAnswer kind="incorrect">
+      DictionaryEntry
+    </QuizChoiceAnswer>
+  </QuizChoice>
 </Quiz>
 
 ### Transform the Sample Dictionary using Elexifier
@@ -293,4 +293,3 @@ For more help on Elexifier, click on Help: [https://elexifier.elex.is/help/](htt
 Lexonomy is a cloud-based, open-source platform for writing and publishing dictionaries. In the course [Lexonomy: Mastering the ELEXIS Dictionary Writing System](/id/Qm_2SzS_rGB-Py9YTCHYm) you learn how to use Lexonomy.
 
 You may be also interested in checking out [Deliverable 1.4 ELEXIS Conversion Tools](https://elex.is/wp-content/uploads/2021/05/ELEXIS_D1_4_ELEXIS_Conversion_Tools.pdf) The appendix of this deliverable contains examples from dictionaries from ELEXIS partners, showing the input format together with the transformed output from Elexifier.
-

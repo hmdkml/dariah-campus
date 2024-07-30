@@ -36,17 +36,9 @@ The Library of Alexandria -- one of the wonders of the Ancient World, was founde
 
 While the destruction of the Library of Alexandria is to this day seen as a symbol of tragic loss of knowledge and culture, it is by no means a singular incident in history. Wars, civil unrest and natural disasters, but sometimes also mere accidents, continue to destroy and damage the human record. A 2004 fire in the Duchess Ana Amalia Library in Weimer destroyed some 50,000 volumes of which 12,500 are considered irreplaceable.
 
-<figure style={{marginTop:'0.4em', marginBottom:'0em', marginLeft:'1em', 'float':'right', 'width': '40%'}}>
-  <img src="http://i.imgur.com/NNw9TI3l.jpg" />
-
-  <figcaption>
-    CC-BY-SA-3.0
-
-    <a href="https://commons.wikimedia.org/wiki/File%3ABrand_Anna_Amalia\_22.30Uhr.JPG">
-      E.Herzel
-    </a>
-  </figcaption>
-</figure>
+<Figure src="http://i.imgur.com/NNw9TI3l.jpg">
+  CC-BY-SA-3.0 [E.Herzel](https://commons.wikimedia.org/wiki/File%3ABrand_Anna_Amalia_22.30Uhr.JPG)
+</Figure>
 
 Digitization is not a cure for all ills and should not be embraced all too hastily as a replacement for proper preservation strategies. Yet there is no doubt that digital objects contribute to both the preservation and accessibility of cultural heritage. From an institutional point of view, the opportunities created by digital resources "for learning, teaching, research, scholarship, documentation, and public accountability" (Kenney and Rieger, 2000, 1) are immense.
 
@@ -172,7 +164,9 @@ Not all digital objects are created equal. We can distinguish two types of metho
 
 **Text capture** refers to the transposition of image-based textual content into a sequence of alphanumerical characters, which can be accomplished either by human operators who retype the original text; or, automatically, by using an optical character recognition (OCR) or handwritten character recognition (HRT) software to convert images into machine-readable (and, ultimately, searchable) strings.
 
-![Print Dictionary to Machine Readable Text](http://i.imgur.com/a18wpcc.png)
+<Figure src="http://i.imgur.com/a18wpcc.png">
+  Print Dictionary to Machine Readable Text
+</Figure>
 
 ### Image capture
 
@@ -251,7 +245,7 @@ For OCR purposes, one doesn't necessarily need a full color representation of th
 
 #### Further reading
 
-JISC Digital Media; 2008-2011; the Joint Information Systems Committee: http\:// [www.jiscdigitalmedia.ac.uk/](http://www.jiscdigitalmedia.ac.uk/) Retrieved 10.03.2011
+JISC Digital Media; 2008-2011; the Joint Information Systems Committee: [http://www.jiscdigitalmedia.ac.uk/](http://www.jiscdigitalmedia.ac.uk/) Retrieved 10.03.2011
 
 Digital Imaging Primer; Gueguen, G; 2007; Office of Digital Collections and Research at the University of Maryland: [http://www.lib.umd.edu/dcr/publications/DigitalImagingPrimer.pdf](http://www.lib.umd.edu/dcr/publications/DigitalImagingPrimer.pdf) Retrieved 10.03.2011
 
@@ -550,9 +544,9 @@ Take HTML for example. HTML is the language in which most of the pages on the in
 
 HTML and LaTeX are examples of **presentational** or **procedural markup languages**. They are used primarily to indicate how text and data is supposed to be processed by a software. For instance, HTML developers are primarily concerned with how something looks in the web browser. However, in recent years with the development of HTML5, HTML has becomes more similar to **descriptive or semantic markup**. This kind of markup language describes the type of data that is encoded, e.g. an address, a pizza menu, or a stanza of a poem. The benefit of this kind of markup is that it can be better understood by software such as search engines. A typical example of a descriptive markup language is the Text Encoding Initiative (TEI). Markup is typically not visible to the reader of electronic text. Rather, it serves as instructions for software to process text.
 
-TODO Add video component: [https://www.youtube.com/embed/MwT4GB-AXbQ](https://www.youtube.com/embed/MwT4GB-AXbQ)
+<Video provider="youtube" id="MwT4GB-AXbQ" />
 
-#### Мarked-up vs. plain text
+#### Marked-up vs. plain text
 
 As mentioned previously, markup languages both inherit characteristics from earlier print-based markup practices, while extending and augmenting those practices for electronic reading, analysis, and distribution. Markup can be expressed, as we saw previously, via handwritten characters or symbols. For computer-based processing, the markup or annotation vocabulary must be itself expressed in machine readable form in a standardised manner.
 
@@ -577,7 +571,7 @@ Markup is an important enhancement that expands the potential of electronic text
 ```html
 <h1>Textual markup</h1>
 <p>Some text.</p>
-<h2>Мarked-up vs. plain text</h2>
+<h2>Marked-up vs. plain text</h2>
 <p>Some other text.</p>
 ```
 
@@ -600,7 +594,7 @@ Markup languages are used to enrich plain text with information which is readabl
 
 ```html
 <h1>Textual markup</h1>
-<h2>Мarked-up vs. plain text</h2>
+<h2>Marked-up vs. plain text</h2>
 ```
 
 There is always an opening tag (e.g. `<h1>`) and a closing tag (e.g. `</h1>`) indicating the start and the end of a heading. The only difference between an opening and a closing tag is the slash `/` which appears after the opening angle bracket in the closing tag. It's not exactly what Freud had in mind when he wrote of the "narcissism of small differences", but this small difference does matter a lot. We'll see why in the rest of this course.
@@ -710,13 +704,13 @@ Tree-structures resemble trees, but in a world turned upside-down: the root of t
 
 A different way of imagining the tree structure is to think of a series of boxes of different sizes. There is one giant box at the top, which contains a number of smaller boxes. Each of these can have one or more boxes inside. The boxes that live in the same bigger box are siblings etc.
 
-![](images/boxes.png)
+![](/assets/content/en/resources/hosted/capturing-modeling-and-transforming-lexical-data-an-introduction/boxes.png)
 
 ##### 3. A folder, a folder, my kingdom for a folder!
 
 Yet another way is to think of the tree structure as a bunch of folders on your computer. The root folder contains all the other folders. The folders that live inside the same folder are siblings to each other etc.
 
-![](images/folders.png)
+![](/assets/content/en/resources/hosted/capturing-modeling-and-transforming-lexical-data-an-introduction/folders.png)
 
 We'll look more closely into the relatinships between different components of the XML tree later in this course, but before we do that, we should explore different types of componenets that make up the XML document.
 
@@ -878,13 +872,13 @@ A **sibling relationship** means that elements (the siblings) have the same pare
 
 ```xml
 <entry>
-        <lemma>lexicographer</lemma>
-        <grammar>noun</grammar>
-        <sense>
-          <definition>A harmless drudge.</definition>
-          <example>Some lexicographers are mad!</example>
-        </sense>
-    </entry>
+	<lemma>lexicographer</lemma>
+	<grammar>noun</grammar>
+	<sense>
+		<definition>A harmless drudge.</definition>
+		<example>Some lexicographers are mad!</example>
+	</sense>
+</entry>
 ```
 
 `<definition>` is a child element of `<sense>` and a sibling of `<example>`.
@@ -1017,4 +1011,3 @@ That's why the maintenance phase of your project is so important. You need to ha
 * long-term archiving
 
 A project which does not have sustainability provisions beyond the end of the grant period cannot be considered a success.
-
