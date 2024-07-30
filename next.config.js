@@ -6,6 +6,7 @@ import localesPlugin from "@react-aria/optimize-locales-plugin";
 import createI18nPlugin from "next-intl/plugin";
 
 import { env } from "./config/env.config.js";
+import { defaultLocale } from "./config/i18n.config.js";
 import { createMdxConfig } from "./config/mdx.config.js";
 
 /** @type {NextConfig} */
@@ -56,7 +57,8 @@ const plugins = [
 	createI18nPlugin("./lib/i18n.ts"),
 	createMdxPlugin({
 		extension: /\.(md|mdx)$/,
-		options: await createMdxConfig(),
+		// FIXME: read `locale` from request.
+		options: await createMdxConfig(defaultLocale),
 	}),
 ];
 
