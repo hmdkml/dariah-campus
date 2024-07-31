@@ -5,7 +5,7 @@ export function createAssetPaths(path: `/${string}/`) {
 		directory: `./public/assets${path}`,
 		publicPath: `/assets${path}`,
 		transformFilename(originalFilename: string) {
-			return slugify(originalFilename);
+			return slugify(originalFilename, { preserveCharacters: ["."] });
 		},
 	};
 }
