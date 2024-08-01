@@ -9,13 +9,14 @@ import {
 	wrapper,
 } from "@keystatic/core/content-components";
 import {
+	BookTextIcon,
 	CaptionsIcon,
 	DownloadIcon,
 	ExpandIcon,
 	GridIcon,
+	HeadingIcon,
 	ImageIcon,
 	InfoIcon,
-	LinkIcon,
 	MessageCircleQuestionIcon,
 	SquareIcon,
 	SuperscriptIcon,
@@ -205,8 +206,17 @@ const components = {
 	HeadingId() {
 		return inline({
 			label: "Heading ID",
-			description: "A custom heading id as link target.",
-			schema: {},
+			description: "A custom heading id as a link target.",
+			icon: <HeadingIcon />,
+			schema: {
+				id: fields.text({
+					label: "Identifier",
+					validation: { isRequired: true },
+				}),
+			},
+			ContentView(props) {
+				return <span className="opacity-50">#{props.value.id}</span>;
+			},
 		});
 	},
 	Quiz() {
@@ -307,9 +317,50 @@ const components = {
 	ResourceLink() {
 		return mark({
 			label: "Resource link",
-			icon: <LinkIcon />,
+			icon: <BookTextIcon />,
 			tag: "a",
-			schema: {},
+			schema: {
+				resource: fields.conditional(
+					fields.select({
+						label: "Collection",
+						options: [
+							{ label: "Curricula", value: "curricula" },
+							{ label: "Events", value: "events" },
+							{ label: "External resources", value: "externalResources" },
+							{ label: "Hosted resources", value: "hostedResources" },
+							{ label: "Pathfinders", value: "pathfinders" },
+						],
+						defaultValue: "hostedResources",
+					}),
+					{
+						curricula: fields.relationship({
+							label: "Resource",
+							collection: "curricula",
+							validation: { isRequired: true },
+						}),
+						events: fields.relationship({
+							label: "Resource",
+							collection: "events",
+							validation: { isRequired: true },
+						}),
+						externalResources: fields.relationship({
+							label: "Resource",
+							collection: "externalResources",
+							validation: { isRequired: true },
+						}),
+						hostedResources: fields.relationship({
+							label: "Resource",
+							collection: "hostedResources",
+							validation: { isRequired: true },
+						}),
+						pathfinders: fields.relationship({
+							label: "Resource",
+							collection: "pathfinders",
+							validation: { isRequired: true },
+						}),
+					},
+				),
+			},
 		});
 	},
 	Tab() {
