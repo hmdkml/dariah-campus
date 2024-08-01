@@ -45,6 +45,7 @@
 		"client-only": "^0.0.1",
 		"cva": "^1.0.0-beta.1",
 		"fast-glob": "^3.3.2",
+		"hast-util-heading": "^3.0.0",
 		"lucide-react": "^0.416.0",
 		"next": "^14.2.5",
 		"next-intl": "^3.17.2",
@@ -60,6 +61,7 @@
 		"server-only": "^0.0.1",
 		"sharp": "^0.33.4",
 		"shiki": "^1.11.2",
+		"unist-util-visit": "^5.0.0",
 		"valibot": "^0.36.0"
 	},
 	"devDependencies": {
