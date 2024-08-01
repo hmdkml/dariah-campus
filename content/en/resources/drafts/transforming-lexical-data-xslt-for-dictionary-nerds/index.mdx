@@ -59,13 +59,9 @@ This really bears repeating: you can't do XSLT without XPath. This is because XS
 
 XSLT was created specifically for trasnforming XML. It's data-centric, purpose-built and quite clever: unlike general programming languages, which can be used to create all sorts of different pieces of software, XSLT does one thing, and it does it well. (Calm down, XSLT afficionados! XSLT *is* very powerful and can do many things, but we're trying to make a point here.)
 
-<figure style={{ width: "40%", float: "right", "margin": "0 0 0 0.5em" }}>
-  <img src="https://i.imgur.com/kYSdoof.jpg" alt="Trulli" />
-
-  <figcaption>
-    Like a lazy cat, XSLT will always go for the absolute minimum! <span style={{ fontSize: "70%" }}>(Photo by <a href="https://unsplash.com/photos/9UUoGaaHtNE">@ludemeula</a>)</span>
-  </figcaption>
-</figure>
+<Figure src="/assets/content/en/resources/drafts/transforming-lexical-data-xslt-for-dictionary-nerds/kYSdoof.jpg">
+Like a lazy cat, XSLT will always go for the absolute minimum! (Photo by [@ludemeula](https://unsplash.com/photos/9UUoGaaHtNE))
+</Figure>
 
 When you start writing and using XSLT stylesheets, you will notice a particular kind of slacker logic: XSLT never wants you to go for anything but the bare minimum! Instead of writing specific rules for each and every element in your XML tree, XSLT teaches you to do more by doing less. You will write one generic, default rule, which will cover all your elements and attributes unless you add specific templates to override them.
 
@@ -91,7 +87,7 @@ To get us started, in your Project View, click on the file `johnson-in-bad-TEI.x
 * displying red markers in the right-side vertical stripe; and
 * displaying the overall result of the failed validation in at the bottom of the screen with a total number of errors.
 
-![](https://i.imgur.com/jczYdcg.png)
+![](/assets/content/en/resources/drafts/transforming-lexical-data-xslt-for-dictionary-nerds/jczYdcg.png)
 
 We will create an XSLT stylesheet to fix all these errors.
 
@@ -102,7 +98,7 @@ We will create an XSLT stylesheet to fix all these errors.
 3. Click on "XSLT Stylesheet" to select it as the document type you want to create.
 4. Check the "Save as" checkbox and specify the file path. You can enter the file path by hand or choose the folder on your file system by clicking on the yellow folder icon next to the default file path. Make sure that you save the newly created stylesheet in the same folder as your `johnson-in-bad-TEI.xml` and name it `johnson2TEI.xsl`.
 
-![](https://i.imgur.com/ffeDBxm.png)
+![](/assets/content/en/resources/drafts/transforming-lexical-data-xslt-for-dictionary-nerds/ffeDBxm.png)
 
 5. Click on the blue "Create" button.
 
@@ -126,15 +122,15 @@ We will create an XSLT stylesheet to fix all these errors.
 
 7. If you have other files open in oXygen, make sure that you've selected `johnson-in-bad-TEI.xml` from the XML dropdown menu in the upper left corner of the window, as well as `johson2TEI.xsl` in the XSL dropdown next to it.
 
-   ![](https://i.imgur.com/cKkYPSC.png)
+   ![](/assets/content/en/resources/drafts/transforming-lexical-data-xslt-for-dictionary-nerds/cKkYPSC.png)
 
 8. To test the XSLT transformation in the Debugger Perspective, click, on the blue arrow icon below the XSL dropdow, or select Debugger > Run from the main menu.
 
-   ![](https://i.imgur.com/A0kkc1R.png)
+   ![](/assets/content/en/resources/drafts/transforming-lexical-data-xslt-for-dictionary-nerds/A0kkc1R.png)
 
    Congratulations! You've just run your first XSLT transformation. In the Output pane, to the right of your stylesheet, you will see that the text from your XML file has been copied without any markup. This is the result of the built-in default because you didn't provide any specific rules in your stylesheet.
 
-   ![](https://i.imgur.com/2icosvY.png)
+   ![](/assets/content/en/resources/drafts/transforming-lexical-data-xslt-for-dictionary-nerds/2icosvY.png)
 
 ### Stylesheet declaration
 
