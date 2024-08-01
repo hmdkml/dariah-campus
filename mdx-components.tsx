@@ -14,6 +14,7 @@ import {
 	QuizErrorMessage,
 	QuizSuccessMessage,
 } from "@/components/content/quiz";
+import { ResourceLink } from "@/components/content/resource-link";
 import { Tab, Tabs } from "@/components/content/tabs";
 import { Video } from "@/components/content/video";
 import { VideoCard } from "@/components/content/video-card";
@@ -36,6 +37,7 @@ const components = {
 	QuizChoiceQuestion,
 	QuizErrorMessage,
 	QuizSuccessMessage,
+	ResourceLink,
 	Tab,
 	Tabs,
 	Video,

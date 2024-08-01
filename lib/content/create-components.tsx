@@ -3,6 +3,7 @@ import { fields, NotEditable } from "@keystatic/core";
 import {
 	block,
 	type ContentComponent,
+	inline,
 	mark,
 	repeating,
 	wrapper,
@@ -14,6 +15,7 @@ import {
 	GridIcon,
 	ImageIcon,
 	InfoIcon,
+	LinkIcon,
 	MessageCircleQuestionIcon,
 	SquareIcon,
 	SuperscriptIcon,
@@ -200,6 +202,13 @@ const components = {
 			schema: {},
 		});
 	},
+	HeadingId() {
+		return inline({
+			label: "Heading ID",
+			description: "A custom heading id as link target.",
+			schema: {},
+		});
+	},
 	Quiz() {
 		return repeating({
 			label: "Quiz",
@@ -292,6 +301,14 @@ const components = {
 			description: "Help text for correct answers.",
 			icon: <MessageCircleQuestionIcon />,
 			forSpecificLocations: true,
+			schema: {},
+		});
+	},
+	ResourceLink() {
+		return mark({
+			label: "Resource link",
+			icon: <LinkIcon />,
+			tag: "a",
 			schema: {},
 		});
 	},
