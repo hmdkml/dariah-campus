@@ -16,6 +16,8 @@ const contentTypes = [
 	{ label: "Website", value: "website" },
 ] as const;
 
+const headingLevels = [2, 3, 4, 5] as const;
+
 const locales = [
 	{ label: "German", value: "de" },
 	{ label: "English", value: "en" },
@@ -156,9 +158,10 @@ export const curricula = createCollection((locale) => {
 			content: fields.mdx({
 				label: "Content",
 				options: {
+					heading: headingLevels,
 					image: createAssetPaths(assetPath),
 				},
-				components: createComponents(assetPath),
+				components: createComponents(assetPath, locale),
 			}),
 			doi: _fields.identifier({
 				label: "DOI (readonly)",
@@ -367,9 +370,10 @@ export const events = createCollection((locale) => {
 			content: fields.mdx({
 				label: "Content",
 				options: {
+					heading: headingLevels,
 					image: createAssetPaths(assetPath),
 				},
-				components: createComponents(assetPath),
+				components: createComponents(assetPath, locale),
 			}),
 			sessions: fields.array(
 				fields.object(
@@ -430,9 +434,10 @@ export const events = createCollection((locale) => {
 						content: fields.mdx({
 							label: "Content",
 							options: {
+								heading: headingLevels,
 								image: createAssetPaths(assetPath),
 							},
-							components: createComponents(assetPath),
+							components: createComponents(assetPath, locale),
 						}),
 						presentations: fields.array(
 							fields.object(
@@ -493,9 +498,10 @@ export const events = createCollection((locale) => {
 									content: fields.mdx({
 										label: "Content",
 										options: {
+											heading: headingLevels,
 											image: createAssetPaths(assetPath),
 										},
-										components: createComponents(assetPath),
+										components: createComponents(assetPath, locale),
 									}),
 								},
 								{
@@ -645,9 +651,10 @@ export const externalResources = createCollection((locale) => {
 			content: fields.mdx({
 				label: "Content",
 				options: {
+					heading: headingLevels,
 					image: createAssetPaths(assetPath),
 				},
-				components: createComponents(assetPath),
+				components: createComponents(assetPath, locale),
 			}),
 			doi: _fields.identifier({
 				label: "DOI (readonly)",
@@ -751,9 +758,10 @@ export const hostedResources = createCollection((locale) => {
 			content: fields.mdx({
 				label: "Content",
 				options: {
+					heading: headingLevels,
 					image: createAssetPaths(assetPath),
 				},
-				components: createComponents(assetPath),
+				components: createComponents(assetPath, locale),
 			}),
 			doi: _fields.identifier({
 				label: "DOI (readonly)",
@@ -857,9 +865,10 @@ export const pathfinders = createCollection((locale) => {
 			content: fields.mdx({
 				label: "Content",
 				options: {
+					heading: headingLevels,
 					image: createAssetPaths(assetPath),
 				},
-				components: createComponents(assetPath),
+				components: createComponents(assetPath, locale),
 			}),
 			doi: _fields.identifier({
 				label: "DOI (readonly)",
@@ -918,9 +927,10 @@ export const people = createCollection((locale) => {
 			description: fields.mdx({
 				label: "Description",
 				options: {
+					heading: false,
 					image: createAssetPaths(assetPath),
 				},
-				components: createComponents(assetPath),
+				components: createComponents(assetPath, locale),
 			}),
 		},
 	});
@@ -952,9 +962,10 @@ export const sources = createCollection((locale) => {
 			description: fields.mdx({
 				label: "Description",
 				options: {
+					heading: false,
 					image: createAssetPaths(assetPath),
 				},
-				components: createComponents(assetPath),
+				components: createComponents(assetPath, locale),
 			}),
 		},
 	});
@@ -981,9 +992,10 @@ export const tags = createCollection((locale) => {
 			description: fields.mdx({
 				label: "Description",
 				options: {
+					heading: false,
 					image: createAssetPaths(assetPath),
 				},
-				components: createComponents(assetPath),
+				components: createComponents(assetPath, locale),
 			}),
 		},
 	});
@@ -1010,9 +1022,10 @@ export const documentation = createCollection((locale) => {
 			content: fields.mdx({
 				label: "Content",
 				options: {
+					heading: headingLevels,
 					image: createAssetPaths(assetPath),
 				},
-				components: createComponents(assetPath),
+				components: createComponents(assetPath, locale),
 			}),
 		},
 	});

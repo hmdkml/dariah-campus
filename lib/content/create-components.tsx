@@ -23,6 +23,7 @@ import {
 	VideoIcon,
 } from "lucide-react";
 
+import type { Locale } from "@/config/i18n.config";
 import { createAssetPaths } from "@/lib/content/create-asset-paths";
 
 /** @see https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts */
@@ -314,7 +315,7 @@ const components = {
 			schema: {},
 		});
 	},
-	ResourceLink() {
+	ResourceLink(_assetPath, _locale) {
 		return mark({
 			label: "Resource link",
 			icon: <BookTextIcon />,
@@ -442,17 +443,18 @@ const components = {
 			},
 		});
 	},
-} satisfies Record<string, (assetPath: `/${string}/`) => ContentComponent>;
+} satisfies Record<string, (assetPath: `/${string}/`, locale: Locale) => ContentComponent>;
 
 export function createComponents(
 	assetPath: `/${string}/`,
+	locale: Locale,
 	include?: Array<keyof typeof components>,
 ) {
 	const _components = include ? pick(components, include) : components;
 
 	return Object.fromEntries(
 		Object.entries(_components).map(([key, value]) => {
-			return [key, value(assetPath)];
+			return [key, value(assetPath, locale)];
 		}),
 	);
 }
