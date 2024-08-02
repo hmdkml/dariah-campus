@@ -1,4 +1,4 @@
-/** @typedef {import('next').NextConfig} NextConfig */
+/** @typedef {import("next").NextConfig} NextConfig */
 
 import createBundleAnalyzer from "@next/bundle-analyzer";
 import createMdxPlugin from "@next/mdx";

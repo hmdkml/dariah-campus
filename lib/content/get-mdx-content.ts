@@ -9,10 +9,15 @@ import type { Locale } from "@/config/i18n.config";
 import { createMdxProcessor } from "@/lib/content/create-mdx-processor";
 import { useMDXComponents } from "@/mdx-components";
 
-export const getMdxContent = cache(async function getMdxContent(
+interface MdxContent<T extends Record<string, unknown>> extends MDXModule {
+	/** Added by `remark-mdx-frontmatter`. */
+	frontmatter: T;
+}
+
+export const getMdxContent = cache(async function getMdxContent<T extends Record<string, unknown>>(
 	code: string,
 	locale: Locale,
-): Promise<MDXModule> {
+): Promise<MdxContent<T>> {
 	const processor = await createMdxProcessor(locale);
 	const file = await processor.process(code);
 
