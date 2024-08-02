@@ -4,7 +4,6 @@ import { Disclosure } from "@/components/content/disclosure";
 import { DownloadLink } from "@/components/content/download-link";
 import { Embed } from "@/components/content/embed";
 import { Figure } from "@/components/content/figure";
-import { Footnote } from "@/components/content/footnote";
 import { Grid, GridItem } from "@/components/content/grid";
 import {
 	Quiz,
@@ -28,7 +27,6 @@ const components = {
 	DownloadLink,
 	Embed,
 	Figure,
-	Footnote,
 	Grid,
 	GridItem,
 	Quiz,

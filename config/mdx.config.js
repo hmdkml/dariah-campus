@@ -29,12 +29,13 @@ export async function createMdxConfig(locale) {
 			withFrontmatter,
 			withMdxFrontmatter,
 			withGfm,
+			withFootnotes,
 			[withTypographicQuotes, typography[locale]],
 		],
+		remarkRehypeOptions: {},
 		rehypePlugins: [
 			withCustomHeadingIds,
 			withHeadingIds,
-			withFootnotes,
 			[withSyntaxHighlighter, syntaxHighlighterConfig],
 		],
 	};
