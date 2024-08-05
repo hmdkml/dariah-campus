@@ -38,10 +38,19 @@ importers:
       cva:
         specifier: ^1.0.0-beta.1
         version: 1.0.0-beta.1(typescript@5.5.4)
+      estree-util-value-to-estree:
+        specifier: ^3.1.2
+        version: 3.1.2
       fast-glob:
         specifier: ^3.3.2
         version: 3.3.2
       hast-util-heading:
+        specifier: ^3.0.0
+        version: 3.0.0
+      hast-util-heading-rank:
+        specifier: ^3.0.0
+        version: 3.0.0
+      hast-util-to-string:
         specifier: ^3.0.0
         version: 3.0.0
       lucide-react:
@@ -228,6 +237,9 @@ importers:
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
+      vfile:
+        specifier: ^6.0.2
+        version: 6.0.2
 
 packages:
 

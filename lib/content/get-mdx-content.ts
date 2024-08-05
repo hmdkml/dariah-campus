@@ -7,11 +7,14 @@ import * as runtime from "react/jsx-runtime";
 
 import type { Locale } from "@/config/i18n.config";
 import { createMdxProcessor } from "@/lib/content/create-mdx-processor";
+import type { Toc } from "@/lib/content/with-table-of-contents";
 import { useMDXComponents } from "@/mdx-components";
 
 interface MdxContent<T extends Record<string, unknown>> extends MDXModule {
 	/** Added by `remark-mdx-frontmatter`. */
 	frontmatter: T;
+	/** Added by `@/lib/content/with-table-of-contents`. */
+	tableOfContents: Toc;
 }
 
 export const getMdxContent = cache(async function getMdxContent<T extends Record<string, unknown>>(

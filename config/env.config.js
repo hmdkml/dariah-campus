@@ -17,6 +17,7 @@ export const env = createEnv({
 			KEYSTATIC_GITHUB_CLIENT_ID: v.optional(v.pipe(v.string(), v.nonEmpty())),
 			KEYSTATIC_GITHUB_CLIENT_SECRET: v.optional(v.pipe(v.string(), v.nonEmpty())),
 			KEYSTATIC_SECRET: v.optional(v.pipe(v.string(), v.nonEmpty())),
+			TYPESENSE_ADMIN_API_KEY: v.pipe(v.string(), v.nonEmpty()),
 		});
 
 		return v.parse(Schema, input);
@@ -41,6 +42,8 @@ export const env = createEnv({
 				v.integer(),
 				v.minValue(1),
 			),
+			NEXT_PUBLIC_TYPESENSE_API_KEY: v.pipe(v.string(), v.nonEmpty()),
+			NEXT_PUBLIC_TYPESENSE_URL: v.pipe(v.string(), v.url()),
 		});
 
 		return v.parse(Schema, input);
@@ -61,7 +64,10 @@ export const env = createEnv({
 		NEXT_PUBLIC_MATOMO_BASE_URL: process.env.NEXT_PUBLIC_MATOMO_BASE_URL,
 		NEXT_PUBLIC_MATOMO_ID: process.env.NEXT_PUBLIC_MATOMO_ID,
 		NEXT_PUBLIC_REDMINE_ID: process.env.NEXT_PUBLIC_REDMINE_ID,
+		NEXT_PUBLIC_TYPESENSE_API_KEY: process.env.NEXT_PUBLIC_TYPESENSE_API_KEY,
+		NEXT_PUBLIC_TYPESENSE_URL: process.env.NEXT_PUBLIC_TYPESENSE_URL,
 		NODE_ENV: process.env.NODE_ENV,
+		TYPESENSE_ADMIN_API_KEY: process.env.TYPESENSE_ADMIN_API_KEY,
 	},
 	validation: v.parse(
 		v.optional(v.picklist(["disabled", "enabled", "public"]), "enabled"),

@@ -72,10 +72,6 @@
 		"switch-locale": "Switch locale",
 		"switch-locale-to": "Switch to {locale}"
 	},
-	"Mdx": {
-		"FootnoteBackLabel": "Back to reference {reference}",
-		"Footnotes": "Footnotes"
-	},
 	"NotFoundPage": {
 		"meta": {
 			"title": "Page not found"
@@ -93,5 +89,9 @@
 			"title": "Sources"
 		},
 		"title": "Sources"
+	},
+	"mdx": {
+		"footnoteBackLabel": "Back to reference {reference}",
+		"footnotes": "Footnotes"
 	}
 }
