@@ -15,6 +15,7 @@ import withTypographicQuotes from "remark-smartypants";
 
 import { withCustomHeadingIds } from "../lib/content/with-custom-heading-ids.js";
 import { withFootnotes } from "../lib/content/with-footnotes.js";
+import { withImageImports } from "../lib/content/with-image-imports.js";
 import {
 	withMdxTableOfContents,
 	withTableOfContents,
@@ -78,6 +79,7 @@ export async function createMdxConfig(locale) {
 			withTableOfContents,
 			withMdxTableOfContents,
 			[withSyntaxHighlighter, syntaxHighlighterConfig],
+			withImageImports,
 		],
 	};
 
