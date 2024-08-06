@@ -54,6 +54,7 @@ const config = {
 const plugins = [
 	createBundleAnalyzer({ enabled: env.BUNDLE_ANALYZER === "enabled" }),
 	createI18nPlugin("./lib/i18n.ts"),
+	// FIXME: @see https://github.com/vercel/next.js/issues/65652
 	// createMdxPlugin({
 	// 	extension: /\.(md|mdx)$/,
 	// 	// FIXME: read `locale` from request.
