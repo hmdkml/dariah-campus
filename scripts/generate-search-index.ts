@@ -1,24 +1,14 @@
 import { assert, keyByToMap, log } from "@acdh-oeaw/lib";
 import { createReader } from "@keystatic/core/reader";
-import { Client as TypesenseClient } from "typesense";
 
-import { env } from "@/config/env.config";
 import { schema } from "@/config/search.config";
 import config from "@/keystatic.config";
+import { createAdminSearchClient } from "@/lib/search/create-admin-search-client";
 
 async function generate() {
-	assert(env.NEXT_PUBLIC_TYPESENSE_URL, "Missing typesense url.");
-	assert(env.TYPESENSE_ADMIN_API_KEY, "Missing typesense admin key.");
-
-	const client = new TypesenseClient({
-		apiKey: env.TYPESENSE_ADMIN_API_KEY,
-		connectionTimeoutSeconds: 2,
-		nodes: [{ url: env.NEXT_PUBLIC_TYPESENSE_URL }],
-	});
+	const client = createAdminSearchClient();
 
 	await client.collections().create(schema);
-
-	// id not exists search key, create search key
 
 	const reader = createReader(process.cwd(), config).collections;
 
