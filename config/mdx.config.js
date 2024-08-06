@@ -3,7 +3,7 @@
 /** @typedef {import("retext-smartypants").Options} TypographicOptions */
 /** @typedef {import("@/config/i18n.config.js").Locale} Locale */
 
-// import "server-only";
+import "server-only";
 
 import withSyntaxHighlighter from "@shikijs/rehype";
 import { getTranslations } from "next-intl/server";
@@ -32,8 +32,7 @@ const typography = {
 
 /** @type {(locale: Locale) => Promise<CompileOptions>} */
 export async function createMdxConfig(locale) {
-	// const locale = await getLocale()
-	const t = await getTranslations();
+	const t = await getTranslations({ locale, namespace: "mdx" });
 
 	/** @type {CompileOptions} */
 	const config = {
@@ -63,13 +62,13 @@ export async function createMdxConfig(locale) {
 			},
 			/** @see https://github.com/syntax-tree/mdast-util-to-hast/blob/13.0.0/lib/footer.js#L108 */
 			footnoteBackLabel(referenceIndex, rereferenceIndex) {
-				return t("mdx.footnoteBackLabel", {
+				return t("footnoteBackLabel", {
 					reference:
 						String(referenceIndex + 1) +
 						(rereferenceIndex > 1 ? `-${String(rereferenceIndex)}` : ""),
 				});
 			},
-			footnoteLabel: t("mdx.footnotes"),
+			footnoteLabel: t("footnotes"),
 			footnoteLabelProperties: { className: ["sr-only"] },
 			footnoteLabelTagName: "h2",
 		},

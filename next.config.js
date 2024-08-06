@@ -1,12 +1,12 @@
 /** @typedef {import("next").NextConfig} NextConfig */
 
 import createBundleAnalyzer from "@next/bundle-analyzer";
-import createMdxPlugin from "@next/mdx";
+// import createMdxPlugin from "@next/mdx";
 import localesPlugin from "@react-aria/optimize-locales-plugin";
 import createI18nPlugin from "next-intl/plugin";
 
 import { env } from "./config/env.config.js";
-import { createMdxConfig } from "./config/mdx.config.js";
+// import { createMdxConfig } from "./config/mdx.config.js";
 
 /** @type {NextConfig} */
 const config = {
@@ -54,11 +54,11 @@ const config = {
 const plugins = [
 	createBundleAnalyzer({ enabled: env.BUNDLE_ANALYZER === "enabled" }),
 	createI18nPlugin("./lib/i18n.ts"),
-	createMdxPlugin({
-		extension: /\.(md|mdx)$/,
-		// FIXME: read `locale` from request.
-		options: await createMdxConfig("en"),
-	}),
+	// createMdxPlugin({
+	// 	extension: /\.(md|mdx)$/,
+	// 	// FIXME: read `locale` from request.
+	// 	options: await createMdxConfig("en"),
+	// }),
 ];
 
 export default plugins.reduce((config, plugin) => {
