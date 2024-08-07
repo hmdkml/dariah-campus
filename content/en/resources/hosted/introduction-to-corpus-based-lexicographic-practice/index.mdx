@@ -225,7 +225,7 @@ Minimally, a corpus consists of a large, diverse collection of files containing 
 
 In this section, we look at different types of corpus annotation and we will illustrate these on the basis of a short newspaper article from The [Guardian](https://www.theguardian.com/science/2022/mar/01/tyrannosaurus-rex-may-have-been-three-species-scientists-say) (The Guardian, Nicola Davis, 01-03-2022).
 
-![](https://lh4.googleusercontent.com/DXUUcLdn8bayhptZ6O7c5yMReIeofKH9Tl_7UKr-7_7G12F3IWdq3DajoJCSRNtVJlZMO6PNI-SPP_Dixp-bayiqJZ8LuiczvzVvel5BFCaHsMq8tXggSk7hyqw0Q6Dvaf2u-608)
+![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-0.png)
 
 We start with tokenisation, then part-of-speech tagging, followed by lemmatisation, and then syntactic and semantic annotation. More annotation layers can be added, but these will not be discussed here.
 
@@ -233,7 +233,7 @@ We start with tokenisation, then part-of-speech tagging, followed by lemmatisati
 
 Tokenisation means splitting the text into tokens and sentences. This is illustrated in the figure below for an extract from our example text. The text is split into tokens and each token is put on a separate line. The `<s>` tag marks the beginning and the end of a sentence.
 
-![](https://lh4.googleusercontent.com/lcjIGEb0rVhJkds3pR4WpRlOGZB_DiUH1Uc7T9VETHyWkfSL3fimdtL7rd7XLQz7b5Lp1zyZSFqIkU2Eryy57MQSITekpccv7FAUvQzRSdUyeFlEO11nyEVMClfWdgS3ogAmJ3h4)
+![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-1.png)
 
 Identifying the boundaries of word tokens and sentences may seem straightforward, but even for a language such as English or French, this is not at all trivial. Should forms such as aren't in English or au (à le) in French be considered as one token or as two?
 
@@ -262,7 +262,7 @@ For mainstream languages (e.g. English, German, French) tagging accuracy of up t
 
 Some of these problems are illustrated in our example text. T rex is tokenised and tagged separately and rex is tagged as a plural noun.
 
-![](https://lh4.googleusercontent.com/19G3WXJPkYBGLKsJFkNYsD0oWe_-PxfViJ0k3HRB-Bz1FxeUyGkZPeoUXY71Hd4PIFYMCSbnkCESg51XL6DSc8q85FduFyqxNsLrz2eQdzvWwBxsNqxRm8ZyR8stNd5Prw3fYoAY)
+![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-2.png)
 
 Part of speech tagging provides the basis for further forms of analysis such as parsing and semantic annotation.
 
@@ -276,15 +276,15 @@ Forms: Corpus, corpora → Lemma: corpus
 
 Again this is not as easy as it may seem. For instance, do diminutives form a separate lemma from the main form, how are variant forms lemmatised, e.g. noticeboard, notice-board, notice board, are accents kept or ignored, e.g. ca·fé.
 
-The figure below shows the extract from our text, POS tagged and lemmatised: ![](https://lh3.googleusercontent.com/UVRghWT3jK7knRlZBmi5NseWrDZNpiLExrEM2YTtmDUKM3svwGy235FpMx9G6BDbhQTUsovSBqlcXDMQhvOBkv-ONoRy0CxFs6GZs_o4obkwjMXyaiawZk9miL95yYAmPPLz2Oe-)
+The figure below shows the extract from our text, POS tagged and lemmatised: ![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-3.png)
 
 ##### Syntactic annotation
 
-Syntactic annotation provides information about the grammatical structure of sentences. This is also called parsing. Two types of parsers can be distinguished, those annotating constituent structures and those annotating dependencies (Figure taken from Jurafsky et al. 2021, Chapter 14, p.2). Syntactically annotated corpora are called treebanks as syntactic structures are commonly visualised in the form of trees. ![](https://lh5.googleusercontent.com/UgKZaXXtD3ktqLc0T3qKN-veKEgTwCYQ1OSIuS2ez1d_O-aWn8m3xKNNbWKEMhdZwwORCUoQjMdsF92RNFNHafV57TTdRSRYzHSNR4FOkOKgQUQV8lS9BQ3L-Iha8cJLxHmAHwvz) For a more computational description of dependency and constituency parsing, see Chapters 13 and 14 from [Jurafksy et al. 2021](https://web.stanford.edu/~jurafsky/slp3/).
+Syntactic annotation provides information about the grammatical structure of sentences. This is also called parsing. Two types of parsers can be distinguished, those annotating constituent structures and those annotating dependencies (Figure taken from Jurafsky et al. 2021, Chapter 14, p.2). Syntactically annotated corpora are called treebanks as syntactic structures are commonly visualised in the form of trees. ![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-4.png) For a more computational description of dependency and constituency parsing, see Chapters 13 and 14 from [Jurafksy et al. 2021](https://web.stanford.edu/~jurafsky/slp3/).
 
 Probably, the best-known example of dependency kind of treebanks are the universal dependency treebanks. Universal Dependencies (UD) is a framework for consistent annotation of grammar (parts of speech, morphological features, and syntactic dependencies) across different human languages. There are at the time of writing nearly 200 treebanks in over 100 languages. ([https://universaldependencies.org/#language-](https://universaldependencies.org/#language-) accessed March 2022)
 
-The Figure below shows a sample UD annotation for English. ![](https://lh6.googleusercontent.com/JCcLD0Iq3mlb8o7-6ciMyPDrpwfZJUU4AIWMMGZ71CJrYmacsFLNSJFwwTMMJ-K0RMOtpBRtWaLfC2BTKbEKnCE2qap4cyMcd94kqQxTSsbSCgjXJ5_HaL_F78fsM8k0QCUGlbt_)
+The Figure below shows a sample UD annotation for English. ![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-5.png)
 
 Each word line contains the following fields:
 
@@ -303,7 +303,7 @@ Further information on Universal Dependencies can be found on the [UD website](h
 
 The final layer of annotation that we discuss here, is semantic annotation. This refers to adding semantic information to the words in the corpus. Semantic annotation is less common, even for corpora of the major languages. The best-known semantically annotated corpora are the SemCor corpora that use a wordnet as their sense inventory. See, for instance, the English SemCor corpus which is available in the Sketch Engine.
 
-![](https://lh3.googleusercontent.com/oe_StqUCy1oPoMt-UWhL1y6MqeH8AfujAnSai9BHBaTPlLB9n2cnNAgp9O36BkowjE-YYHqUh9kSBeNgW0begsRDELs9PGYi_lFiGPzwJZWhWYdmgVtGHGAAtjzg9Rme4BQ81b6_)
+![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-6.png)
 
 Semantically annotated corpora are, for instance, used in NLP for Word Sense Disambiguation (WSD).
 
@@ -393,7 +393,7 @@ In general, n-grams are sequences of items. In the context of corpora, n-grams a
 
 These are the top twenty 5-grams containing the word end:
 
-![](https://lh6.googleusercontent.com/RgTGQhK7pRNu1pgvpPHqy2dm1de1wpipLlxjCKsWHMLjV7XrYKLOM07VTGsCP29YwlzyvqB5nCgJgBVE_ALLwypqxQg0-SlwMAP91sHQ1IIaAtDBoqeqBHdZ9W-0JvHrwumboB4_NpC2G9lTCQ)
+![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-7.png)
 
 ### Collocations
 
@@ -403,7 +403,7 @@ There are several tools which can be used to extract collocation information fro
 
 The Word Sketch is the best starting point for exploring collocations. It identifies words which typically appear together and categorizes them according to the relation between them. Each column represents a different grammatical relation.
 
-![](https://lh6.googleusercontent.com/ZIFA89_yEK-rAkVc3TNJbNNwbGTvyZbszQSyMYr8Co4SlG45_zSgDLjaXP-LvZRmEtHrQrd0KNBldSeqZfYrrigu4ZPqWptqdft4Bv8W2ZAi1LOSQ6Iaw8z_UY1Z_M6XB54HutlxIwwBa0OBqw)
+![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-8.png)
 
 The fact that a word combination is frequent is often of limited use or even insignificant for the purpose of lexicography. For example, these are the most frequent collocations of the word bedroom (only adjectives modifying the noun are included)
 
@@ -447,11 +447,11 @@ For this to work, time-stamped data are required. Time-stamped refers to data wh
 
 ### Word senses
 
-Corpora can also help to identify the different senses of a polysemous word. For instance, by looking at the concordances (i.e. …) of the noun party in the example below, we see occurrences of the different senses of the noun party, i.e. party in the sense of political party, but also in the sense of a social event. ![](https://lh3.googleusercontent.com/rJ1rFQV9guLxdP0QQV9orXMhyB3Ocw8lyfR-RrcQOgtHRziYhXNuAtA8sB2m_5duArn2imyXr53hrne1gM0zePZBFtNLtRh0NXZU_YWbJoJXYjeTvZ5FsQAaUPX29Eed8HRuf7_AF5u2Ca0q8A)
+Corpora can also help to identify the different senses of a polysemous word. For instance, by looking at the concordances (i.e. …) of the noun party in the example below, we see occurrences of the different senses of the noun party, i.e. party in the sense of political party, but also in the sense of a social event. ![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-9.png)
 
 These different senses can also be observed when looking at the word sketch of party:
 
-![](https://lh5.googleusercontent.com/1YKprossoH1o4bz5qwO9r3PaTmyE16UKYyyYtzOxJMGM8AgQQj6Xqxx50lBh1hhhtk1KhBdCfVoDYDMhc-26EfpXG6k5bzQHsYlEiGtsGhIFoG-0EpQQELGr2hqaPCvd31a8CZq4aWU-eYzNug)
+![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-10.png)
 
 ### Labels
 
@@ -459,11 +459,11 @@ Dictionary labels give information about the restricted use of a word or its sen
 
 This screen short shows that word outback is a lot more frequent (has a higher relative density) in texts collected from the Australian .au top-level domain. The relative density is not affected by the difference in the volume of text collected from each domain.
 
-![](https://lh5.googleusercontent.com/It4uGokPFMWHytNPEMD-HAL01L8oUcnSX1_IXKW_LiY_hDrGXHfok1TNEGRwMBD0AvKuOUiTpgLtNNhdBCBK48odb66GOONJ55YkoT5MfzVx-BKJBFaX14sGxrG7A9IcVw-O4C8vzYRPjL0ndg)
+![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-11.png)
 
 Similarly, a corpus with metadata classifying documents into topics can provide information about the usage restrictions of collocations identified by the word sketch:
 
-![](https://lh4.googleusercontent.com/cii22e4QwQLbyGoyAILZxRgCS07z6XSeoV6GlMPV07O-MGquVgZl0FDSYJCe2mm6q1flA3v_es4BAGLbGGxT5cZQGnDhbhoyrxGE9qcwttVpBQxNdGiVgFSaDt5wRqGU4TGP5iOGTmyYU9lpcA)
+![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-12.png)
 
 ### Translations
 
@@ -471,7 +471,7 @@ Parallel corpora can be useful for providing translation equivalents. An example
 
 This example shows segments in English and their translations into French and German. The yellow highlighting indicates the most probable place in the translated segment where the translation of the word could be located. The highlighting does not claim to be a direct translation.
 
-![](https://lh5.googleusercontent.com/uwiK5N7EU0Eyb3rYCL5klLO9YuqHmNbWtzlaHkIzBUrSFdgsELoGpx792ldkgt76MWVKds3fodls8xXBtVP-pJpSDDWLrcKD3lyS5QYZcLadiP646ZW0EOBmx9eTVUpkHZgtEFCQtOty5OfwvQ)
+![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-13.png)
 
 ### Syntactic patterns
 
@@ -481,13 +481,13 @@ There are several ways to explore syntactic patterns of a word.
 
 Generating n-grams of different sizes that contain the word can show prepositions and other function words frequently found before and after the word. In Sketch Engine, the ADVANCED tab of the n-gram tools lets the user specify various search options and restricting conditions.
 
-![](https://lh6.googleusercontent.com/EBoY2x5ncS2SlOurDIigmizTIJ4ekpCdTBPuO1Zo8QiqVmA8u5XHv6ndJeb4joeWaFXJzKzzYSX6OFRBFozSZpHiE_7UOmIH1veF1MBig1lUyaNogoURd1SKAxSA59-Fb_eZ9410dD_xcB1L5w)
+![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-14.png)
 
 #### Word sketches for discovering patterns
 
 Word sketches contain some grammatical relations specifically designed to identify the typical patterns, such as prepositions before and after the word or usage patterns:
 
-![](https://lh4.googleusercontent.com/sE77wTNcEmMGBk4UbN7xkMlhZNQ7hC8NOzC-r9C_FAdelZFyx1_gN4PXXOlEYV-iB6cWfXwlrp7fMizC25F1H5RrlmThXoKTO_R7IFHH0gmJjD-O-6Xn-UPqvP8De-c2HdwN_AgBrnZi42FQpA)
+![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-15.png)
 
 #### Concordance for discovering patterns
 
@@ -504,7 +504,7 @@ Sorting is only practical when the number of concordance lines is very small, ty
 
 Frequency distribution refers to a function that operates like a calculator of concordance lines. It produces counts of words, lemmas, tags and other attributes in specific positions of a concordance line. This frequency distribution shows the frequency of the POS attribute following a/the total of. It is easy to see that a total of has a strong tendency to be followed by a number (e.g. a total of 15 people) while the total of is frequently followed by noun. A close look a the actual lines would reveal that other (x) and adjective (j) refers to a determiner followed by a noun or adjective followed by a noun.
 
-![](https://lh5.googleusercontent.com/KS9KJFrEXcVEqOwVtIAmp6gffBzUUM17C5PA2z2GjCTi-wD-Fe-sN_hzyImB0BQ7ckk8yFo0N6tznwnxs4Oxe-4n6xyHvOYRDx_MCORtm_OIaR1sYq0KM8yVnySu9BYIeH5lWO5raAL6kLyGvg)
+![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-16.png)
 
 A similar technique can be used to analyse the left or right context or of other lexical or grammatical structures.
 
@@ -512,7 +512,7 @@ A similar technique can be used to analyse the left or right context or of other
 
 Different tools which are part of a corpus software offer various types of statistics. It is beyond the scope of this course to provide a detailed explanation of each of them. However, when using Sketch Engine, the interface provides quick reference as well as detailed information about the various types of statistics via tooltips that are displayed upon hovering the mouse over the statistic or over the column header. The tooltips frequently contain links to more detailed information.
 
-![](https://lh5.googleusercontent.com/tP9qIUGtSQFZNTWUO_7vFuONBqNNrYtjq4EQdpDy7cWPVE7iuL2rke0PYvNp7co0nRa6I6aB-X0fJxRKAIOB86rLTWpTu4HoEb_AUQ2WUOonU-XgXed06zTMxOxNeqlPumbnKiCBPZLPLbDEYQ)
+![](/assets/content/en/resources/hosted/introduction-to-corpus-based-lexicographic-practice/image-17.png)
 
 #### Corpus size
 

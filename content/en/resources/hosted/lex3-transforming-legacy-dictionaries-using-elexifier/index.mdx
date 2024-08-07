@@ -112,7 +112,7 @@ The Sample Dictionary is an extract from the GLOBAL French Portuguese Dictionary
 
 First, have a look at the input XML and see if you understand its structure. An extract of the XML of the entry for café 'coffee' is given below.
 
-![](https://lh5.googleusercontent.com/oqXnBUD-dywul9jPV_qJdEGzJup9xh_QnZzmankQ-MtyKygDmgRqOI77gVScBhTp7Spy-lgF7Qm91qvf9IgjawuZKfX0WRcRgwu1-ZJInMJNZpQ0nG9RFZGGudFXcXSnm_8mawNUMbLNxnwEfw)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-0.png)
 
 Figure: Extract from GLOBAL French Portuguese Dictionary © K Dictionaries Ltd
 
@@ -151,7 +151,7 @@ How to import a file into Elexifier?
 * Select the xml icon on the left-hand side of the screen and click "upload a dictionary"
 * choose the file you want to upload and complete the template.
 
-![](https://lh6.googleusercontent.com/rS3Q_YpepxG9eJJAkUrCyD7-6Eg_nuZCmFvnM40hIiw3bmjLkbQFeP7kQJecgcwcRB4McYjAHBr6l63t3Fv3QMsfdnZlvftQQUuU5aKKzUREkz_tu0gt7vHXwzsrMzUYgGeUfNmNIiAhqE2NAg)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-1.png)
 
 What do you need to fill in?
 
@@ -175,7 +175,7 @@ Under **CREATE A TRANSFORMATION** you need to complete the values for:
 
 Your data is uploaded and on the screen you will see two panes one above the other. The top one contains the original imported XML file and the bottom one shows a preview of the transformed data.
 
-![](https://lh6.googleusercontent.com/XrY7X6oszqc1IfpWTt8uk9BRUHqhqGCqWR4IcKWPrvfCjZkquX9t1jxSLkRtTCAvKIOVI4i-I9zvLQhjqubH1FOBQJPEFK2kJpwjo81gA1nU08fVU_iNZI5ppoPlAwxtz2c6-DPeGjDUwQ2WvA)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-2.png)
 
 As you can see in the bottom pane on your screen, the entry and headword elements have already been transformed to the TEI Lex-0 format, i.e.
 
@@ -201,19 +201,19 @@ We are now going to define a complete transformation of the Sample Dictionary, t
 
 To edit your transformation, you need to click edit.
 
-![](https://lh5.googleusercontent.com/XR20CqpMPy8Lm1uIrbp8T-so3cJHiCo0B8b1W2wpt4pEDcSyy4HBUZXMWHYiKHzX3cDB9I0_TGAVIzgAvncUrQbRlXRzTohec9RjzqNLHm01pe3RRVGI1rA2SOF66SKuFCFVmuwu5-noc8bsAg)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-3.png)
 
 The transformation already contains three elements, i.e. entry, headword and sense.
 
-![](https://lh5.googleusercontent.com/6ezu_t0ItGY5y7vgLg9uJd-ZE-8DMMlrERlNpaK1EpMGQA66Sw8tgcA_xVMT9Qb68eLdJBl2zmNpINOo4IegA0JccCEv-ZOgKFgsbWN_sdHgEfRyeslqpnqHkKEoB8syKkzT-ltcUJRCPAPmiw)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-4.png)
 
 > Note: It is recommended to add the language of the headwords in your dictionary to the entry element.
 
 The first two elements were already specified when uploading the XML file; sense is given a 'dummy' value by default. You need to define it and set it to the name of the XML tag which contains the sense information in the input.
 
-![](https://lh6.googleusercontent.com/DwXzvHuE0B5bEfJoZtXyYpSuXDYfsh_duSepXmYD-fJgktcxn9rwwOosAKArcWBT4cwjHIWmj61IFD1-OO2wIG4ZSqYD2Zs_y330FjSK9nqqtR-qOVV2BLgOCHzmnzfeki84OOOxbYgDl2wR4g)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-5.png)
 
-![](https://lh6.googleusercontent.com/ZFO17ogEMuZkpAGpNprKA2G0OLBxH27781bwXp4gKFGTx5EDXp5A9k_CmBs46UlSfc3ezenjgqfmzCoUmXDSpQu9ZTbv_Ehy1RdU-yYwtrOBa2doo6iC9TEQ6sMLwz1ASxq8FoDE1hC9IHL01g)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-6.png)
 
 You can now start identifying the other elements in the data using simple XPATH expressions, selecting an element with a specific name and if needed the path to the element.
 
@@ -221,7 +221,7 @@ You can now start identifying the other elements in the data using simple XPATH 
 
 To add an element, click on "ADD CORE ELEMENT" and add for instance "DEFINITION" and specify the element that contains the definition element in the input.
 
-![](https://lh3.googleusercontent.com/omHv1ODtgu9vB3O92EMZSC0BLs2tvomPR8ktmWjinmSEIW1OEqKXaTOjz4aeI3QGgP1stTjLlQv5KElnCFMaBAma5dYYjFQEyMRwGwa0YS8r67f2YNQgJ73TOOQPvbH6aSnEWbY4pQYSpYq5Vg)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-7.png)
 
 After you have done this, you can click on Update. In the bottom pane, you can inspect the result of the current version of the transformation. Note that at the top of this pane you have the option to strip off namespaces and dictScrap elements.
 
@@ -235,23 +235,23 @@ After you have done this, you can click on Update. In the bottom pane, you can i
 
 Ticking these boxes will make your output more understandable.
 
-![](https://lh4.googleusercontent.com/4l-6oh7GslVhYlcSe1HxirDSH_uPXIDIC1ZZhilRQR88y-nWlkY2qhqNbqJ2rlYm49kRh-Vk9-Z0268IDui7n0f72stsPeMxQOxCtMaApWNX17O2ZyzdmxMBMdLOIk9zm0uhiKugqAZf9tPD1w)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-8.png)
 
 So far so good. Let's now look at "PART OF SPEECH".
 
-Transforming the Part of Speech tag is a little more difficult in our Sample Dictionary as the part of speech value is stored in an attribute of the PartOfSpeech tag.![](https://lh5.googleusercontent.com/l38pQRWaZzn7jatj0JommeX-R2b7CCw8EV24X2WZuc97HJbVDBlpolJHnZQdKLpMj_Nn-9nav_0RE4dRrP9QqaXoUOwuGpxq2Gu_KP0eV_shMTEVzcE_p5qJ-X5Mei_Op3ndBs5C9WGOKgzGkg)To transform the Part of Speech, you first need to specify the tag name, i.e. PartOfSpeech and then you need to select the value of the attribute. You do this by selecting the option 'attribute value' from the dropdown menu.
+Transforming the Part of Speech tag is a little more difficult in our Sample Dictionary as the part of speech value is stored in an attribute of the PartOfSpeech tag.![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-9.png)To transform the Part of Speech, you first need to specify the tag name, i.e. PartOfSpeech and then you need to select the value of the attribute. You do this by selecting the option 'attribute value' from the dropdown menu.
 
-![](https://lh6.googleusercontent.com/YUkFwtu9lrx9jhkJJgwNQan62GoCemvOyeA9f_qr9sRX5uwd0fyNmOdTlB4xyMvASsEVWgtjmvjKu649skkw-B0tTutbu-PI2MbZSd6bHtglTf714aURthTZUm6oRom_rxgjOv4gG2keiLFI4Q)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-10.png)
 
 In the box behind ATTRIBUTE VALUE, you can then type the name of the attribute that contains the content you want to extract, e.g. value in this case.
 
-![](https://lh5.googleusercontent.com/HWHs0S5WAPLJN-JlOBTb8XZjCoToUYFKOL1y9pWpC6ufmq50aHop-YwYIEPeCMREySsPYO5eGJH-qCRTNmWxKPfCeN-pFSUTWN0yZJKY9edSJy9X0dPwZIGOWseWTSkGFIRSQKgmihfn-aNpLw)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-11.png)
 
 ##### Mapping POS labels to Universal Dependencies
 
 Under PART OF SPEECH you also have the option to map the Part of Speech label occurring in the XML file with the tags from [Universal Dependencies](https://universaldependencies.org/u/pos/index.html). It is recommended that you do this as this will make it easier to link your data more reliably to other lexicographic resources in the ELEXIS infrastructure. In our Sample Dictionary, the Part of Speech labels that are used are already compatible with Universal Dependencies.
 
-![](https://lh6.googleusercontent.com/FPWb2IwsQhgw_rT_ATYop2sF4bsLuRBSigQqJeIxPFjAZV4tk-lIHNfm5WRGyYVGhrRCdbj7zhIqGIu_3Qovbl9z4388nE9DwVL7NmBM04_5s4QZw3aIOY8_c5j-PHHc3rz1P7KDTuOiAYhWiA)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-12.png)
 
 Try to add the following core elements to your transformation:
 
@@ -262,15 +262,15 @@ Try to add the following core elements to your transformation:
 
 > Note: It is recommended to add language to Headword Translation and Example Translation.
 
-![](https://lh4.googleusercontent.com/MZQAZiQB8OqiyRSfolBJfBJpKUlNZE1xteD39UdTYLPNlMjgaRlTP5AxAYUo77EknJndirha5b33EKm4m0GVBpliaJAPJEHiMAl1f8uwizFiiSbNpySrfv91V42jM8ccKSMaVzNbO9OLWkR38Q)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-13.png)
 
 If your dictionary contains an example translation you want it to occur inside the example tag in your output. You do this by adding ADOPT SELECTOR in the **example** element.
 
-![](https://lh3.googleusercontent.com/ER_aTr63PtiCoD1zHuY-4bMirNLeQDTNetHd5IQZUCjcG_TIjZc3HyKDNnvccfDdemkyTDbyRZbYC8jV4KY900B9ISfSMeHdMmWtn9vA7cDfJkLJya3eN0KxQ7fWbFA9HFPfayR1kYEZ_x9V4w)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-14.png)
 
 You then set the path to the example translation element.
 
-![](https://lh4.googleusercontent.com/fDnPBjLk-PFPA8HjdlAWy0238UquJe3EyJNyGxTPsGxyDQf9cD7QAXrM_20OIgGM1OvwM5QeZkoVFa2iH5TkogfumwBR6o23u7AytEQiMcUF_TdbPNXqLPhLDjRVyzaZ71ltld7sEhHlAQrkZA)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-15.png)
 
 What this expression does is ask the algorithm to move one level up, to find all Translation elements, and to move them within the **example** element. In the preview pane, you will the changed position of the example translation. after you have updated your transformation.
 
@@ -278,11 +278,11 @@ What this expression does is ask the algorithm to move one level up, to find all
 
 Once you are done with the transformation, you can download the data for later use, by clicking on "Download". You need to close the transformation editing pane, by clicking on the name of your dictionary on the left-hand side. Then the Download option will appear again.
 
-![](https://lh6.googleusercontent.com/b_iSR49-3m6O1-93uOu8Sm60Pu9X64lVVQjy86_sLIQQ55ZJxRV-k7I7yYR5yvZKw_x71cr70NpZD-ZBsBVOFhM-XT3TPEuDFrrSvONyd8pKN4jnJ6K9WGgCcdceLc9jG4yW2SOcJhyVpDwGfg)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-16.png)
 
 You can then choose to download with or without namespaces.
 
-![](https://lh5.googleusercontent.com/kXw1mzanyCUjTsLey1S5Ohf6ObTY2g8y4apo_MKokDlh3WR_vnvYLzZ4GnHMU6JCVf3ccAayF7hikfm-Q7pBEo_uszCAtk3tjSpcp7M2-Hl4V094k3IZ3rKkJqt8_MXWMOkqN5pP_t7mYch_-Q)
+![](/assets/content/en/resources/hosted/lex3-transforming-legacy-dictionaries-using-elexifier/image-17.png)
 
 A download without namespaces of the transformed data that we prepared for these two entries can be found [here](https://github.com/elexis-eu/elexifier/blob/master/docs/examples/ElexifierSampleDictionary-v2-SampleTransformation-v2-full_without-nmspcs-output.xml).
 
