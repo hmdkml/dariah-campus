@@ -14,6 +14,7 @@ import {
 	sources,
 	tags,
 } from "@/lib/content/collections";
+import { indexPage, metadata, navigation } from "@/lib/content/singletons";
 
 export default config({
 	collections: {
@@ -27,7 +28,11 @@ export default config({
 		sources: sources(defaultLocale),
 		tags: tags(defaultLocale),
 	},
-	singletons: {},
+	singletons: {
+		indexPage: indexPage(defaultLocale),
+		metadata: metadata(defaultLocale),
+		navigation: navigation(defaultLocale),
+	},
 	storage:
 		env.NEXT_PUBLIC_KEYSTATIC_MODE === "github" &&
 		env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_OWNER &&
@@ -54,6 +59,8 @@ export default config({
 			content: ["curricula", "events", "externalResources", "hostedResources", "pathfinders"],
 			data: ["people", "sources", "tags"],
 			documentation: ["documentation"],
+			pages: ["indexPage"],
+			settings: ["metadata", "navigation"],
 		},
 	},
 });
