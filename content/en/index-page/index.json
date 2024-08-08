@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "title": "Looking for learning resources?",
+    "leadIn": "DARIAH-CAMPUS is a discovery framework and hosting platform for learning resources.",
+    "image": "/assets/content/en/index-page/hero/image.svg"
+  },
+  "browse": {
+    "title": "Browse content",
+    "leadIn": "Choose a category to browse or search above",
+    "cards": []
+  },
+  "support": {
+    "title": "How can DARIAH-Campus support you?",
+    "leadIn": "Check out what DARIAH-Campus has in store for both learners and training providers",
+    "cards": []
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "leadIn": "Time is precious, we know",
+    "entries": []
+  },
+  "videos": {
+    "title": "Why training and education?",
+    "leadIn": "Some thoughts on why training and education matter so much for a research infrastructure such as DARIAH",
+    "cards": []
+  },
+  "team": {
+    "title": "We are here to help",
+    "leadIn": "Our DARIAH-CAMPUS team is just an email away and ready to answer your questions",
+    "members": []
+  }
+}

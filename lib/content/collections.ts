@@ -3,7 +3,7 @@ import { collection, fields } from "@keystatic/core";
 import { createAssetPaths } from "@/lib/content/create-asset-paths";
 import { createCollection } from "@/lib/content/create-collection";
 import { createComponents } from "@/lib/content/create-components";
-import { createPaths } from "@/lib/content/create-paths";
+import { createCollectionPaths } from "@/lib/content/create-paths";
 import { createPreviewUrl } from "@/lib/content/create-preview-url";
 import * as _fields from "@/lib/content/fields";
 
@@ -26,7 +26,7 @@ const locales = [
 const license = "CC BY 4.0";
 
 export const curricula = createCollection((locale) => {
-	const { assetPath, contentPath } = createPaths("/resources/curricula/", locale);
+	const { assetPath, contentPath } = createCollectionPaths("/resources/curricula/", locale);
 
 	return collection({
 		label: "Curricula",
@@ -171,7 +171,7 @@ export const curricula = createCollection((locale) => {
 });
 
 export const events = createCollection((locale) => {
-	const { assetPath, contentPath } = createPaths("/resources/events/", locale);
+	const { assetPath, contentPath } = createCollectionPaths("/resources/events/", locale);
 
 	return collection({
 		label: "Events",
@@ -537,7 +537,7 @@ export const events = createCollection((locale) => {
 });
 
 export const externalResources = createCollection((locale) => {
-	const { assetPath, contentPath } = createPaths("/resources/external/", locale);
+	const { assetPath, contentPath } = createCollectionPaths("/resources/external/", locale);
 
 	return collection({
 		label: "External resources",
@@ -664,7 +664,7 @@ export const externalResources = createCollection((locale) => {
 });
 
 export const hostedResources = createCollection((locale) => {
-	const { assetPath, contentPath } = createPaths("/resources/hosted/", locale);
+	const { assetPath, contentPath } = createCollectionPaths("/resources/hosted/", locale);
 
 	return collection({
 		label: "Hosted resources",
@@ -771,7 +771,7 @@ export const hostedResources = createCollection((locale) => {
 });
 
 export const pathfinders = createCollection((locale) => {
-	const { assetPath, contentPath } = createPaths("/resources/pathfinders/", locale);
+	const { assetPath, contentPath } = createCollectionPaths("/resources/pathfinders/", locale);
 
 	return collection({
 		label: "Pathfinders",
@@ -878,7 +878,7 @@ export const pathfinders = createCollection((locale) => {
 });
 
 export const people = createCollection((locale) => {
-	const { assetPath, contentPath } = createPaths("/people/", locale);
+	const { assetPath, contentPath } = createCollectionPaths("/people/", locale);
 
 	return collection({
 		label: "People",
@@ -937,7 +937,7 @@ export const people = createCollection((locale) => {
 });
 
 export const sources = createCollection((locale) => {
-	const { assetPath, contentPath } = createPaths("/sources/", locale);
+	const { assetPath, contentPath } = createCollectionPaths("/sources/", locale);
 
 	return collection({
 		label: "Sources",
@@ -972,7 +972,7 @@ export const sources = createCollection((locale) => {
 });
 
 export const tags = createCollection((locale) => {
-	const { assetPath, contentPath } = createPaths("/tags/", locale);
+	const { assetPath, contentPath } = createCollectionPaths("/tags/", locale);
 
 	return collection({
 		label: "Tags",
@@ -1002,7 +1002,7 @@ export const tags = createCollection((locale) => {
 });
 
 export const documentation = createCollection((locale) => {
-	const { assetPath, contentPath } = createPaths("/documentation/", locale);
+	const { assetPath, contentPath } = createCollectionPaths("/documentation/", locale);
 
 	return collection({
 		label: "Documentation",

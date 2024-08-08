@@ -4,6 +4,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 
 import { MainContent } from "@/components/main-content";
+import { createReader } from "@/lib/content/create-reader";
 
 interface IndexPageProps extends EmptyObject {}
 
@@ -26,13 +27,18 @@ export async function generateMetadata(
 	return metadata;
 }
 
-export default function IndexPage(_props: IndexPageProps): ReactNode {
-	const t = useTranslations("IndexPage");
+export default async function IndexPage(_props: IndexPageProps): Promise<ReactNode> {
+	const _t = useTranslations("IndexPage");
+
+	const reader = createReader();
+	const indexPage = await reader.singletons.indexPage.readOrThrow();
 
 	return (
 		<MainContent className="container py-8">
-			<h1>{t("title")}</h1>
-			<h2>{t("subtitle")}</h2>
+			<section>
+				<h1>{indexPage.hero.title}</h1>
+				<div>{indexPage.hero.leadIn}</div>
+			</section>
 		</MainContent>
 	);
 }
