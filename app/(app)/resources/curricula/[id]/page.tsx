@@ -20,7 +20,7 @@ export async function generateStaticParams(): Promise<
 	const ids = await reader.collections.curricula.list();
 
 	return ids.map((id) => {
-		return { id };
+		return { id: encodeURIComponent(id) };
 	});
 }
 
@@ -30,7 +30,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 	const { params } = props;
 
-	const { id } = params;
+	const id = decodeURIComponent(params.id);
 
 	const reader = createReader();
 	const entry = await reader.collections.curricula.readOrThrow(id, { resolveLinkedFiles: true });
@@ -47,7 +47,7 @@ export default async function CurriculumPage(
 ): Promise<Awaited<ReactNode>> {
 	const { params } = props;
 
-	const { id } = params;
+	const id = decodeURIComponent(params.id);
 
 	const reader = createReader();
 	const entry = await reader.collections.curricula.readOrThrow(id, { resolveLinkedFiles: true });

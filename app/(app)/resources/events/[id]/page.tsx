@@ -18,7 +18,7 @@ export async function generateStaticParams(): Promise<Array<Pick<EventPageProps[
 	const ids = await reader.collections.events.list();
 
 	return ids.map((id) => {
-		return { id };
+		return { id: encodeURIComponent(id) };
 	});
 }
 
@@ -28,7 +28,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 	const { params } = props;
 
-	const { id } = params;
+	const id = decodeURIComponent(params.id);
 
 	const reader = createReader();
 	const entry = await reader.collections.events.readOrThrow(id, { resolveLinkedFiles: true });
@@ -43,7 +43,7 @@ export async function generateMetadata(
 export default async function EventPage(props: EventPageProps): Promise<Awaited<ReactNode>> {
 	const { params } = props;
 
-	const { id } = params;
+	const id = decodeURIComponent(params.id);
 
 	const reader = createReader();
 	const entry = await reader.collections.events.readOrThrow(id, { resolveLinkedFiles: true });
