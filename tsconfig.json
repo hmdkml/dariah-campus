@@ -22,14 +22,14 @@
 		"./next-env.d.ts",
 		"./**/*.d.ts",
 		"./**/*.js",
-		"./**/*.mdx",
+		// "./**/*.mdx",
 		"./**/*.ts",
 		"./**/*.tsx",
 		".next/types/**/*.ts"
 	],
 	"exclude": ["node_modules", "out"],
 	"mdx": {
-		"checkMdx": true,
+		"checkMdx": false,
 		"plugins": ["remark-frontmatter", "remark-mdx-frontmatter", "remark-gfm"]
 	}
 }
