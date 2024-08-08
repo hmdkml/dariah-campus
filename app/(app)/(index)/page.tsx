@@ -1,5 +1,4 @@
 import type { Metadata, ResolvingMetadata } from "next";
-import { useTranslations } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 
@@ -28,7 +27,7 @@ export async function generateMetadata(
 }
 
 export default async function IndexPage(_props: IndexPageProps): Promise<ReactNode> {
-	const _t = useTranslations("IndexPage");
+	const _t = await getTranslations("IndexPage");
 
 	const reader = createReader();
 	const indexPage = await reader.singletons.indexPage.readOrThrow();
