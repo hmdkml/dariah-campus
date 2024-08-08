@@ -20,7 +20,8 @@ export async function generateStaticParams(): Promise<
 	const ids = await reader.collections.pathfinders.list();
 
 	return ids.map((id) => {
-		return { id: encodeURIComponent(id) };
+		/** @see https://github.com/vercel/next.js/issues/63002 */
+		return { id: process.env.NODE_ENV === "production" ? id : encodeURIComponent(id) };
 	});
 }
 

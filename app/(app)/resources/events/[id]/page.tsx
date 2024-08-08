@@ -18,7 +18,8 @@ export async function generateStaticParams(): Promise<Array<Pick<EventPageProps[
 	const ids = await reader.collections.events.list();
 
 	return ids.map((id) => {
-		return { id: encodeURIComponent(id) };
+		/** @see https://github.com/vercel/next.js/issues/63002 */
+		return { id: process.env.NODE_ENV === "production" ? id : encodeURIComponent(id) };
 	});
 }
 
