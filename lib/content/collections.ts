@@ -6,6 +6,7 @@ import { createComponents } from "@/lib/content/create-components";
 import { createCollectionPaths } from "@/lib/content/create-paths";
 import { createPreviewUrl } from "@/lib/content/create-preview-url";
 import * as _fields from "@/lib/content/fields";
+import { mastodonHandle, twitterHandle } from "@/lib/content/validation";
 
 const contentTypes = [
 	{ label: "Audio", value: "audio" },
@@ -336,11 +337,11 @@ export const events = createCollection((locale) => {
 					}),
 					twitter: fields.text({
 						label: "Twitter",
-						// validation: { isRequired: false },
+						validation: { isRequired: false, pattern: twitterHandle },
 					}),
 					mastodon: fields.text({
 						label: "Mastodon",
-						// validation: { isRequired: false },
+						validation: { isRequired: false, pattern: mastodonHandle },
 					}),
 					flickr: fields.url({
 						label: "Flickr",
@@ -914,11 +915,11 @@ export const people = createCollection((locale) => {
 			}),
 			twitter: fields.text({
 				label: "Twitter",
-				// validation: { isRequired: false },
+				validation: { isRequired: false, pattern: twitterHandle },
 			}),
 			mastodon: fields.text({
 				label: "Mastodon",
-				// validation: { isRequired: false },
+				validation: { isRequired: false, pattern: mastodonHandle },
 			}),
 			linkedIn: fields.text({
 				label: "LinkedIn",

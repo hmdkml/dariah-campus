@@ -4,6 +4,7 @@ import { createAssetPaths } from "@/lib/content/create-asset-paths";
 import { createSingletonPaths } from "@/lib/content/create-paths";
 import { createPreviewUrl } from "@/lib/content/create-preview-url";
 import { createSingleton } from "@/lib/content/create-singleton";
+import { twitterHandle } from "@/lib/content/validation";
 
 const videoProviders = [{ label: "YouTube", value: "youtube" }] as const;
 
@@ -313,11 +314,11 @@ export const metadata = createSingleton((locale) => {
 				{
 					creator: fields.text({
 						label: "Creator",
-						validation: { isRequired: true },
+						validation: { isRequired: true, pattern: twitterHandle },
 					}),
 					site: fields.text({
 						label: "Site",
-						validation: { isRequired: true },
+						validation: { isRequired: true, pattern: twitterHandle },
 					}),
 				},
 				{
