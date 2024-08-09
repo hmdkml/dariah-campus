@@ -37,6 +37,7 @@ export default async function IndexPage(_props: IndexPageProps): Promise<Awaited
 	return (
 		<MainContent className="container py-8">
 			<section>
+				<Image alt="" src={indexPage.hero.image} />
 				<h1>{indexPage.hero.title}</h1>
 				<div>{indexPage.hero.leadIn}</div>
 			</section>

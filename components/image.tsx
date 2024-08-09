@@ -5,12 +5,14 @@ import { join } from "node:path";
 
 import { assert, request } from "@acdh-oeaw/lib";
 import { imageSize } from "image-size";
+// eslint-disable-next-line no-restricted-imports
 import NextImage, { type ImageProps as NextImageProps } from "next/image";
-import type { ReactNode } from "react";
+// import type { ReactNode } from "react";
 
 interface ImageProps extends NextImageProps {}
 
-export async function Image(props: ImageProps): Promise<Awaited<ReactNode>> {
+// FIXME: missing return type annotation.
+export async function Image(props: ImageProps) {
 	const { alt = "", fill, height, src, width } = props;
 
 	if (typeof src === "object" || fill === true || (width != null && height != null)) {
