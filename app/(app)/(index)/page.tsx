@@ -1,8 +1,8 @@
 import type { Metadata, ResolvingMetadata } from "next";
-import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 
+import { Image } from "@/components/image";
 import { Link } from "@/components/link";
 import { MainContent } from "@/components/main-content";
 import { createReader } from "@/lib/content/create-reader";

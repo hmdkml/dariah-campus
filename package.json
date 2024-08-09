@@ -165,6 +165,10 @@
 			"no-restricted-imports": [
 				"error",
 				{
+					"name": "next/image",
+					"message": "Please use @/components/image instead."
+				},
+				{
 					"name": "next/link",
 					"message": "Please use @/components/link instead."
 				},

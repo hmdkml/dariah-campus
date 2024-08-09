@@ -19,13 +19,18 @@ export async function Image(props: ImageProps): Promise<Awaited<ReactNode>> {
 
 	if (src.startsWith("blob:") || src.startsWith("data:")) {
 		// eslint-disable-next-line @next/next/no-img-element
-		return <img {...props} alt={alt} src={src} />;
+		return <img {...props} alt={alt} loading="lazy" src={src} />;
 	}
 
 	const buffer = await getImageData(src);
-	const dimensions = imageSize(buffer);
+	const image = imageSize(buffer);
 
-	return <NextImage {...props} alt={alt} height={dimensions.height} width={dimensions.width} />;
+	// if (image.type === "svg") {
+	// 	// eslint-disable-next-line @next/next/no-img-element
+	// 	return <img {...props} alt={alt} loading="lazy" src={src} />;
+	// }
+
+	return <NextImage {...props} alt={alt} height={image.height} width={image.width} />;
 }
 
 function getImageData(src: string): Promise<Uint8Array> {
