@@ -360,10 +360,9 @@ export const navigation = createSingleton((locale) => {
 							label: "Label",
 							validation: { isRequired: true },
 						}),
-						page: fields.relationship({
-							label: "Page",
+						url: fields.url({
+							label: "URL",
 							validation: { isRequired: true },
-							collection: "pages",
 						}),
 					},
 					{
