@@ -17,6 +17,7 @@ import { ResourceLink } from "@/components/content/resource-link";
 import { Tab, Tabs } from "@/components/content/tabs";
 import { Video } from "@/components/content/video";
 import { VideoCard } from "@/components/content/video-card";
+import { Image } from "@/components/image";
 import { Link } from "@/components/link";
 
 const components = {
@@ -29,6 +30,7 @@ const components = {
 	Figure,
 	Grid,
 	GridItem,
+	img: Image,
 	Quiz,
 	QuizChoice,
 	QuizChoiceAnswer,

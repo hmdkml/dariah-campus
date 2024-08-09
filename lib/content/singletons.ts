@@ -63,10 +63,9 @@ export const indexPage = createSingleton((locale) => {
 									validation: { isRequired: true },
 									...createAssetPaths(assetPath),
 								}),
-								page: fields.relationship({
-									label: "Page",
+								url: fields.url({
+									label: "URL",
 									validation: { isRequired: true },
-									collection: "pages",
 								}),
 							},
 							{
@@ -78,6 +77,7 @@ export const indexPage = createSingleton((locale) => {
 							itemLabel(props) {
 								return props.fields.title.value;
 							},
+							validation: { length: { min: 1 } },
 						},
 					),
 				},
@@ -137,6 +137,7 @@ export const indexPage = createSingleton((locale) => {
 							itemLabel(props) {
 								return props.fields.title.value;
 							},
+							validation: { length: { min: 1 } },
 						},
 					),
 				},
@@ -175,6 +176,7 @@ export const indexPage = createSingleton((locale) => {
 							itemLabel(props) {
 								return props.fields.question.value;
 							},
+							validation: { length: { min: 1 } },
 						},
 					),
 				},
@@ -234,6 +236,7 @@ export const indexPage = createSingleton((locale) => {
 							itemLabel(props) {
 								return props.fields.title.value;
 							},
+							validation: { length: { min: 1 } },
 						},
 					),
 				},
@@ -277,6 +280,7 @@ export const indexPage = createSingleton((locale) => {
 							itemLabel(props) {
 								return props.fields.name.value;
 							},
+							validation: { length: { min: 1 } },
 						},
 					),
 				},
