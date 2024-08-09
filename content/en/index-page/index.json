@@ -111,24 +111,20 @@
 		"leadIn": "Our DARIAH-CAMPUS team is just an email away and ready to answer your questions",
 		"members": [
 			{
-				"name": "Vicky Garnett",
-				"role": "Training & Education Officer",
-				"image": "/assets/content/en/index-page/team/members/0/image.webp"
+				"person": "garnett-vicky",
+				"role": "Training & Education Officer"
 			},
 			{
-				"name": "Elisabeth Königshofer",
-				"role": "Community Editor",
-				"image": "/assets/content/en/index-page/team/members/1/image.webp"
+				"person": "königshofer-elisabeth",
+				"role": "Community Editor"
 			},
 			{
-				"name": "Toma Tasovac",
-				"role": "DARIAH Director",
-				"image": "/assets/content/en/index-page/team/members/2/image.webp"
+				"person": "tasovac-toma",
+				"role": "DARIAH Director"
 			},
 			{
-				"name": "Erzsébet Tóth-Czifra",
-				"role": "Open Science Officer",
-				"image": "/assets/content/en/index-page/team/members/3/image.webp"
+				"person": "tóth-czifra-erzsébet",
+				"role": "Open Science Officer"
 			}
 		]
 	}

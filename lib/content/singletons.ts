@@ -258,18 +258,14 @@ export const indexPage = createSingleton((locale) => {
 					members: fields.array(
 						fields.object(
 							{
-								name: fields.text({
-									label: "Name",
+								person: fields.relationship({
+									label: "Person",
 									validation: { isRequired: true },
+									collection: "people",
 								}),
 								role: fields.text({
 									label: "Role",
 									validation: { isRequired: true },
-								}),
-								image: fields.image({
-									label: "Image",
-									validation: { isRequired: true },
-									...createAssetPaths(assetPath),
 								}),
 							},
 							{
@@ -279,7 +275,7 @@ export const indexPage = createSingleton((locale) => {
 						{
 							label: "Team members",
 							itemLabel(props) {
-								return props.fields.name.value;
+								return props.fields.person.value ?? "Unknown";
 							},
 							validation: { length: { min: 1 } },
 						},

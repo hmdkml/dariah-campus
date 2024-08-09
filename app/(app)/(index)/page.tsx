@@ -1,3 +1,4 @@
+import { assert, keyByToMap } from "@acdh-oeaw/lib";
 import type { Metadata, ResolvingMetadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
@@ -33,6 +34,10 @@ export default async function IndexPage(_props: IndexPageProps): Promise<Awaited
 
 	const reader = createReader();
 	const indexPage = await reader.singletons.indexPage.readOrThrow({ resolveLinkedFiles: true });
+	const people = await reader.collections.people.all();
+	const peopleById = keyByToMap(people, (person) => {
+		return person.slug;
+	});
 
 	return (
 		<MainContent className="container py-8">
@@ -131,11 +136,15 @@ export default async function IndexPage(_props: IndexPageProps): Promise<Awaited
 				<div>{indexPage.team.leadIn}</div>
 				<ul role="list">
 					{indexPage.team.members.map((member, index) => {
+						const person = peopleById.get(member.person);
+						assert(person, `Person "${member.person}" not found.`);
+						assert(person.entry.image, "Team member must have an image.");
+
 						return (
 							<li key={index}>
 								<article>
-									<Image alt="" src={member.image} />
-									<h3>{member.name}</h3>
+									<Image alt="" src={person.entry.image} />
+									<h3>{person.entry.name}</h3>
 									<div>{member.role}</div>
 								</article>
 							</li>
