@@ -69,7 +69,6 @@
 		"server-only": "^0.0.1",
 		"sharp": "^0.33.4",
 		"shiki": "^1.12.1",
-		"simple-icons": "^13.5.0",
 		"typesense": "^2.0.0-3",
 		"unist-util-visit": "^5.0.0",
 		"valibot": "^0.37.0"

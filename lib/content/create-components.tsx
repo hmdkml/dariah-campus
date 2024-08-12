@@ -20,10 +20,10 @@ import {
 	MessageCircleQuestionIcon,
 	SquareIcon,
 	SuperscriptIcon,
+	TwitterIcon,
 	VideoIcon,
 } from "lucide-react";
 import { Tweet } from "react-tweet";
-import { siX as twitterIcon } from "simple-icons";
 
 import type { Locale } from "@/config/i18n.config";
 import { createAssetPaths } from "@/lib/content/create-asset-paths";
@@ -393,11 +393,7 @@ const components = {
 		return block({
 			label: "Tweet",
 			description: "A tweet.",
-			icon: (
-				<svg>
-					<path d={twitterIcon.path} />
-				</svg>
-			),
+			icon: <TwitterIcon />,
 			schema: {
 				id: fields.text({
 					label: "ID",
