@@ -360,6 +360,22 @@ const links = {
 			label: "Link",
 		},
 	),
+	page: fields.object(
+		{
+			label: fields.text({
+				label: "Label",
+				validation: { isRequired: true },
+			}),
+			id: fields.relationship({
+				label: "Page",
+				validation: { isRequired: true },
+				collection: "pages",
+			}),
+		},
+		{
+			label: "Page",
+		},
+	),
 };
 
 export const navigation = createSingleton((locale) => {
