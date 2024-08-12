@@ -66,7 +66,7 @@ export default async function IndexPage(_props: IndexPageProps): Promise<Awaited
 								<article>
 									<Image alt="" src={card.image} />
 									<h3>
-										<Link href={card.url}>{card.title}</Link>
+										<Link href={card.href}>{card.title}</Link>
 									</h3>
 									<div>{card.subtitle}</div>
 								</article>

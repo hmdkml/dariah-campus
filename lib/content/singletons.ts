@@ -64,7 +64,7 @@ export const indexPage = createSingleton((locale) => {
 									validation: { isRequired: true },
 									...createAssetPaths(assetPath),
 								}),
-								url: fields.url({
+								href: fields.url({
 									label: "URL",
 									validation: { isRequired: true },
 								}),
@@ -344,6 +344,24 @@ export const metadata = createSingleton((locale) => {
 	});
 });
 
+const links = {
+	link: fields.object(
+		{
+			label: fields.text({
+				label: "Label",
+				validation: { isRequired: true },
+			}),
+			href: fields.url({
+				label: "URL",
+				validation: { isRequired: true },
+			}),
+		},
+		{
+			label: "Link",
+		},
+	),
+};
+
 export const navigation = createSingleton((locale) => {
 	const { contentPath } = createSingletonPaths("/navigation/", locale);
 
@@ -353,27 +371,51 @@ export const navigation = createSingleton((locale) => {
 		format: { data: "json" },
 		entryLayout: "form",
 		schema: {
-			links: fields.array(
-				fields.object(
-					{
-						label: fields.text({
-							label: "Label",
-							validation: { isRequired: true },
-						}),
-						url: fields.url({
-							label: "URL",
-							validation: { isRequired: true },
-						}),
-					},
-					{
+			links: fields.blocks(
+				{
+					link: {
 						label: "Link",
+						itemLabel(props) {
+							return `${props.fields.label.value} (Link)`;
+						},
+						schema: links.link,
 					},
-				),
+					menu: {
+						label: "Menu",
+						itemLabel(props) {
+							return `${props.fields.label.value} (Menu)`;
+						},
+						schema: fields.object(
+							{
+								label: fields.text({
+									label: "Label",
+									validation: { isRequired: true },
+								}),
+								links: fields.blocks(
+									{
+										link: {
+											label: "Link",
+											itemLabel(props) {
+												return props.fields.label.value;
+											},
+											schema: links.link,
+										},
+									},
+									{
+										label: "Links",
+										validation: { length: { min: 1 } },
+									},
+								),
+							},
+							{
+								label: "Menu",
+							},
+						),
+					},
+				},
 				{
 					label: "Links",
-					itemLabel(props) {
-						return props.fields.label.value;
-					},
+					validation: { length: { min: 1 } },
 				},
 			),
 		},

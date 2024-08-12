@@ -12,19 +12,19 @@
 				"title": "Resources",
 				"subtitle": "Learn about different topics with online resources provided by DARIAH",
 				"image": "/assets/content/en/index-page/browse/cards/0/image.svg",
-				"url": "/resources"
+				"href": "/resources"
 			},
 			{
 				"title": "Events",
 				"subtitle": "Missed a face-to-face DARIAH event? Check out what happened",
 				"image": "/assets/content/en/index-page/browse/cards/1/image.svg",
-				"url": "/resources/events"
+				"href": "/resources/events"
 			},
 			{
 				"title": "Pathfinders",
 				"subtitle": "Collections of external resources curated by the DARIAH team",
 				"image": "/assets/content/en/index-page/browse/cards/2/image.svg",
-				"url": "/resources/pathfinders"
+				"href": "/resources/pathfinders"
 			}
 		]
 	},

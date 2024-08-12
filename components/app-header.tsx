@@ -4,14 +4,18 @@ import type { ReactNode } from "react";
 import { AppNavLink } from "@/components/app-nav-link";
 import { ColorSchemeSwitcher } from "@/components/color-scheme-switcher";
 import type { LinkProps } from "@/components/link";
+import { createReader } from "@/lib/content/create-reader";
 import { createHref } from "@/lib/create-href";
 
-export function AppHeader(): ReactNode {
+export async function AppHeader(): Promise<Awaited<ReactNode>> {
 	const t = useTranslations("AppHeader");
 
 	const links = {
 		home: { href: createHref({ pathname: "/" }), label: t("links.home") },
 	} satisfies Record<string, { href: LinkProps["href"]; label: string }>;
+
+	const reader = createReader();
+	const navigation = await reader.singletons.navigation.readOrThrow({ resolveLinkedFiles: true });
 
 	return (
 		<header className="border-b">
@@ -24,6 +28,22 @@ export function AppHeader(): ReactNode {
 									<AppNavLink href={link.href}>{link.label}</AppNavLink>
 								</li>
 							);
+						})}
+
+						{navigation.links.map((link, index) => {
+							switch (link.discriminant) {
+								case "link": {
+									return (
+										<li key={index}>
+											<AppNavLink href={link.value.href}>{link.value.label}</AppNavLink>
+										</li>
+									);
+								}
+
+								case "menu": {
+									throw new Error("Not yet implemented.");
+								}
+							}
 						})}
 					</ul>
 				</nav>
