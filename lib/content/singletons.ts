@@ -27,6 +27,7 @@ export const indexPage = createSingleton((locale) => {
 					leadIn: fields.text({
 						label: "Lead in",
 						validation: { isRequired: true },
+						multiline: true,
 					}),
 					image: fields.image({
 						label: "Image",
