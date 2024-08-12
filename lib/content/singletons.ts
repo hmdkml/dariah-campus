@@ -377,6 +377,7 @@ const links = {
 			label: "Page",
 		},
 	),
+	separator: fields.empty(),
 };
 
 export const navigation = createSingleton((locale) => {
@@ -397,6 +398,10 @@ export const navigation = createSingleton((locale) => {
 						},
 						schema: links.link,
 					},
+					separator: {
+						label: "Separator",
+						schema: links.separator,
+					},
 					menu: {
 						label: "Menu",
 						itemLabel(props) {
@@ -416,6 +421,10 @@ export const navigation = createSingleton((locale) => {
 												return props.fields.label.value;
 											},
 											schema: links.link,
+										},
+										separator: {
+											label: "Separator",
+											schema: links.separator,
 										},
 									},
 									{
