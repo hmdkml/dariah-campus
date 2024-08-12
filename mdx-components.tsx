@@ -15,6 +15,7 @@ import {
 } from "@/components/content/quiz";
 import { ResourceLink } from "@/components/content/resource-link";
 import { Tab, Tabs } from "@/components/content/tabs";
+import { Tweet } from "@/components/content/tweet";
 import { Video } from "@/components/content/video";
 import { VideoCard } from "@/components/content/video-card";
 import { Image } from "@/components/image";
@@ -40,6 +41,7 @@ const components = {
 	ResourceLink,
 	Tab,
 	Tabs,
+	Tweet,
 	Video,
 	VideoCard,
 };

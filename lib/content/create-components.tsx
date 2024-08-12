@@ -22,6 +22,8 @@ import {
 	SuperscriptIcon,
 	VideoIcon,
 } from "lucide-react";
+import { Tweet } from "react-tweet";
+import { siX as twitterIcon } from "simple-icons";
 
 import type { Locale } from "@/config/i18n.config";
 import { createAssetPaths } from "@/lib/content/create-asset-paths";
@@ -385,6 +387,30 @@ const components = {
 			icon: <CaptionsIcon />,
 			children: ["Tab"],
 			schema: {},
+		});
+	},
+	Tweet() {
+		return block({
+			label: "Tweet",
+			description: "A tweet.",
+			icon: (
+				<svg>
+					<path d={twitterIcon.path} />
+				</svg>
+			),
+			schema: {
+				id: fields.text({
+					label: "ID",
+					validation: { isRequired: true },
+				}),
+			},
+			ContentView(props) {
+				return (
+					<NotEditable>
+						<Tweet id={props.value.id} />
+					</NotEditable>
+				);
+			},
 		});
 	},
 	Video() {
