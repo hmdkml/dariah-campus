@@ -458,3 +458,5 @@ export function createComponents(
 		}),
 	);
 }
+
+export const headingLevels = [2, 3, 4, 5] as const;

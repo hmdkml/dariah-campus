@@ -2,7 +2,7 @@ import { collection, fields } from "@keystatic/core";
 
 import { createAssetPaths } from "@/lib/content/create-asset-paths";
 import { createCollection } from "@/lib/content/create-collection";
-import { createComponents } from "@/lib/content/create-components";
+import { createComponents, headingLevels } from "@/lib/content/create-components";
 import { createCollectionPaths } from "@/lib/content/create-paths";
 import { createPreviewUrl } from "@/lib/content/create-preview-url";
 import * as _fields from "@/lib/content/fields";
@@ -16,8 +16,6 @@ const contentTypes = [
 	{ label: "Webinar recording", value: "webinar-recording" },
 	{ label: "Website", value: "website" },
 ] as const;
-
-const headingLevels = [2, 3, 4, 5] as const;
 
 const locales = [
 	{ label: "German", value: "de" },
