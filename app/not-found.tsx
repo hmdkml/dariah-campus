@@ -6,7 +6,6 @@ import type { ReactNode } from "react";
 import { MainContent } from "@/components/main-content";
 import { PageTitle } from "@/components/ui/page-title";
 import { defaultLocale } from "@/config/i18n.config";
-import { ColorSchemeScript } from "@/lib/color-scheme-script";
 import * as fonts from "@/lib/fonts";
 import { cn } from "@/lib/styles";
 
@@ -44,8 +43,6 @@ export default function NotFoundPage(): ReactNode {
 			suppressHydrationWarning={true}
 		>
 			<body>
-				<ColorSchemeScript />
-
 				<MainContent className="container py-8">
 					<PageTitle>{t("title")}</PageTitle>
 				</MainContent>

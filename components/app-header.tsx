@@ -1,13 +1,12 @@
 import { useTranslations } from "next-intl";
-import type { ReactNode } from "react";
 
 import { AppNavLink } from "@/components/app-nav-link";
-import { ColorSchemeSwitcher } from "@/components/color-scheme-switcher";
 import type { LinkProps } from "@/components/link";
 import { createReader } from "@/lib/content/create-reader";
 import { createHref } from "@/lib/create-href";
 
-export async function AppHeader(): Promise<Awaited<ReactNode>> {
+// FIXME: return type annotation
+export async function AppHeader() {
 	const t = useTranslations("AppHeader");
 
 	const links = {
@@ -30,6 +29,7 @@ export async function AppHeader(): Promise<Awaited<ReactNode>> {
 							);
 						})}
 
+						{/* eslint-disable-next-line consistent-return */}
 						{navigation.links.map((link, index) => {
 							switch (link.discriminant) {
 								case "link": {
@@ -40,6 +40,10 @@ export async function AppHeader(): Promise<Awaited<ReactNode>> {
 									);
 								}
 
+								case "separator": {
+									return <div role="separator" />;
+								}
+
 								case "menu": {
 									throw new Error("Not yet implemented.");
 								}
@@ -48,9 +52,7 @@ export async function AppHeader(): Promise<Awaited<ReactNode>> {
 					</ul>
 				</nav>
 
-				<div className="flex items-center gap-4">
-					<ColorSchemeSwitcher />
-				</div>
+				<div className="flex items-center gap-4"></div>
 			</div>
 		</header>
 	);

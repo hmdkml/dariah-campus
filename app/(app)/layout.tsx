@@ -14,7 +14,6 @@ import { id } from "@/components/main-content";
 import { SkipLink } from "@/components/skip-link";
 import { env } from "@/config/env.config";
 import { AnalyticsScript } from "@/lib/analytics-script";
-import { ColorSchemeScript } from "@/lib/color-scheme-script";
 import * as fonts from "@/lib/fonts";
 import { cn } from "@/lib/styles";
 
@@ -85,8 +84,6 @@ export default function LocaleLayout(props: LocaleLayoutProps): ReactNode {
 						description: meta("description"),
 					})}
 				/>
-
-				<ColorSchemeScript />
 
 				<AnalyticsScript baseUrl={env.NEXT_PUBLIC_MATOMO_BASE_URL} id={env.NEXT_PUBLIC_MATOMO_ID} />
 
