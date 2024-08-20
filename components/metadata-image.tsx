@@ -16,11 +16,11 @@ export async function MetadataImage(props: MetadataImageProps): Promise<ImageRes
 	 *
 	 * @see https://github.com/vercel/satori/issues/162
 	 */
-	const inter = await fetch(new URL("../assets/fonts/inter-semibold.ttf", import.meta.url)).then(
-		(res) => {
-			return res.arrayBuffer();
-		},
-	);
+	const inter = await fetch(
+		new URL("../public/assets/fonts/inter-semibold.ttf", import.meta.url),
+	).then((res) => {
+		return res.arrayBuffer();
+	});
 
 	return new ImageResponse(
 		(
