@@ -1,12 +1,12 @@
 {
 	"hero": {
 		"title": "Looking for learning resources?",
-		"leadIn": "DARIAH-CAMPUS is a discovery framework and hosting platform for learning resources.",
+		"lead": "DARIAH-CAMPUS is a discovery framework and hosting platform for learning resources.",
 		"image": "/assets/content/en/index-page/hero/image.svg"
 	},
 	"browse": {
 		"title": "Browse content",
-		"leadIn": "Choose a category to browse or search above",
+		"lead": "Choose a category to browse or search above",
 		"cards": [
 			{
 				"title": "Resources",
@@ -30,7 +30,7 @@
 	},
 	"support": {
 		"title": "How can DARIAH-Campus support you?",
-		"leadIn": "Check out what DARIAH-Campus has in store for both learners and training providers",
+		"lead": "Check out what DARIAH-Campus has in store for both learners and training providers",
 		"cards": [
 			{
 				"title": "For learners",
@@ -54,7 +54,7 @@
 	},
 	"faq": {
 		"title": "Frequently asked questions",
-		"leadIn": "Time is precious, we know",
+		"lead": "Time is precious, we know",
 		"entries": [
 			{
 				"question": "What is DARIAH?"
@@ -75,7 +75,7 @@
 	},
 	"videos": {
 		"title": "Why training and education?",
-		"leadIn": "Some thoughts on why training and education matter so much for a research infrastructure such as DARIAH",
+		"lead": "Some thoughts on why training and education matter so much for a research infrastructure such as DARIAH",
 		"cards": [
 			{
 				"title": "Laurent Romary",
@@ -108,7 +108,7 @@
 	},
 	"team": {
 		"title": "We are here to help",
-		"leadIn": "Our DARIAH-CAMPUS team is just an email away and ready to answer your questions",
+		"lead": "Our DARIAH-CAMPUS team is just an email away and ready to answer your questions",
 		"members": [
 			{
 				"person": "garnett-vicky",

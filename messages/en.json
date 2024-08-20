@@ -70,6 +70,12 @@
 		},
 		"title": "Pathfinders"
 	},
+	"ResourcesPage": {
+		"meta": {
+			"title": "Resources"
+		},
+		"title": "Resources"
+	},
 	"SourcesPage": {
 		"meta": {
 			"title": "Sources"

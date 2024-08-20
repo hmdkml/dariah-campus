@@ -1,20 +1,20 @@
-import { useTranslations } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
 
 import { AppNavLink } from "@/components/app-nav-link";
 import type { LinkProps } from "@/components/link";
-import { createReader } from "@/lib/content/create-reader";
+import { createSingletonResource } from "@/lib/content/create-resource";
 import { createHref } from "@/lib/create-href";
 
 // FIXME: return type annotation
 export async function AppHeader() {
-	const t = useTranslations("AppHeader");
+	const locale = await getLocale();
+	const t = await getTranslations("AppHeader");
 
 	const links = {
 		home: { href: createHref({ pathname: "/" }), label: t("links.home") },
 	} satisfies Record<string, { href: LinkProps["href"]; label: string }>;
 
-	const reader = createReader();
-	const navigation = await reader.singletons.navigation.readOrThrow({ resolveLinkedFiles: true });
+	const navigation = await createSingletonResource("navigation", locale).read();
 
 	return (
 		<header className="border-b">
@@ -30,7 +30,7 @@ export async function AppHeader() {
 						})}
 
 						{/* eslint-disable-next-line consistent-return */}
-						{navigation.links.map((link, index) => {
+						{navigation.data.links.map((link, index) => {
 							switch (link.discriminant) {
 								case "link": {
 									return (

@@ -25,11 +25,15 @@ const config = {
 				heading: "var(--font-heading, var(--font-body, ui-sans-serif)), system-ui, sans-serif",
 			},
 			colors: {
+				brand: "#006699",
 				neutral: {
 					"0": "white",
-					...colors.zinc,
+					...colors.slate,
 					"1000": "black",
 				},
+				/** Map tailwind typography default colors. */
+				gray: colors.slate,
+				//
 				background:
 					"color-mix(in sRGB, var(--color-background) calc(<alpha-value> * 100%), transparent)",
 				"on-background":
@@ -73,12 +77,24 @@ const config = {
 				"focus-ring":
 					"color-mix(in sRGB, var(--color-focus-ring) calc(<alpha-value> * 100%), transparent)",
 			},
-			typography: {
-				DEFAULT: {
-					css: {
-						maxWidth: null,
+			typography(theme: (key: string) => string) {
+				return {
+					DEFAULT: {
+						css: {
+							"--tw-prose-bullets": "currentColor",
+							maxWidth: "none",
+							/** Don't add quotes around `blockquote`. */
+							"blockquote p:first-of-type::before": null,
+							"blockquote p:last-of-type::after": null,
+							/** Don't add backticks around inline `code`. */
+							"code::before": null,
+							"code::after": null,
+							a: {
+								color: theme("colors.brand"),
+							},
+						},
 					},
-				},
+				};
 			},
 		},
 		screens: {

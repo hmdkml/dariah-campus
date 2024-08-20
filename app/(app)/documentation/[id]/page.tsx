@@ -1,9 +1,10 @@
 import type { Metadata, ResolvingMetadata } from "next";
+import { getLocale } from "next-intl/server";
 import type { ReactNode } from "react";
 
 import { MainContent } from "@/components/main-content";
 import { PageTitle } from "@/components/ui/page-title";
-import { createReader } from "@/lib/content/create-reader";
+import { createCollectionResource } from "@/lib/content/create-resource";
 
 interface DocumentationPageProps {
 	params: {
@@ -16,8 +17,9 @@ export const dynamicParams = false;
 export async function generateStaticParams(): Promise<
 	Array<Pick<DocumentationPageProps["params"], "id">>
 > {
-	const reader = createReader();
-	const ids = await reader.collections.documentation.list();
+	const locale = await getLocale();
+
+	const ids = await createCollectionResource("documentation", locale).list();
 
 	return ids.map((id) => {
 		/** @see https://github.com/vercel/next.js/issues/63002 */
@@ -31,15 +33,14 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 	const { params } = props;
 
+	const locale = await getLocale();
+
 	const id = decodeURIComponent(params.id);
 
-	const reader = createReader();
-	const entry = await reader.collections.externalResources.readOrThrow(id, {
-		resolveLinkedFiles: true,
-	});
+	const entry = await createCollectionResource("externalResources", locale).read(id);
 
 	const metadata: Metadata = {
-		title: entry.title,
+		title: entry.data.title,
 	};
 
 	return metadata;
@@ -50,16 +51,15 @@ export default async function DocumentationPage(
 ): Promise<Awaited<ReactNode>> {
 	const { params } = props;
 
+	const locale = await getLocale();
+
 	const id = decodeURIComponent(params.id);
 
-	const reader = createReader();
-	const entry = await reader.collections.documentation.readOrThrow(id, {
-		resolveLinkedFiles: true,
-	});
+	const entry = await createCollectionResource("documentation", locale).read(id);
 
 	return (
 		<MainContent className="container py-8">
-			<PageTitle>{entry.title}</PageTitle>
+			<PageTitle>{entry.data.title}</PageTitle>
 		</MainContent>
 	);
 }

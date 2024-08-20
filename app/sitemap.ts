@@ -5,7 +5,8 @@ import { glob } from "fast-glob";
 import type { MetadataRoute } from "next";
 
 import { env } from "@/config/env.config";
-import { createReader } from "@/lib/content/create-reader";
+import { defaultLocale as locale } from "@/config/i18n.config";
+import { createCollectionResource } from "@/lib/content/create-resource";
 
 const baseUrl = env.NEXT_PUBLIC_APP_BASE_URL;
 
@@ -52,15 +53,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		};
 	});
 
-	const reader = createReader();
-	const curricula = await reader.collections.curricula.all();
-	const events = await reader.collections.events.all();
-	const externalResources = await reader.collections.externalResources.all();
-	const hostedResources = await reader.collections.hostedResources.all();
-	const pathfinders = await reader.collections.pathfinders.all();
+	const curricula = await createCollectionResource("curricula", locale).all();
+	const events = await createCollectionResource("events", locale).all();
+	const externalResources = await createCollectionResource("externalResources", locale).all();
+	const hostedResources = await createCollectionResource("hostedResources", locale).all();
+	const pathfinders = await createCollectionResource("pathfinders", locale).all();
 
 	curricula.forEach((resource) => {
-		const pathname = `/resources/curricula/${resource.slug}`;
+		const pathname = `/resources/curricula/${resource.id}`;
 
 		entries.push({
 			url: String(createUrl({ baseUrl, pathname })),
@@ -69,7 +69,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	});
 
 	events.forEach((resource) => {
-		const pathname = `/resources/events/${resource.slug}`;
+		const pathname = `/resources/events/${resource.id}`;
 
 		entries.push({
 			url: String(createUrl({ baseUrl, pathname })),
@@ -78,7 +78,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	});
 
 	externalResources.forEach((resource) => {
-		const pathname = `/resources/external/${resource.slug}`;
+		const pathname = `/resources/external/${resource.id}`;
 
 		entries.push({
 			url: String(createUrl({ baseUrl, pathname })),
@@ -87,7 +87,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	});
 
 	hostedResources.forEach((resource) => {
-		const pathname = `/resources/hosted/${resource.slug}`;
+		const pathname = `/resources/hosted/${resource.id}`;
 
 		entries.push({
 			url: String(createUrl({ baseUrl, pathname })),
@@ -96,7 +96,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	});
 
 	pathfinders.forEach((resource) => {
-		const pathname = `/resources/pathfinders/${resource.slug}`;
+		const pathname = `/resources/pathfinders/${resource.id}`;
 
 		entries.push({
 			url: String(createUrl({ baseUrl, pathname })),

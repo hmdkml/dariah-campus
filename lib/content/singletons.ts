@@ -24,7 +24,7 @@ export const indexPage = createSingleton((locale) => {
 						label: "Title",
 						validation: { isRequired: true },
 					}),
-					leadIn: fields.text({
+					lead: fields.text({
 						label: "Lead in",
 						validation: { isRequired: true },
 						multiline: true,
@@ -45,7 +45,7 @@ export const indexPage = createSingleton((locale) => {
 						label: "Title",
 						validation: { isRequired: true },
 					}),
-					leadIn: fields.text({
+					lead: fields.text({
 						label: "Lead in",
 						validation: { isRequired: true },
 					}),
@@ -93,7 +93,7 @@ export const indexPage = createSingleton((locale) => {
 						label: "Title",
 						validation: { isRequired: true },
 					}),
-					leadIn: fields.text({
+					lead: fields.text({
 						label: "Lead in",
 						validation: { isRequired: true },
 					}),
@@ -153,7 +153,7 @@ export const indexPage = createSingleton((locale) => {
 						label: "Title",
 						validation: { isRequired: true },
 					}),
-					leadIn: fields.text({
+					lead: fields.text({
 						label: "Lead in",
 						validation: { isRequired: true },
 					}),
@@ -192,7 +192,7 @@ export const indexPage = createSingleton((locale) => {
 						label: "Title",
 						validation: { isRequired: true },
 					}),
-					leadIn: fields.text({
+					lead: fields.text({
 						label: "Lead in",
 						validation: { isRequired: true },
 					}),
@@ -252,7 +252,7 @@ export const indexPage = createSingleton((locale) => {
 						label: "Title",
 						validation: { isRequired: true },
 					}),
-					leadIn: fields.text({
+					lead: fields.text({
 						label: "Lead in",
 						validation: { isRequired: true },
 					}),
