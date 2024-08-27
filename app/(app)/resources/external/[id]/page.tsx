@@ -33,6 +33,8 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 	const { params } = props;
 
+	const locale = await getLocale();
+
 	const id = decodeURIComponent(params.id);
 
 	const entry = await createCollectionResource("externalResources", locale).read(id);

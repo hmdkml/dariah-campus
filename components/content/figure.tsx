@@ -1,5 +1,11 @@
 import type { ReactNode } from "react";
 
-export function Figure(): ReactNode {
+interface FigureProps {
+	alt?: string;
+	children: ReactNode;
+	src: string;
+}
+
+export function Figure(props: FigureProps): ReactNode {
 	return null;
 }

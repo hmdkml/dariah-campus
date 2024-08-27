@@ -1,5 +1,9 @@
 import type { ReactNode } from "react";
 
-export function DownloadLink(): ReactNode {
+interface DownloadLinkProps {
+	children: ReactNode;
+}
+
+export function DownloadLink(props: DownloadLinkProps): ReactNode {
 	return null;
 }

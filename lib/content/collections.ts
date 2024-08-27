@@ -215,7 +215,7 @@ export const events = createCollection((locale) => {
 			}),
 			authors: fields.multiRelationship({
 				label: "Authors",
-				validation: { length: { min: 1 } },
+				// validation: { length: { min: 1 } }, // FIXME:
 				collection: "people",
 			}),
 			// editors: fields.multiRelationship({
@@ -631,11 +631,11 @@ export const externalResources = createCollection((locale) => {
 					}),
 					url: fields.url({
 						label: "URL",
-						validation: { isRequired: true },
+						// validation: { isRequired: true }, // FIXME:
 					}),
 					publisher: fields.text({
 						label: "Publisher",
-						validation: { isRequired: true },
+						// validation: { isRequired: true }, // FIXME:
 					}),
 				},
 				{

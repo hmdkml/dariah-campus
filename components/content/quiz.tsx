@@ -1,25 +1,52 @@
 import type { ReactNode } from "react";
 
-export function Quiz(): ReactNode {
+interface QuizProps {
+	children: ReactNode;
+}
+
+export function Quiz(props: QuizProps): ReactNode {
 	return null;
 }
 
-export function QuizChoice(): ReactNode {
+interface QuizChoiceProps {
+	buttonLabel?: string;
+	children: ReactNode;
+	variant: "multiple" | "single";
+}
+
+export function QuizChoice(props: QuizChoiceProps): ReactNode {
 	return null;
 }
 
-export function QuizChoiceAnswer(): ReactNode {
+interface QuizChoiceAnswerProps {
+	children: ReactNode;
+	kind: "correct" | "incorrect";
+}
+
+export function QuizChoiceAnswer(props: QuizChoiceAnswerProps): ReactNode {
 	return null;
 }
 
-export function QuizChoiceQuestion(): ReactNode {
+interface QuizChoiceQuestionProps {
+	children: ReactNode;
+}
+
+export function QuizChoiceQuestion(props: QuizChoiceQuestionProps): ReactNode {
 	return null;
 }
 
-export function QuizErrorMessage(): ReactNode {
+interface QuizErrorMessageProps {
+	children: ReactNode;
+}
+
+export function QuizErrorMessage(props: QuizErrorMessageProps): ReactNode {
 	return null;
 }
 
-export function QuizSuccessMessage(): ReactNode {
+interface QuizSuccessMessageProps {
+	children: ReactNode;
+}
+
+export function QuizSuccessMessage(props: QuizSuccessMessageProps): ReactNode {
 	return null;
 }

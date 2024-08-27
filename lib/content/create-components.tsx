@@ -29,7 +29,7 @@ import type { Locale } from "@/config/i18n.config";
 import { createAssetPaths } from "@/lib/content/create-asset-paths";
 
 /** @see https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts */
-const calloutKinds = [
+export const calloutKinds = [
 	{ label: "Caution", value: "caution" },
 	{ label: "Important", value: "important" },
 	{ label: "Note", value: "note" },
@@ -37,7 +37,7 @@ const calloutKinds = [
 	{ label: "Warning", value: "warning" },
 ] as const;
 
-const gridVariants = [
+export const gridVariants = [
 	{ label: "Two columns", value: "two-columns" },
 	{ label: "Three columns", value: "three-columns" },
 	{ label: "Four columns", value: "four-columns" },
@@ -46,7 +46,7 @@ const gridVariants = [
 	{ label: "Two columns, right is 4x as wide", value: "one-four-columns" },
 ] as const;
 
-const videoProviders = [
+export const videoProviders = [
 	{ label: "Nakala", value: "nakala" },
 	{ label: "University of Helsinki", value: "uni-helsinki" },
 	{ label: "Vimeo", value: "vimeo" },
@@ -102,6 +102,7 @@ const components = {
 			},
 			ContentView(props) {
 				const { children, value } = props;
+
 				return (
 					<aside>
 						{isNonEmptyString(value.title) ? (
@@ -218,7 +219,9 @@ const components = {
 				}),
 			},
 			ContentView(props) {
-				return <span className="opacity-50">#{props.value.id}</span>;
+				const { value } = props;
+
+				return <span className="opacity-50">#{value.id}</span>;
 			},
 		});
 	},
@@ -279,12 +282,12 @@ const components = {
 				}),
 			},
 			ContentView(props) {
+				const { children, value } = props;
+
 				return (
 					<div>
-						<NotEditable>
-							{props.value.kind === "correct" ? "Correct" : "Incorrect"} answer:
-						</NotEditable>
-						{props.children}
+						<NotEditable>{value.kind === "correct" ? "Correct" : "Incorrect"} answer:</NotEditable>
+						{children}
 					</div>
 				);
 			},
@@ -390,7 +393,7 @@ const components = {
 		});
 	},
 	Tweet() {
-		return block({
+		return wrapper({
 			label: "Tweet",
 			description: "A tweet.",
 			icon: <TwitterIcon />,
@@ -401,10 +404,15 @@ const components = {
 				}),
 			},
 			ContentView(props) {
+				const { children, value } = props;
+
 				return (
-					<NotEditable>
-						<Tweet id={props.value.id} />
-					</NotEditable>
+					<figure>
+						<NotEditable>
+							<Tweet id={value.id} />
+						</NotEditable>
+						{children ? <ficgcaption>{children}</ficgcaption> : null}
+					</figure>
 				);
 			},
 		});
@@ -445,6 +453,10 @@ const components = {
 					label: "Subtitle",
 					validation: { isRequired: true },
 				}),
+				image: fields.image({
+					label: "image",
+					validation: { isRequired: true },
+				}),
 				provider: fields.select({
 					label: "Provider",
 					options: videoProviders,
@@ -458,10 +470,6 @@ const components = {
 					label: "Start time",
 					// validation: { isRequired: false },
 				}),
-				image: fields.image({
-					label: "image",
-					validation: { isRequired: true },
-				}),
 			},
 		});
 	},
@@ -474,11 +482,15 @@ export function createComponents(
 ) {
 	const _components = include ? pick(components, include) : components;
 
+	type Components = typeof _components;
+
 	return Object.fromEntries(
 		Object.entries(_components).map(([key, value]) => {
 			return [key, value(assetPath, locale)];
 		}),
-	);
+	) as {
+		[Key in keyof Components]: ReturnType<Components[Key]>;
+	};
 }
 
 export const headingLevels = [2, 3, 4, 5] as const;

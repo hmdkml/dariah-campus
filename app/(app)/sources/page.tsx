@@ -1,5 +1,4 @@
 import type { Metadata, ResolvingMetadata } from "next";
-import { useTranslations } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 
@@ -24,7 +23,7 @@ export async function generateMetadata(
 
 export default async function SourcesPage(_props: SourcesPageProps): Promise<Awaited<ReactNode>> {
 	const locale = await getLocale();
-	const t = useTranslations("SourcesPage");
+	const t = await getTranslations("SourcesPage");
 
 	const entries = await createCollectionResource("sources", locale).all();
 
